@@ -328,7 +328,7 @@ export default function Home() {
               justifyContent: 'center',
               alignItems: 'center',
               background: 'rgba(0,0,0,0.3)',
-              marginTop: '-10px'
+              marginTop: '-25px'
             }}>
               <Button variant="primary" href="/#plans" onClick={() => setShowSportsModal(false)}>
                 S'abonner pour accéder
