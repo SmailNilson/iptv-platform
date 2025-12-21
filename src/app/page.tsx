@@ -269,7 +269,7 @@ export default function Home() {
               background: 'linear-gradient(135deg, rgba(0, 207, 255, 0.1) 0%, transparent 100%)'
             }}>
               <div>
-                <h2 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>⚽ Pack Sport - {sportsChannels.length}+ Chaînes</h2>
+                <h2 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>⚽ Pack Sport - 200+ Chaînes</h2>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Toutes les compétitions mondiales en direct</p>
               </div>
               <button
