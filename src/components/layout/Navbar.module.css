@@ -1,0 +1,74 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: flex;
+    gap: 0.3rem;
+    letter-spacing: -0.02em;
+    font-family: 'Inter', sans-serif;
+}
+
+.iptv {
+    color: var(--accent-1);
+    text-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+.smarters {
+    color: var(--text-primary);
+}
+
+.pro {
+    background: var(--cta-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navLink {
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: var(--text-primary);
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+}

@@ -1,0 +1,179 @@
+.main {
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 4rem;
+    background-color: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.planSummary {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.planName {
+    font-size: 1.5rem;
+    color: var(--accent-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.planDetails {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 1rem;
+}
+
+.price span {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--accent-1);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+}
+
+.input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: var(--accent-1);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+}
+
+.textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.submitButton {
+    background: var(--cta-gradient);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submitButton:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+.securityNote {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.backLink {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.backLink a {
+    color: var(--accent-1);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.backLink a:hover {
+    text-decoration: underline;
+}

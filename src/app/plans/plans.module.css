@@ -1,0 +1,190 @@
+.main {
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 4rem;
+    background-color: var(--bg-primary);
+    background-image: linear-gradient(var(--glass-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--glass-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.toggleContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.deviceToggle {
+    background: transparent;
+    border: 1px solid var(--accent-1);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.deviceToggleActive {
+    background: var(--accent-1);
+    color: white;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+    /* Purple Shadow */
+}
+
+.plansGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+/* Force 4 columns on large screens */
+@media (min-width: 1280px) {
+    .plansGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.planCard {
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    /* Revert to Dark Glass */
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 20px;
+    padding: 2.5rem 2rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Limit left align */
+    text-align: left;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.bestValue {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: var(--cta-gradient);
+    /* Gradient Badge */
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+}
+
+.planName {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    /* White Text */
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    /* White Text */
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.price span {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.period {
+    font-size: 1rem;
+    color: var(--accent-2);
+    /* Cyan for period */
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: left;
+    margin-top: auto;
+}
+
+.features li {
+    padding: 0.5rem 0;
+    border-bottom: none;
+    color: var(--text-secondary);
+    /* Grey Text */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.check {
+    color: var(--success);
+    /* Green Checkmarks */
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+/* Custom Button */
+.selectButton {
+    background: var(--cta-gradient);
+    /* Purple Gradient */
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.selectButton:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
