@@ -322,13 +322,12 @@ export default function Home() {
 
             {/* Footer CTA */}
             <div style={{
-              padding: '1.5rem 2rem',
+              padding: '1.25rem 2rem',
               borderTop: '1px solid var(--glass-border)',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              background: 'rgba(0,0,0,0.3)',
-              marginTop: '-25px'
+              background: 'rgba(0,0,0,0.3)'
             }}>
               <Button variant="primary" href="/#plans" onClick={() => setShowSportsModal(false)}>
                 S'abonner pour accéder
