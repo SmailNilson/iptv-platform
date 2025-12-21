@@ -17,6 +17,33 @@ export default function Trial() {
                 <form className={styles.form}>
                     <Input label="Adresse Email" type="email" placeholder="votre@email.com" />
 
+                    <div style={{ marginTop: '1rem' }}>
+                        <label style={{
+                            display: 'block',
+                            marginBottom: '0.5rem',
+                            fontSize: '0.9rem',
+                            color: 'var(--text-secondary)'
+                        }}>
+                            Note (optionnel)
+                        </label>
+                        <textarea
+                            placeholder="Ex: J'aimerais tester sur Smart TV Samsung..."
+                            rows={3}
+                            style={{
+                                width: '100%',
+                                padding: '0.875rem 1rem',
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                borderRadius: '12px',
+                                color: 'white',
+                                fontSize: '1rem',
+                                resize: 'vertical',
+                                outline: 'none',
+                                fontFamily: 'inherit'
+                            }}
+                        />
+                    </div>
+
                     <Button variant="primary" fullWidth className="mt-4">
                         Demander mon Accès
                     </Button>
