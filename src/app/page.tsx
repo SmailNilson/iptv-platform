@@ -253,7 +253,7 @@ export default function Home() {
               borderRadius: '1rem',
               maxWidth: '900px',
               width: '100%',
-              maxHeight: '85vh',
+              maxHeight: '80vh',
               overflow: 'hidden',
               border: '1px solid var(--glass-border)'
             }}
@@ -292,7 +292,7 @@ export default function Home() {
             {/* Channels Grid */}
             <div style={{
               padding: '1.5rem 2rem',
-              maxHeight: 'calc(85vh - 150px)',
+              maxHeight: 'calc(80vh - 180px)',
               overflowY: 'auto'
             }}>
               <div style={{
