@@ -43,7 +43,7 @@ export default function SmartIptvActivationPage() {
                         </p>
                         <ol style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
                             <li style={{ marginBottom: '0.5rem' }}>L'application installée sur votre TV.</li>
-                            <li>Un <Link href="/abonnement-iptv" style={{ color: 'var(--accent-2)' }}>abonnement IPTV premium</Link> (fichier M3U ou lien).</li>
+                            <li>Un <Link href="/#plans" style={{ color: 'var(--accent-2)' }}>abonnement IPTV premium</Link> (fichier M3U ou lien).</li>
                         </ol>
 
                         <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid #3b82f6', padding: '1.5rem', margin: '2rem 0', borderRadius: '0 8px 8px 0' }}>
@@ -81,7 +81,7 @@ export default function SmartIptvActivationPage() {
                         <ol style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
                             <li>Allez sur l'onglet <strong>My List</strong> du site siptv.app.</li>
                             <li>Dans "MAC", remettez l'adresse MAC de votre TV.</li>
-                            <li>Dans "URL", collez le lien M3U fourni par votre <Link href="/abonnement-iptv" style={{ color: 'var(--accent-2)' }}>fournisseur IPTV</Link>.</li>
+                            <li>Dans "URL", collez le lien M3U fourni par votre <Link href="/#plans" style={{ color: 'var(--accent-2)' }}>fournisseur IPTV</Link>.</li>
                             <li>Cochez la case "Save online" si disponible.</li>
                             <li>Cliquez sur <strong>Send</strong>.</li>
                         </ol>
@@ -100,7 +100,7 @@ export default function SmartIptvActivationPage() {
                             Ne perdez pas votre argent avec des abonnements qui coupent.
                             Obtenez le meilleur lien M3U du marché, parfaitement compatible Smart IPTV.
                         </p>
-                        <Button href="/abonnement-iptv" variant="primary">Découvrir nos offres</Button>
+                        <Button href="/#plans" variant="primary">Découvrir nos offres</Button>
                     </div>
                 </div>
             </section>
