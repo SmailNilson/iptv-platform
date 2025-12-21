@@ -327,7 +327,8 @@ export default function Home() {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              background: 'rgba(0,0,0,0.3)'
+              background: 'rgba(0,0,0,0.3)',
+              marginTop: '-10px'
             }}>
               <Button variant="primary" href="/#plans" onClick={() => setShowSportsModal(false)}>
                 S'abonner pour accéder
