@@ -27,7 +27,7 @@ export default function Trial() {
                             Note (optionnel)
                         </label>
                         <textarea
-                            placeholder="Ex: J'aimerais tester sur Smart TV Samsung..."
+                            placeholder="Ex: Pays, appareil (Smart TV, Box Android, etc.)"
                             rows={3}
                             style={{
                                 width: '100%',
