@@ -229,7 +229,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sports Channels Modal - Enhanced */}
+      {/* Sports Channels Modal */}
       {showSportsModal && (
         <div
           style={{
@@ -238,8 +238,7 @@ export default function Home() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(0, 0, 0, 0.95)',
-            backdropFilter: 'blur(10px)',
+            background: 'rgba(0, 0, 0, 0.9)',
             zIndex: 9999,
             display: 'flex',
             alignItems: 'center',
@@ -250,117 +249,72 @@ export default function Home() {
         >
           <div
             style={{
-              background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%)',
-              borderRadius: '1.5rem',
-              maxWidth: '1000px',
+              background: 'var(--card-bg)',
+              borderRadius: '1rem',
+              maxWidth: '900px',
               width: '100%',
-              maxHeight: '90vh',
+              maxHeight: '85vh',
               overflow: 'hidden',
-              border: '1px solid rgba(0, 207, 255, 0.2)',
-              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 207, 255, 0.1)'
+              border: '1px solid var(--glass-border)'
             }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             <div style={{
-              padding: '2rem 2.5rem',
-              borderBottom: '1px solid rgba(255,255,255,0.1)',
+              padding: '1.5rem 2rem',
+              borderBottom: '1px solid var(--glass-border)',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              background: 'linear-gradient(135deg, rgba(0, 207, 255, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%)'
+              background: 'linear-gradient(135deg, rgba(0, 207, 255, 0.1) 0%, transparent 100%)'
             }}>
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '2.5rem' }}>⚽</span>
-                  <h2 style={{ fontSize: '1.75rem', fontWeight: '700', background: 'linear-gradient(135deg, #00CFFF, #7C3AFA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                    Pack Sport Premium
-                  </h2>
-                </div>
-                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1rem' }}>
-                  🔴 <strong style={{ color: '#00CFFF' }}>{sportsChannels.length}+ chaînes</strong> • Toutes les compétitions mondiales en direct
-                </p>
+                <h2 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>⚽ Pack Sport - {sportsChannels.length}+ Chaînes</h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Toutes les compétitions mondiales en direct</p>
               </div>
               <button
                 onClick={() => setShowSportsModal(false)}
                 style={{
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'rgba(255,255,255,0.1)',
+                  border: 'none',
                   color: 'white',
-                  fontSize: '1.25rem',
-                  width: '44px',
-                  height: '44px',
-                  borderRadius: '12px',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
+                  fontSize: '1.5rem',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  cursor: 'pointer'
                 }}
               >
                 ✕
               </button>
             </div>
 
-            {/* Category Tags */}
-            <div style={{
-              padding: '1rem 2.5rem',
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '0.5rem',
-              borderBottom: '1px solid rgba(255,255,255,0.05)',
-              background: 'rgba(0,0,0,0.2)'
-            }}>
-              {['🇫🇷 France', '🇬🇧 UK', '🇺🇸 USA', '🌍 Monde', '⚽ Football', '🏀 NBA', '🎾 Tennis', '🏎️ F1'].map((tag, i) => (
-                <span key={i} style={{
-                  background: 'rgba(0, 207, 255, 0.1)',
-                  border: '1px solid rgba(0, 207, 255, 0.2)',
-                  padding: '0.4rem 0.8rem',
-                  borderRadius: '20px',
-                  fontSize: '0.8rem',
-                  color: 'rgba(255,255,255,0.8)'
-                }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-
             {/* Channels Grid */}
             <div style={{
-              padding: '1.5rem 2.5rem',
-              maxHeight: 'calc(90vh - 280px)',
+              padding: '1.5rem 2rem',
+              maxHeight: 'calc(85vh - 150px)',
               overflowY: 'auto'
             }}>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
                 gap: '0.75rem'
               }}>
                 {sportsChannels.map((channel, i) => (
                   <div
                     key={i}
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
-                      padding: '0.875rem 1rem',
-                      borderRadius: '10px',
+                      background: 'rgba(255,255,255,0.03)',
+                      padding: '0.75rem 1rem',
+                      borderRadius: '8px',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '0.875rem',
+                      gap: '0.75rem',
                       border: '1px solid rgba(255,255,255,0.05)'
                     }}
                   >
-                    <span style={{
-                      fontSize: '1.5rem',
-                      width: '36px',
-                      height: '36px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      background: 'rgba(0,0,0,0.3)',
-                      borderRadius: '8px'
-                    }}>
-                      {channel.country}
-                    </span>
-                    <span style={{ fontSize: '0.9rem', fontWeight: '500' }}>{channel.name}</span>
+                    <span style={{ fontSize: '1.2rem' }}>{channel.country}</span>
+                    <span style={{ fontSize: '0.9rem' }}>{channel.name}</span>
                   </div>
                 ))}
               </div>
@@ -368,19 +322,16 @@ export default function Home() {
 
             {/* Footer CTA */}
             <div style={{
-              padding: '1.5rem 2.5rem',
-              borderTop: '1px solid rgba(255,255,255,0.1)',
+              padding: '1.5rem 2rem',
+              borderTop: '1px solid var(--glass-border)',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              gap: '1rem',
-              background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%)'
+              background: 'rgba(0,0,0,0.3)',
+              marginTop: '-25px'
             }}>
-              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', margin: 0 }}>
-                Accès illimité à toutes les chaînes sport
-              </p>
               <Button variant="primary" href="/#plans" onClick={() => setShowSportsModal(false)}>
-                S'abonner maintenant →
+                S'abonner pour accéder
               </Button>
             </div>
           </div>
