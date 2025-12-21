@@ -26,57 +26,42 @@ export default function Plans() {
         return parseFloat(finalPrice) < 10 ? `0${finalPrice}` : finalPrice;
     };
 
+    const commonFeatures = [
+        "📡 +20 000 Chaînes Live (Monde)",
+        "🎬 +100 000 VOD (Films & Séries)",
+        "🏆 Sports (PPV, Ligue 1, NBA, F1, UFC)",
+        "🎮 Multi-Support (Smart TV, Box, PC, Mobile)",
+        "⚡ Qualité 4K / FHD / HD (Anti-Lag)",
+        "⏪ Replay / Catch-Up (7 Jours)",
+        "📅 Guide EPG Complet",
+        "🔒 Compatible VPN",
+        "🛡️ Support 24/7 (WhatsApp / Email)",
+        "🔞 Option Adulte Incluse"
+    ];
+
     const plans = [
         {
             name: "1 Mois",
-            period: "Tout ce qui est inclus dans le Premium. Plus :",
-            features: [
-                "+ 20k Chaînes TV Direct",
-                "+ 120k Séries et Films",
-                "Mises à jour Régulières",
-                "SD / HD / FHD / 4K",
-                "Netflix / Disney+ / HBO",
-                "NBA, Ligue 1, Premier League"
-            ],
+            period: "Accès complet sans engagement",
+            features: commonFeatures,
             highlight: false
         },
         {
             name: "3 Mois",
-            period: "Tout ce qui est inclus dans le Premium. Plus :",
-            features: [
-                "+ 20k Chaînes TV Direct",
-                "+ 120k Séries et Films",
-                "Mises à jour Régulières",
-                "SD / HD / FHD / 4K",
-                "Netflix / Disney+ / HBO",
-                "NBA, Ligue 1, Premier League"
-            ],
+            period: "Économique • Trimestriel",
+            features: commonFeatures,
             highlight: false
         },
         {
             name: "6 Mois",
-            period: "Tout ce qui est inclus dans le Premium. Plus :",
-            features: [
-                "+ 20k Chaînes TV Direct",
-                "+ 120k Séries et Films",
-                "Mises à jour Régulières",
-                "SD / HD / FHD / 4K",
-                "Netflix / Disney+ / HBO",
-                "NBA, Ligue 1, Premier League"
-            ],
+            period: "Populaire • Semestriel",
+            features: commonFeatures,
             highlight: false
         },
         {
             name: "12 Mois",
-            period: "Tout ce qui est inclus dans le Premium. Plus :",
-            features: [
-                "+ 20k Chaînes TV Direct",
-                "+ 120k Séries et Films",
-                "Mises à jour Régulières",
-                "SD / HD / FHD / 4K",
-                "Netflix / Disney+ / HBO",
-                "NBA, Ligue 1, Premier League"
-            ],
+            period: "Meilleure Offre • Annuel",
+            features: commonFeatures,
             highlight: true
         }
     ];
@@ -119,9 +104,9 @@ export default function Plans() {
                             ))}
                         </ul>
 
-                        <Link href={`/trial?plan=${encodeURIComponent(plan.name)}&devices=${devices}`} style={{ width: '100%' }}>
+                        <Link href={`/checkout?plan=${encodeURIComponent(plan.name)}&devices=${devices}`} style={{ width: '100%' }}>
                             <button className={styles.selectButton}>
-                                Choisir ce plan
+                                Finaliser la Commande
                             </button>
                         </Link>
                     </div>

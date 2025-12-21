@@ -55,3 +55,55 @@
     border-top: 1px solid var(--glass-border);
     padding-top: 1rem;
 }
+
+/* Added for FAQ page structure */
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faqItem {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.contact {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .main {
+        padding-top: 80px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    .faqContainer,
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .question,
+    .faqItem {
+        padding: 1rem;
+    }
+
+    .qHeader {
+        font-size: 1rem;
+    }
+}

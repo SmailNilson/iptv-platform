@@ -81,3 +81,41 @@
     font-size: 0.9rem;
     line-height: 1.6;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .main {
+        padding-top: 80px;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .categoryCard {
+        padding: 1.5rem;
+    }
+
+    .icon {
+        font-size: 2.5rem;
+    }
+
+    .catTitle {
+        font-size: 1.25rem;
+    }
+}

@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .main {
     min-height: 100vh;
     padding-top: 80px;
@@ -6,6 +10,19 @@
     align-items: center;
     position: relative;
     overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 1rem;
+    }
+
+    .channelsGrid,
+    .plansGrid,
+    .features {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 .videoContainer {
@@ -137,10 +154,30 @@
     }
 }
 
+/* Mobile: Single column for plans */
+@media (max-width: 768px) {
+    .plansGrid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem 3rem;
+        gap: 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+
+    .ctaGroup {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+}
+
 .planCard {
     flex: 1;
-    min-width: 300px;
-    max-width: 380px;
+    min-width: 0;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -245,6 +282,38 @@
     color: var(--accent-1);
     font-weight: 500;
     margin-bottom: 1rem;
+}
+
+/* Channels Grid Mobile */
+@media (max-width: 768px) {
+    .channelsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 1rem 3rem;
+    }
+
+    .channelCard {
+        padding: 1.25rem;
+    }
+
+    .channelIcon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .channelTitle {
+        font-size: 1rem;
+    }
+
+    .channelCount {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .channelsGrid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* FAQ Section */

@@ -24,30 +24,43 @@ export const PlansSection = () => {
         return parseFloat(finalPrice) < 10 ? `0${finalPrice}` : finalPrice;
     };
 
+    const commonFeatures = [
+        "📡 +20 000 Chaînes (Monde)",
+        "🎬 +100 000 VOD (Films/Séries)",
+        "🏆 Sports (PPV, Ligue 1, NBA, F1)",
+        "🎮 Multi-Appareils (TV/PC/Mobile)",
+        "⚡ 4K/FHD (Anti-Lag)",
+        "⏪ Replay 7 Jours",
+        "📅 Guide EPG",
+        "🔒 Compatible VPN",
+        "🛡️ Support 24/7",
+        "🔞 Option Adulte"
+    ];
+
     const plans = [
         {
             name: "1 Mois",
-            period: "Tout ce qui est inclus dans le Premium. Plus :",
-            features: ["+ 20k Chaînes TV Direct", "+ 120k Séries et Films", "Mises à jour Régulières", "SD / HD / FHD / 4K"],
+            period: "Sans engagement",
+            features: commonFeatures,
             highlight: false
         },
         {
             name: "3 Mois",
-            period: "Tout ce qui est inclus dans le Premium. Plus :",
-            features: ["+ 20k Chaînes TV Direct", "+ 120k Séries et Films", "Mises à jour Régulières", "SD / HD / FHD / 4K"],
+            period: "Économique",
+            features: commonFeatures,
+            highlight: false
+        },
+        {
+            name: "6 Mois",
+            period: "Populaire",
+            features: commonFeatures,
             highlight: false
         },
         {
             name: "12 Mois",
-            period: "Tout ce qui est inclus dans le Premium. Plus :",
-            features: ["+ 20k Chaînes TV Direct", "+ 120k Séries et Films", "Support Prioritaire", "2 Écrans Simultanés"],
+            period: "Meilleure Offre",
+            features: commonFeatures,
             highlight: true
-        },
-        {
-            name: "6 Mois",
-            period: "Tout ce qui est inclus dans le Premium. Plus :",
-            features: ["+ 20k Chaînes TV Direct", "+ 120k Séries et Films", "Mises à jour Régulières", "SD / HD / FHD / 4K"],
-            highlight: false
         }
     ];
 
@@ -112,7 +125,7 @@ export const PlansSection = () => {
                                 cursor: 'pointer',
                                 fontSize: '1rem'
                             }}>
-                                Choisir ce plan
+                                Finaliser la Commande
                             </div>
                         </Link>
                     </div>

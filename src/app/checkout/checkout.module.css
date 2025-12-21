@@ -177,3 +177,52 @@
 .backLink a:hover {
     text-decoration: underline;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .main {
+        padding-top: 80px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .planName {
+        font-size: 1.25rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .price span {
+        font-size: 1.2rem;
+    }
+
+    .input,
+    .textarea {
+        padding: 0.875rem 1rem;
+    }
+
+    .submitButton {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+}

@@ -7,6 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     fullWidth?: boolean;
     children: React.ReactNode;
     href?: string;
+    target?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -26,7 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
 
     if (href) {
         return (
-            <Link href={href} className={rootClassName}>
+            <Link href={href} className={rootClassName} {...(props as any)}>
                 {children}
             </Link>
         );

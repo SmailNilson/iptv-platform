@@ -25,7 +25,7 @@ export default function Home() {
       <section className={styles.hero}>
         <h1 className={styles.title}>
           +20 000 Chaînes TV.<br />
-          <span className={styles.highlight}>Sans Engagement.</span> Accès Immédiat.
+          <span className={styles.highlight}>Streaming premium.</span> Accès Immédiat.
         </h1>
         <p className={styles.subtitle}>
           Le service IPTV N°1 en France & Europe. Regardez vos Sports, Films et Séries favoris en 4K/FHD.
@@ -34,7 +34,7 @@ export default function Home() {
 
         <div className={styles.ctaGroup}>
           <Button variant="primary" className="text-lg px-8" href="/trial">Essai Gratuit 24h</Button>
-          <Button variant="outline" className="text-lg px-8" href="/plans">Voir les Offres</Button>
+          <Button variant="outline" className="text-lg px-8" href="/#plans">Voir les Offres</Button>
         </div>
       </section>
 
@@ -85,13 +85,13 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div style={{ marginBottom: '4rem' }}>
-          <Button variant="secondary" href="/channels">Voir les 20 000+ Chaînes</Button>
+        <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
+          <Button variant="secondary" href="/#channels">Voir les 20 000+ Chaînes</Button>
         </div>
       </section>
 
       {/* FAQ Preview */}
-      <section id="help" className={styles.faqSection}>
+      <section id="faq" className={styles.faqSection}>
         <h2 className={styles.sectionTitle}>Questions Fréquentes</h2>
         <div className={styles.faqItem}>
           <h3 className={styles.faqQuestion}>Quand vais-je recevoir mes codes ?</h3>
@@ -108,3 +108,4 @@ export default function Home() {
     </main>
   );
 }
+
