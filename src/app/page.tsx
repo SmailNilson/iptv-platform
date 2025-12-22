@@ -243,17 +243,18 @@ export default function Home() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '1rem'
+            padding: '0.5rem'
           }}
           onClick={() => setShowSportsModal(false)}
         >
           <div
+            className="sports-modal"
             style={{
               background: 'var(--card-bg)',
               borderRadius: '1rem',
               maxWidth: '900px',
               width: '100%',
-              maxHeight: '80vh',
+              maxHeight: '90vh',
               overflow: 'hidden',
               border: '1px solid var(--glass-border)'
             }}
@@ -261,7 +262,7 @@ export default function Home() {
           >
             {/* Header */}
             <div style={{
-              padding: '1.5rem 2rem',
+              padding: '1rem 1.25rem',
               borderBottom: '1px solid var(--glass-border)',
               display: 'flex',
               justifyContent: 'space-between',
@@ -269,8 +270,8 @@ export default function Home() {
               background: 'linear-gradient(135deg, rgba(0, 207, 255, 0.1) 0%, transparent 100%)'
             }}>
               <div>
-                <h2 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>⚽ Pack Sport - 200+ Chaînes</h2>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Toutes les compétitions mondiales en direct</p>
+                <h2 style={{ fontSize: 'clamp(1rem, 4vw, 1.5rem)', marginBottom: '0.25rem' }}>⚽ Pack Sport - 200+ Chaînes</h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'clamp(0.75rem, 2.5vw, 0.9rem)' }}>Toutes les compétitions mondiales en direct</p>
               </div>
               <button
                 onClick={() => setShowSportsModal(false)}
@@ -278,11 +279,12 @@ export default function Home() {
                   background: 'rgba(255,255,255,0.1)',
                   border: 'none',
                   color: 'white',
-                  fontSize: '1.5rem',
-                  width: '40px',
-                  height: '40px',
+                  fontSize: '1.25rem',
+                  width: '36px',
+                  height: '36px',
                   borderRadius: '50%',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  flexShrink: 0
                 }}
               >
                 ✕
@@ -291,30 +293,30 @@ export default function Home() {
 
             {/* Channels Grid */}
             <div style={{
-              padding: '1.5rem 2rem',
-              maxHeight: 'calc(80vh - 180px)',
+              padding: '1rem',
+              maxHeight: 'calc(90vh - 140px)',
               overflowY: 'auto'
             }}>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-                gap: '0.75rem'
+                gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
+                gap: '0.5rem'
               }}>
                 {sportsChannels.map((channel, i) => (
                   <div
                     key={i}
                     style={{
                       background: 'rgba(255,255,255,0.03)',
-                      padding: '0.75rem 1rem',
+                      padding: '0.6rem 0.75rem',
                       borderRadius: '8px',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '0.75rem',
+                      gap: '0.5rem',
                       border: '1px solid rgba(255,255,255,0.05)'
                     }}
                   >
-                    <span style={{ fontSize: '1.2rem' }}>{channel.country}</span>
-                    <span style={{ fontSize: '0.9rem' }}>{channel.name}</span>
+                    <span style={{ fontSize: '1rem' }}>{channel.country}</span>
+                    <span style={{ fontSize: '0.8rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{channel.name}</span>
                   </div>
                 ))}
               </div>
@@ -322,7 +324,7 @@ export default function Home() {
 
             {/* Footer CTA */}
             <div style={{
-              padding: '1.25rem 2rem',
+              padding: '1rem',
               borderTop: '1px solid var(--glass-border)',
               display: 'flex',
               justifyContent: 'center',
