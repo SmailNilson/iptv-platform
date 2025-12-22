@@ -238,7 +238,7 @@ export default function Home() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(0, 0, 0, 0.9)',
+            background: '#000000',
             zIndex: 9999,
             display: 'flex',
             alignItems: 'center',
@@ -250,13 +250,13 @@ export default function Home() {
           <div
             className="sports-modal"
             style={{
-              background: 'var(--card-bg)',
+              background: '#0d1117',
               borderRadius: '1rem',
               maxWidth: '900px',
               width: '100%',
               maxHeight: '90vh',
               overflow: 'hidden',
-              border: '1px solid var(--glass-border)'
+              border: '1px solid rgba(255,255,255,0.1)'
             }}
             onClick={(e) => e.stopPropagation()}
           >
