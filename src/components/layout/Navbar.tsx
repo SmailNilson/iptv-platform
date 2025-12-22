@@ -29,7 +29,7 @@ export const Navbar: React.FC = () => {
                 <Link href="/#plans" className={styles.navLink}>Abonnements</Link>
                 <Link href="/#channels" className={styles.navLink}>Chaînes</Link>
                 <Link href="/blog" className={styles.navLink}>Blog</Link>
-                <Link href="/contacts" className={styles.navLink}>Contact</Link>
+                <Link href="/contact" className={styles.navLink}>Contact</Link>
                 <Link href="/faq" className={styles.navLink}>FAQ / Aide</Link>
             </div>
 
@@ -54,7 +54,7 @@ export const Navbar: React.FC = () => {
                 <Link href="/#plans" className={styles.navLink} onClick={closeMenu}>Abonnements</Link>
                 <Link href="/#channels" className={styles.navLink} onClick={closeMenu}>Chaînes</Link>
                 <Link href="/blog" className={styles.navLink} onClick={closeMenu}>Blog</Link>
-                <Link href="/contacts" className={styles.navLink} onClick={closeMenu}>Contact</Link>
+                <Link href="/contact" className={styles.navLink} onClick={closeMenu}>Contact</Link>
                 <Link href="/faq" className={styles.navLink} onClick={closeMenu}>FAQ / Aide</Link>
                 <div style={{ marginTop: '1rem' }} onClick={closeMenu}>
                     <Button variant="primary" href="/trial">Essai Gratuit</Button>
