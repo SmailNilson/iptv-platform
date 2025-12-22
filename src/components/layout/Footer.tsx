@@ -33,6 +33,7 @@ export const Footer = () => {
                     <ul>
                         <li><Link href="/faq">FAQ / Aide</Link></li>
                         <li><Link href="/blog/installer-iptv-smart-tv">Guide d'installation</Link></li>
+                        <li><Link href="/blog/smartone-iptv">Guide SmartOne IPTV</Link></li>
                         <li><Link href="/contact">Nous Contacter</Link></li>
                         <li><a href="https://wa.me/17575357760" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                     </ul>
