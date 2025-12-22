@@ -68,6 +68,14 @@ const articles = [
         date: "22 Décembre 2024",
         readTime: "6 min",
         image: "📲"
+    },
+    {
+        id: "can-2025-regarder-matchs",
+        title: "CAN 2025 : Comment Regarder Tous les Matchs",
+        excerpt: "Guide complet pour suivre la Coupe d'Afrique des Nations 2025 au Maroc en streaming HD.",
+        date: "22 Décembre 2024",
+        readTime: "7 min",
+        image: "⚽"
     }
 ];
 

@@ -113,6 +113,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://iptvplusfrance.com/blog/can-2025-regarder-matchs/</loc>
+    <lastmod>2024-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Legal Pages -->
   <url>
