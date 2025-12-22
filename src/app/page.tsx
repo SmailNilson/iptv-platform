@@ -241,9 +241,11 @@ export default function Home() {
             background: '#000000',
             zIndex: 9999,
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             justifyContent: 'center',
-            padding: '0.5rem'
+            paddingTop: '3rem',
+            paddingLeft: '0.5rem',
+            paddingRight: '0.5rem'
           }}
           onClick={() => setShowSportsModal(false)}
         >
