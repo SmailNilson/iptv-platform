@@ -60,6 +60,14 @@ const articles = [
         date: "16 Décembre 2024",
         readTime: "5 min",
         image: "🔧"
+    },
+    {
+        id: "smartone-iptv",
+        title: "SmartOne IPTV : Guide d'Installation",
+        excerpt: "Comment installer et configurer l'application SmartOne IPTV sur Smart TV, Fire Stick et Box Android.",
+        date: "22 Décembre 2024",
+        readTime: "6 min",
+        image: "📲"
     }
 ];
 
