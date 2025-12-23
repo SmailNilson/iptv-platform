@@ -9,23 +9,23 @@ import Link from 'next/link';
 // Web3Forms Access Key (contact@iptvplusfrance.com)
 const WEB3FORMS_ACCESS_KEY = "e3434dec-c90a-42c3-ae8d-6ba943844ca7";
 
-// Stripe Payment Links - REMPLACER PAR VOS VRAIS LIENS STRIPE
+// Stripe Payment Links
 const stripeLinks: { [key: string]: string } = {
     // 1 Appareil
-    "1 Mois_1": "https://buy.stripe.com/test_1mois_1ecran",
-    "3 Mois_1": "https://buy.stripe.com/test_3mois_1ecran",
-    "6 Mois_1": "https://buy.stripe.com/test_6mois_1ecran",
-    "12 Mois_1": "https://buy.stripe.com/test_12mois_1ecran",
-    // 2 Appareils
-    "1 Mois_2": "https://buy.stripe.com/test_1mois_2ecran",
-    "3 Mois_2": "https://buy.stripe.com/test_3mois_2ecran",
-    "6 Mois_2": "https://buy.stripe.com/test_6mois_2ecran",
-    "12 Mois_2": "https://buy.stripe.com/test_12mois_2ecran",
-    // 3 Appareils
-    "1 Mois_3": "https://buy.stripe.com/test_1mois_3ecran",
-    "3 Mois_3": "https://buy.stripe.com/test_3mois_3ecran",
-    "6 Mois_3": "https://buy.stripe.com/test_6mois_3ecran",
-    "12 Mois_3": "https://buy.stripe.com/test_12mois_3ecran",
+    "1 Mois_1": "https://buy.stripe.com/eVq00ifB9crI2negPT5Rm02",
+    "3 Mois_1": "", // TODO: Créer le lien Stripe pour 3 mois
+    "6 Mois_1": "https://buy.stripe.com/bJe3cu9cL8bs8LCgPT5Rm03",
+    "12 Mois_1": "https://buy.stripe.com/dRmdR8bkT4Zgd1S8jn5Rm04",
+    // 2 Appareils - TODO: Créer liens quand besoin
+    "1 Mois_2": "",
+    "3 Mois_2": "",
+    "6 Mois_2": "",
+    "12 Mois_2": "",
+    // 3 Appareils - TODO: Créer liens quand besoin
+    "1 Mois_3": "",
+    "3 Mois_3": "",
+    "6 Mois_3": "",
+    "12 Mois_3": "",
 };
 
 function CheckoutContent() {
