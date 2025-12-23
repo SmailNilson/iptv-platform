@@ -6,8 +6,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import styles from "./checkout.module.css";
 import Link from 'next/link';
 
-// Web3Forms Access Key
-const WEB3FORMS_ACCESS_KEY = "66f291a5-b089-47b7-95c4-d20ac2a50b32";
+// Web3Forms Access Key (contact@iptvplusfrance.com)
+const WEB3FORMS_ACCESS_KEY = "e3434dec-c90a-42c3-ae8d-6ba943844ca7";
 
 // Stripe Payment Links - REMPLACER PAR VOS VRAIS LIENS STRIPE
 const stripeLinks: { [key: string]: string } = {
