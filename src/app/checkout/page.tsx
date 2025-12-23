@@ -1,16 +1,10 @@
 "use client";
 
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useRef } from 'react';
 import { Navbar } from "@/components/layout/Navbar";
 import styles from "./checkout.module.css";
 import Link from 'next/link';
-import emailjs from '@emailjs/browser';
-
-// Initialize EmailJS - REPLACE WITH YOUR OWN VALUES
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";      // Remplacer par votre Service ID
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";    // Remplacer par votre Template ID  
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";      // Remplacer par votre Public Key
 
 // Stripe Payment Links - REMPLACER PAR VOS VRAIS LIENS STRIPE
 const stripeLinks: { [key: string]: string } = {
@@ -34,6 +28,7 @@ const stripeLinks: { [key: string]: string } = {
 function CheckoutContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
+    const formRef = useRef<HTMLFormElement>(null);
     const plan = searchParams.get('plan') || '12 Mois';
     const devices = parseInt(searchParams.get('devices') || '1');
     const [email, setEmail] = useState('');
@@ -62,22 +57,23 @@ function CheckoutContent() {
         setError('');
 
         try {
-            // 1. Send notification email to admin
-            const templateParams = {
-                to_email: "contact@iptvplusfrance.com",
-                from_email: email,
-                customer_email: email,
-                plan_name: plan,
-                devices: devices,
-                price: getPrice(),
-                note: note || "Aucune note",
-                date: new Date().toLocaleString('fr-FR'),
-            };
+            // 1. Send email via FormSubmit.co
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('_subject', `🛒 Nouvelle Commande IPTV - ${plan} (${devices} appareil${devices > 1 ? 's' : ''})`);
+            formData.append('Plan', plan);
+            formData.append('Appareils', devices.toString());
+            formData.append('Prix', `${getPrice()}€`);
+            formData.append('Note', note || 'Aucune note');
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
 
-            // Send email notification (uncomment when EmailJS is configured)
-            // await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
+            await fetch('https://formsubmit.co/ajax/contact@iptvplusfrance.com', {
+                method: 'POST',
+                body: formData,
+            });
 
-            // 2. Save order to localStorage (for client-side tracking)
+            // 2. Save order to localStorage
             const orders = JSON.parse(localStorage.getItem('iptv_orders') || '[]');
             orders.push({
                 id: Date.now(),
@@ -91,16 +87,16 @@ function CheckoutContent() {
             });
             localStorage.setItem('iptv_orders', JSON.stringify(orders));
 
-            // 3. Get Stripe payment link
+            // 3. Redirect to Stripe or Thank You page
             const stripeKey = `${plan}_${devices}`;
             const stripeLink = stripeLinks[stripeKey];
 
             if (stripeLink && !stripeLink.includes('test_')) {
-                // Add customer email to Stripe link
+                // Real Stripe link - redirect with prefilled email
                 const checkoutUrl = `${stripeLink}?prefilled_email=${encodeURIComponent(email)}`;
                 window.location.href = checkoutUrl;
             } else {
-                // Fallback: redirect to thank you page with instructions
+                // Test mode - redirect to thank you page
                 router.push(`/thank-you?email=${encodeURIComponent(email)}&plan=${encodeURIComponent(plan)}&devices=${devices}&price=${getPrice()}`);
             }
 
@@ -128,11 +124,12 @@ function CheckoutContent() {
                         <div className={styles.price}>{getPrice()} <span>€</span></div>
                     </div>
 
-                    <form className={styles.form} onSubmit={handleSubmit}>
+                    <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
                         <div className={styles.inputGroup}>
                             <label className={styles.label}>Adresse Email *</label>
                             <input
                                 type="email"
+                                name="email"
                                 className={styles.input}
                                 placeholder="votre@email.com"
                                 value={email}
@@ -145,6 +142,7 @@ function CheckoutContent() {
                         <div className={styles.inputGroup}>
                             <label className={styles.label}>Note (optionnel)</label>
                             <textarea
+                                name="note"
                                 className={styles.textarea}
                                 placeholder="Ex: Pays, appareil, instructions spéciales..."
                                 value={note}
