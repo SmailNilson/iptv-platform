@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState } from 'react';
 import { Navbar } from "@/components/layout/Navbar";
 import styles from "./checkout.module.css";
 import Link from 'next/link';
@@ -28,15 +28,6 @@ const stripeLinks: { [key: string]: string } = {
     "12 Mois_3": "https://buy.stripe.com/test_12mois_3ecran",
 };
 
-declare global {
-    interface Window {
-        hcaptcha: {
-            render: (container: string, options: { sitekey: string; callback: (token: string) => void; theme?: string }) => string;
-            reset: (widgetId: string) => void;
-        };
-    }
-}
-
 function CheckoutContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -46,7 +37,6 @@ function CheckoutContent() {
     const [note, setNote] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
-    const [hcaptchaToken, setHcaptchaToken] = useState('');
 
     // Base prices for 1 device
     const basePrices: { [key: string]: number } = {
@@ -63,42 +53,13 @@ function CheckoutContent() {
         return parseFloat(finalPrice) < 10 ? `0${finalPrice}` : finalPrice;
     };
 
-    // Load hCaptcha script
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://js.hcaptcha.com/1/api.js';
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
-
-        script.onload = () => {
-            if (window.hcaptcha) {
-                window.hcaptcha.render('hcaptcha-container', {
-                    sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2', // Web3Forms hCaptcha sitekey
-                    callback: (token: string) => setHcaptchaToken(token),
-                    theme: 'dark'
-                });
-            }
-        };
-
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        if (!hcaptchaToken) {
-            setError('Veuillez valider le captcha');
-            return;
-        }
-
         setIsLoading(true);
         setError('');
 
         try {
-            // Send via Web3Forms
+            // Send via Web3Forms (sans hCaptcha)
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
@@ -115,11 +76,12 @@ function CheckoutContent() {
                     prix: `${getPrice()}€`,
                     note: note || "Aucune note",
                     date: new Date().toLocaleString('fr-FR'),
-                    "h-captcha-response": hcaptchaToken
+                    botcheck: "" // Honeypot anti-spam
                 })
             });
 
             const result = await response.json();
+            console.log('Web3Forms response:', result);
 
             if (result.success) {
                 // Save order to localStorage
@@ -175,6 +137,9 @@ function CheckoutContent() {
                     </div>
 
                     <form className={styles.form} onSubmit={handleSubmit}>
+                        {/* Honeypot anti-spam (invisible) */}
+                        <input type="checkbox" name="botcheck" style={{ display: 'none' }} />
+
                         <div className={styles.inputGroup}>
                             <label className={styles.label}>Adresse Email *</label>
                             <input
@@ -200,11 +165,6 @@ function CheckoutContent() {
                                 rows={3}
                                 disabled={isLoading}
                             />
-                        </div>
-
-                        {/* hCaptcha Widget */}
-                        <div style={{ display: 'flex', justifyContent: 'center', margin: '1rem 0' }}>
-                            <div id="hcaptcha-container"></div>
                         </div>
 
                         {error && (
