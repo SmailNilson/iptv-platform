@@ -1,10 +1,13 @@
 "use client";
 
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Suspense, useState, useRef } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { Navbar } from "@/components/layout/Navbar";
 import styles from "./checkout.module.css";
 import Link from 'next/link';
+
+// Web3Forms Access Key - REMPLACER PAR VOTRE CLÉ
+const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
 
 // Stripe Payment Links - REMPLACER PAR VOS VRAIS LIENS STRIPE
 const stripeLinks: { [key: string]: string } = {
@@ -25,16 +28,25 @@ const stripeLinks: { [key: string]: string } = {
     "12 Mois_3": "https://buy.stripe.com/test_12mois_3ecran",
 };
 
+declare global {
+    interface Window {
+        hcaptcha: {
+            render: (container: string, options: { sitekey: string; callback: (token: string) => void; theme?: string }) => string;
+            reset: (widgetId: string) => void;
+        };
+    }
+}
+
 function CheckoutContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
-    const formRef = useRef<HTMLFormElement>(null);
     const plan = searchParams.get('plan') || '12 Mois';
     const devices = parseInt(searchParams.get('devices') || '1');
     const [email, setEmail] = useState('');
     const [note, setNote] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
+    const [hcaptchaToken, setHcaptchaToken] = useState('');
 
     // Base prices for 1 device
     const basePrices: { [key: string]: number } = {
@@ -51,53 +63,91 @@ function CheckoutContent() {
         return parseFloat(finalPrice) < 10 ? `0${finalPrice}` : finalPrice;
     };
 
+    // Load hCaptcha script
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://js.hcaptcha.com/1/api.js';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+
+        script.onload = () => {
+            if (window.hcaptcha) {
+                window.hcaptcha.render('hcaptcha-container', {
+                    sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2', // Web3Forms hCaptcha sitekey
+                    callback: (token: string) => setHcaptchaToken(token),
+                    theme: 'dark'
+                });
+            }
+        };
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!hcaptchaToken) {
+            setError('Veuillez valider le captcha');
+            return;
+        }
+
         setIsLoading(true);
         setError('');
 
         try {
-            // 1. Send email via FormSubmit.co
-            const formData = new FormData();
-            formData.append('email', email);
-            formData.append('_subject', `🛒 Nouvelle Commande IPTV - ${plan} (${devices} appareil${devices > 1 ? 's' : ''})`);
-            formData.append('Plan', plan);
-            formData.append('Appareils', devices.toString());
-            formData.append('Prix', `${getPrice()}€`);
-            formData.append('Note', note || 'Aucune note');
-            formData.append('_template', 'table');
-            formData.append('_captcha', 'false');
-
-            await fetch('https://formsubmit.co/ajax/contact@iptvplusfrance.com', {
+            // Send via Web3Forms
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: formData,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    subject: `🛒 Nouvelle Commande IPTV - ${plan} (${devices} appareil${devices > 1 ? 's' : ''})`,
+                    from_name: "IPTV Plus France",
+                    email: email,
+                    plan: plan,
+                    appareils: devices,
+                    prix: `${getPrice()}€`,
+                    note: note || "Aucune note",
+                    date: new Date().toLocaleString('fr-FR'),
+                    "h-captcha-response": hcaptchaToken
+                })
             });
 
-            // 2. Save order to localStorage
-            const orders = JSON.parse(localStorage.getItem('iptv_orders') || '[]');
-            orders.push({
-                id: Date.now(),
-                email,
-                plan,
-                devices,
-                price: getPrice(),
-                note,
-                date: new Date().toISOString(),
-                status: 'pending_payment'
-            });
-            localStorage.setItem('iptv_orders', JSON.stringify(orders));
+            const result = await response.json();
 
-            // 3. Redirect to Stripe or Thank You page
-            const stripeKey = `${plan}_${devices}`;
-            const stripeLink = stripeLinks[stripeKey];
+            if (result.success) {
+                // Save order to localStorage
+                const orders = JSON.parse(localStorage.getItem('iptv_orders') || '[]');
+                orders.push({
+                    id: Date.now(),
+                    email,
+                    plan,
+                    devices,
+                    price: getPrice(),
+                    note,
+                    date: new Date().toISOString(),
+                    status: 'pending_payment'
+                });
+                localStorage.setItem('iptv_orders', JSON.stringify(orders));
 
-            if (stripeLink && !stripeLink.includes('test_')) {
-                // Real Stripe link - redirect with prefilled email
-                const checkoutUrl = `${stripeLink}?prefilled_email=${encodeURIComponent(email)}`;
-                window.location.href = checkoutUrl;
+                // Redirect to Stripe or Thank You page
+                const stripeKey = `${plan}_${devices}`;
+                const stripeLink = stripeLinks[stripeKey];
+
+                if (stripeLink && !stripeLink.includes('test_')) {
+                    const checkoutUrl = `${stripeLink}?prefilled_email=${encodeURIComponent(email)}`;
+                    window.location.href = checkoutUrl;
+                } else {
+                    router.push(`/thank-you?email=${encodeURIComponent(email)}&plan=${encodeURIComponent(plan)}&devices=${devices}&price=${getPrice()}`);
+                }
             } else {
-                // Test mode - redirect to thank you page
-                router.push(`/thank-you?email=${encodeURIComponent(email)}&plan=${encodeURIComponent(plan)}&devices=${devices}&price=${getPrice()}`);
+                throw new Error(result.message || 'Erreur lors de l\'envoi');
             }
 
         } catch (err) {
@@ -124,7 +174,7 @@ function CheckoutContent() {
                         <div className={styles.price}>{getPrice()} <span>€</span></div>
                     </div>
 
-                    <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
+                    <form className={styles.form} onSubmit={handleSubmit}>
                         <div className={styles.inputGroup}>
                             <label className={styles.label}>Adresse Email *</label>
                             <input
@@ -150,6 +200,11 @@ function CheckoutContent() {
                                 rows={3}
                                 disabled={isLoading}
                             />
+                        </div>
+
+                        {/* hCaptcha Widget */}
+                        <div style={{ display: 'flex', justifyContent: 'center', margin: '1rem 0' }}>
+                            <div id="hcaptcha-container"></div>
                         </div>
 
                         {error && (
