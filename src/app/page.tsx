@@ -238,27 +238,25 @@ export default function Home() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: '#000000',
+            background: 'rgba(0, 0, 0, 0.9)',
             zIndex: 9999,
             display: 'flex',
-            alignItems: 'flex-start',
+            alignItems: 'center',
             justifyContent: 'center',
-            paddingTop: '3rem',
-            paddingLeft: '0.5rem',
-            paddingRight: '0.5rem'
+            padding: '0.5rem'
           }}
           onClick={() => setShowSportsModal(false)}
         >
           <div
             className="sports-modal"
             style={{
-              background: '#0d1117',
+              background: 'var(--card-bg)',
               borderRadius: '1rem',
               maxWidth: '900px',
               width: '100%',
               maxHeight: '90vh',
               overflow: 'hidden',
-              border: '1px solid rgba(255,255,255,0.1)'
+              border: '1px solid var(--glass-border)'
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -295,30 +293,30 @@ export default function Home() {
 
             {/* Channels Grid */}
             <div style={{
-              padding: '1rem',
-              maxHeight: 'calc(90vh - 140px)',
+              padding: '1.5rem',
+              maxHeight: 'calc(85vh - 160px)',
               overflowY: 'auto'
             }}>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
-                gap: '0.5rem'
+                gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))',
+                gap: '0.75rem'
               }}>
                 {sportsChannels.map((channel, i) => (
                   <div
                     key={i}
                     style={{
-                      background: 'rgba(255,255,255,0.03)',
-                      padding: '0.6rem 0.75rem',
-                      borderRadius: '8px',
+                      background: 'rgba(255,255,255,0.05)',
+                      padding: '0.875rem 1rem',
+                      borderRadius: '10px',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '0.5rem',
-                      border: '1px solid rgba(255,255,255,0.05)'
+                      gap: '0.75rem',
+                      border: '1px solid rgba(255,255,255,0.08)'
                     }}
                   >
-                    <span style={{ fontSize: '1rem' }}>{channel.country}</span>
-                    <span style={{ fontSize: '0.8rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{channel.name}</span>
+                    <span style={{ fontSize: '1.25rem' }}>{channel.country}</span>
+                    <span style={{ fontSize: '0.9rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{channel.name}</span>
                   </div>
                 ))}
               </div>
@@ -326,13 +324,12 @@ export default function Home() {
 
             {/* Footer CTA */}
             <div style={{
-              padding: '1.25rem 1rem',
-              borderTop: '1px solid var(--glass-border)',
+              padding: '1.5rem 2rem',
+              borderTop: '1px solid rgba(255,255,255,0.1)',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              background: '#0d1117',
-              flexShrink: 0
+              background: '#0a0e14'
             }}>
               <Button variant="primary" href="/#plans" onClick={() => setShowSportsModal(false)}>
                 S'abonner pour accéder
