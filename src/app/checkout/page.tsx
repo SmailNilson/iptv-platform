@@ -13,7 +13,7 @@ const WEB3FORMS_ACCESS_KEY = "e3434dec-c90a-42c3-ae8d-6ba943844ca7";
 const stripeLinks: { [key: string]: string } = {
     // 1 Appareil
     "1 Mois_1": "https://buy.stripe.com/eVq00ifB9crI2negPT5Rm02",
-    "3 Mois_1": "", // TODO: Créer le lien Stripe pour 3 mois
+    "3 Mois_1": "https://buy.stripe.com/fZu28qbkT9fw5zq6bf5Rm01",
     "6 Mois_1": "https://buy.stripe.com/bJe3cu9cL8bs8LCgPT5Rm03",
     "12 Mois_1": "https://buy.stripe.com/dRmdR8bkT4Zgd1S8jn5Rm04",
     // 2 Appareils - TODO: Créer liens quand besoin
