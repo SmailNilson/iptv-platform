@@ -101,12 +101,10 @@ export const PlansSection = () => {
                             backgroundColor: plan.highlight ? 'rgba(124, 58, 237, 0.15)' : 'var(--bg-secondary)',
                             border: plan.highlight ? '2px solid var(--accent-1)' : '1px solid var(--glass-border)',
                             borderRadius: '20px',
-                            padding: plan.highlight ? '2.5rem 1.75rem' : '2rem 1.5rem',
+                            padding: '2rem 1.5rem',
                             backdropFilter: 'blur(10px)',
-                            transform: plan.highlight ? 'scale(1.05)' : 'scale(1)',
-                            boxShadow: plan.highlight ? '0 0 40px rgba(124, 58, 237, 0.3), 0 0 80px rgba(124, 58, 237, 0.15)' : 'none',
+                            boxShadow: plan.highlight ? '0 0 30px rgba(124, 58, 237, 0.25)' : 'none',
                             position: 'relative' as const,
-                            zIndex: plan.highlight ? 10 : 1,
                             transition: 'all 0.3s ease'
                         }}
                     >
@@ -134,7 +132,7 @@ export const PlansSection = () => {
                         <h2 className={styles.planName} style={{
                             color: 'white',
                             textTransform: 'uppercase',
-                            fontSize: plan.highlight ? '1.75rem' : '1.5rem',
+                            fontSize: '1.5rem',
                             marginTop: plan.highlight ? '0.5rem' : '0'
                         }}>
                             {plan.name}
@@ -143,15 +141,15 @@ export const PlansSection = () => {
                             color: 'white',
                             display: 'flex',
                             gap: '5px',
-                            fontSize: plan.highlight ? '3rem' : '2.5rem',
-                            fontWeight: plan.highlight ? '800' : '700'
+                            fontSize: '2.5rem',
+                            fontWeight: '700'
                         }}>
                             {getPrice(plan.name)} <span style={{ fontSize: '1.2rem', color: '#b3b3b3', marginTop: '10px' }}>€</span>
                         </div>
                         <div className={styles.period} style={{
                             color: plan.highlight ? '#22c55e' : 'var(--accent-2)',
-                            fontWeight: plan.highlight ? '600' : '500',
-                            fontSize: plan.highlight ? '0.9rem' : '1.1rem'
+                            fontWeight: '500',
+                            fontSize: '1.1rem'
                         }}>
                             {plan.highlight ? '💰 Meilleure Offre' : plan.period}
                         </div>
