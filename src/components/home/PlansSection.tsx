@@ -45,10 +45,10 @@ export const PlansSection = () => {
             highlight: false
         },
         {
-            name: "3 Mois",
-            period: "Économique",
+            name: "12 Mois",
+            period: "Meilleure Offre",
             features: commonFeatures,
-            highlight: false
+            highlight: true
         },
         {
             name: "6 Mois",
@@ -57,10 +57,10 @@ export const PlansSection = () => {
             highlight: false
         },
         {
-            name: "12 Mois",
-            period: "Meilleure Offre",
+            name: "3 Mois",
+            period: "Économique",
             features: commonFeatures,
-            highlight: true
+            highlight: false
         }
     ];
 
