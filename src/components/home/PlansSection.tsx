@@ -153,7 +153,7 @@ export const PlansSection = () => {
                             fontWeight: plan.highlight ? '600' : '500',
                             fontSize: plan.highlight ? '0.9rem' : '1.1rem'
                         }}>
-                            {plan.highlight ? '💰 Meilleure Offre - Économisez 58%' : plan.period}
+                            {plan.highlight ? '💰 Meilleure Offre' : plan.period}
                         </div>
 
                         <ul className={styles.planFeatures}>
