@@ -1,33 +1,48 @@
-# Robots.txt for iptvplusfrance.com
-# https://www.robotstxt.org/robotstxt.html
-
+# *
 User-agent: *
-Allow: /
-
-# Sitemap location
-Sitemap: https://iptvplusfrance.com/sitemap.xml
-
-# Disallow admin/internal pages (if any)
+Allow: /blog
+Allow: /blog/
+Allow: /compatibilite
+Allow: /contact
+Allow: /faq
+Allow: /channels
+Allow: /mentions-legales
+Allow: /politique-de-confidentialite
+Allow: /conditions
+Disallow: /
+Disallow: /checkout
+Disallow: /trial
+Disallow: /thank-you
+Disallow: /plans
+Disallow: /prix
+Disallow: /login
+Disallow: /dashboard
+Disallow: /admin
 Disallow: /api/
 Disallow: /_next/
-Disallow: /checkout/
 
-# Allow important crawlers
+# Googlebot
 User-agent: Googlebot
 Allow: /
 
+# Bingbot
 User-agent: Bingbot
 Allow: /
 
-User-agent: Slurp
-Allow: /
-
-# Block bad bots
+# AhrefsBot
 User-agent: AhrefsBot
 Disallow: /
 
+# SemrushBot
 User-agent: SemrushBot
 Disallow: /
 
+# MJ12bot
 User-agent: MJ12bot
 Disallow: /
+
+# Host
+Host: https://iptvplusfrance.com
+
+# Sitemaps
+Sitemap: https://iptvplusfrance.com/sitemap.xml

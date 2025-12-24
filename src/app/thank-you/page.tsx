@@ -10,6 +10,8 @@ function ThankYouContent() {
     const searchParams = useSearchParams();
     const email = searchParams.get('email') || '';
     const plan = searchParams.get('plan') || '12 Mois';
+    const devices = searchParams.get('devices') || '1';
+    const price = searchParams.get('price') || '';
 
     return (
         <main className={styles.main}>
@@ -23,7 +25,7 @@ function ThankYouContent() {
                 <h1 className={styles.title}>Merci pour votre commande !</h1>
 
                 <p className={styles.message}>
-                    Votre demande a été enregistrée. Pour finaliser l'activation, veuillez suivre les instructions ci-dessous.
+                    Votre demande a été enregistrée avec succès.
                 </p>
 
                 {email && (
@@ -36,21 +38,57 @@ function ThankYouContent() {
                 <div className={styles.planCard}>
                     <div className={styles.planTitle}>Votre abonnement</div>
                     <div className={styles.planName}>{plan}</div>
+                    {devices && <div style={{ fontSize: '0.9rem', opacity: 0.8, marginTop: '0.25rem' }}>{devices} Appareil{parseInt(devices) > 1 ? 's' : ''}</div>}
+                    {price && <div style={{ fontSize: '1.5rem', fontWeight: 'bold', marginTop: '0.5rem', color: '#7C3AFA' }}>{price}€</div>}
                 </div>
 
-                <div className={styles.nextSteps}>
-                    <h3 className={styles.stepsTitle}>Activation en cours</h3>
+                {/* EMAIL NOTIFICATION SECTION */}
+                <div style={{
+                    background: 'linear-gradient(135deg, rgba(124, 58, 250, 0.15) 0%, rgba(96, 165, 250, 0.15) 100%)',
+                    border: '2px solid rgba(124, 58, 250, 0.4)',
+                    borderRadius: '16px',
+                    padding: '2rem',
+                    marginTop: '2rem',
+                    textAlign: 'center'
+                }}>
+                    <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📧</div>
+                    <h3 style={{
+                        color: '#ffffff',
+                        fontSize: '1.3rem',
+                        marginBottom: '1rem'
+                    }}>
+                        Un lien de paiement a été envoyé à votre boîte email
+                    </h3>
+                    <p style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '1.5rem', fontSize: '1rem', lineHeight: '1.6' }}>
+                        Veuillez vérifier votre boîte de réception à l'adresse <strong style={{ color: '#7C3AFA' }}>{email}</strong>
+                    </p>
+
+                    <div style={{
+                        background: 'rgba(251, 191, 36, 0.15)',
+                        border: '1px solid rgba(251, 191, 36, 0.4)',
+                        borderRadius: '12px',
+                        padding: '1rem',
+                        marginTop: '1rem'
+                    }}>
+                        <p style={{ color: '#fbbf24', fontSize: '0.95rem', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                            ⚠️ <strong>Important :</strong> Pensez à vérifier votre dossier Spam / Indésirables
+                        </p>
+                    </div>
+                </div>
+
+                <div className={styles.nextSteps} style={{ marginTop: '2rem' }}>
+                    <h3 className={styles.stepsTitle}>Prochaines étapes</h3>
                     <ul className={styles.stepsList}>
-                        <li>📧 Vous allez recevoir un <strong>lien de paiement sécurisé</strong> par email dans quelques instants.</li>
-                        <li>💳 Une fois le paiement validé, vos identifiants d'accès vous seront envoyés immédiatement.</li>
-                        <li>⚠️ Pensez à vérifier vos dossiers Spam/Indésirables.</li>
+                        <li>📧 Ouvrez l'email que nous venons de vous envoyer</li>
+                        <li>💳 Cliquez sur le lien de paiement sécurisé Stripe</li>
+                        <li>✅ Après paiement, vos identifiants d'accès vous seront envoyés immédiatement</li>
                     </ul>
                 </div>
 
                 <div className={styles.support}>
-                    <p style={{ marginBottom: '1rem', fontWeight: '500' }}>Besoin d'aide ?</p>
+                    <p style={{ marginBottom: '1rem', fontWeight: '500' }}>Vous n'avez pas reçu l'email ?</p>
                     <a
-                        href={`https://wa.me/17575357760?text=${encodeURIComponent("Bonjour, je viens de passer commande et j'aimerais recevoir mon lien de paiement.")}`}
+                        href={`https://wa.me/33749931569?text=${encodeURIComponent("Bonjour, je viens de passer commande mais je n'ai pas reçu l'email avec le lien de paiement.")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

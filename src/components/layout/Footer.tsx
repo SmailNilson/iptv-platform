@@ -13,32 +13,34 @@ export const Footer = () => {
                         IPTV <span style={{ color: '#7C3AFA' }}>PREMIUM</span>
                     </div>
                     <p className={styles.brandDesc}>
-                        Profitez de +20 000 chaînes TV et +100 000 VOD en qualité 4K/FHD.
-                        Compatible avec tous vos appareils. Support client réactif 7j/7.
+                        Service de streaming premium compatible avec tous vos appareils.
+                        Support client réactif 7j/7.
                     </p>
                 </div>
 
+                {/* Navigation - Only indexable pages */}
                 <div className={styles.column}>
                     <h3>Navigation</h3>
                     <ul>
-                        <li><Link href="/">Accueil</Link></li>
-                        <li><Link href="/#plans">Nos Offres</Link></li>
-                        <li><Link href="/#channels">Liste des Chaînes</Link></li>
+                        <li><Link href="/blog">Blog & Tutoriels</Link></li>
                         <li><Link href="/compatibilite">Compatibilité</Link></li>
+                        <li><Link href="/channels">Liste des Chaînes</Link></li>
+                        <li><Link href="/faq">FAQ / Aide</Link></li>
                     </ul>
                 </div>
 
+                {/* Support - Only indexable pages */}
                 <div className={styles.column}>
                     <h3>Support Client</h3>
                     <ul>
-                        <li><Link href="/faq">FAQ / Aide</Link></li>
                         <li><Link href="/blog/installer-iptv-smart-tv">Guide d'installation</Link></li>
-                        <li><Link href="/blog/smartone-iptv">Guide SmartOne IPTV</Link></li>
+                        <li><Link href="/blog/smartone-iptv">Guide SmartOne</Link></li>
+                        <li><Link href="/blog/smart-iptv-activation">Activer Smart IPTV</Link></li>
                         <li><Link href="/contact">Nous Contacter</Link></li>
-                        <li><a href="https://wa.me/17575357760" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                     </ul>
                 </div>
 
+                {/* Legal - Indexable pages */}
                 <div className={styles.column}>
                     <h3>Informations</h3>
                     <ul>
@@ -52,10 +54,6 @@ export const Footer = () => {
             <div className={styles.bottomBar}>
                 <div>
                     &copy; {currentYear} IPTV Premium. Tous droits réservés.
-                </div>
-                <div>
-                    <span style={{ marginRight: '10px' }}>Paiement Sécurisé :</span>
-                    💳 Visa • Mastercard • Crypto
                 </div>
             </div>
         </footer>

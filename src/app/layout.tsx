@@ -4,14 +4,27 @@ import Script from "next/script";
 import "./globals.css";
 import { WhatsAppButton } from "@/components/widgets/WhatsAppButton";
 import { TawkTo } from "@/components/widgets/TawkTo";
-
 import { Footer } from "@/components/layout/Footer";
+import { OrganizationSchema, WebSiteSchema } from "@/components/seo/SchemaOrg";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Abonnement IPTV Smarters Pro - N°1 en France",
-  description: "Accédez à +20 000 Chaînes et 50 000 VOD. Sans Contrat. Activation Instantanée. Compatible Smart TV, Box Android, FireStick.",
+  title: "IPTV Premium France - Streaming HD & 4K",
+  description: "Service de streaming premium. Accédez à des milliers de contenus en HD et 4K. Compatible Smart TV, Box Android, FireStick.",
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    siteName: 'IPTV Plus France',
+  },
 };
 
 export default function RootLayout({
@@ -20,8 +33,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <head>
+        {/* Schema.org Structured Data */}
+        <OrganizationSchema
+          name="IPTV Plus France"
+          url="https://iptvplusfrance.com"
+          contactEmail="contact@iptvplusfrance.com"
+          contactPhone="+33749931569"
+        />
+        <WebSiteSchema />
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TQZMMLZ8DE"

@@ -6,19 +6,19 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Button } from '@/components/ui/Button';
 import styles from '../../styles/shared.module.css';
 
-export default function IptvGratuitVsPremiumPage() {
+export default function QualiteStreamingPage() {
     return (
         <main className={styles.main}>
             <Navbar />
 
             <section className={styles.hero} style={{ paddingBottom: '2rem' }}>
                 <div className={styles.container}>
-                    <span style={{ color: 'var(--accent-1)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem' }}>Comparatif</span>
+                    <span style={{ color: 'var(--accent-1)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem' }}>Guide</span>
                     <h1 className={styles.heroTitle} style={{ fontSize: '2.5rem', marginTop: '1rem' }}>
-                        IPTV Gratuit vs Premium : Le Comparatif Complet
+                        Comment Choisir un Service de Streaming de Qualité
                     </h1>
                     <p className={styles.heroSubtitle}>
-                        Pourquoi un abonnement IPTV payant vaut-il vraiment le coup face aux solutions gratuites ?
+                        Les critères essentiels pour évaluer et choisir un service de streaming fiable.
                     </p>
                 </div>
             </section>
@@ -27,88 +27,65 @@ export default function IptvGratuitVsPremiumPage() {
                 <div className={styles.container}>
                     <article className={styles.prose} style={{ background: 'var(--card-bg)', padding: '3rem', borderRadius: '1rem', border: '1px solid var(--glass-border)', maxWidth: '800px', margin: '0 auto' }}>
 
-                        <h2>Les solutions IPTV gratuites</h2>
+                        <h2>Les Critères de Qualité</h2>
                         <p>
-                            Il existe de nombreuses listes M3U gratuites disponibles sur Internet. Voici leurs caractéristiques :
+                            Face à la multitude de services disponibles, voici les critères importants à considérer
+                            pour faire le bon choix.
                         </p>
 
-                        <h3 style={{ color: '#ef4444' }}>❌ Inconvénients</h3>
+                        <h3>1. Stabilité et Fiabilité</h3>
                         <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
-                            <li><strong>Instabilité :</strong> Les liens changent constamment et cessent de fonctionner</li>
-                            <li><strong>Qualité médiocre :</strong> Souvent en SD ou 480p maximum</li>
-                            <li><strong>Buffering fréquent :</strong> Serveurs surchargés = coupures</li>
-                            <li><strong>Pas de support :</strong> Aucune aide en cas de problème</li>
-                            <li><strong>Risques de sécurité :</strong> Publicités malveillantes, malwares potentiels</li>
-                            <li><strong>Catalogue limité :</strong> Peu de chaînes, pas de VOD</li>
+                            <li><strong>Infrastructure serveur</strong> : Des serveurs dédiés et bien maintenus</li>
+                            <li><strong>Temps de disponibilité</strong> : Viser 99% de disponibilité minimum</li>
+                            <li><strong>Redondance</strong> : Serveurs de secours en cas de problème</li>
                         </ul>
 
-                        <h2>Les abonnements IPTV Premium</h2>
-
-                        <h3 style={{ color: '#22c55e' }}>✅ Avantages</h3>
+                        <h3>2. Qualité d'Image</h3>
                         <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
-                            <li><strong>Stabilité garantie :</strong> Serveurs dédiés et maintenus</li>
-                            <li><strong>Qualité HD/4K :</strong> Image nette, son clair</li>
-                            <li><strong>Pas de buffering :</strong> Streaming fluide 24/7</li>
-                            <li><strong>Support client :</strong> Aide disponible en cas de souci</li>
-                            <li><strong>Catalogue complet :</strong> +20 000 chaînes, +100 000 VOD</li>
-                            <li><strong>Multi-appareils :</strong> Compatible TV, mobile, PC</li>
-                            <li><strong>Guide EPG :</strong> Programme TV intégré</li>
+                            <li><strong>Résolution HD/4K</strong> : Image nette et détaillée</li>
+                            <li><strong>Encodage moderne</strong> : H.265/HEVC pour une meilleure compression</li>
+                            <li><strong>Adaptation automatique</strong> : Ajustement selon votre connexion</li>
                         </ul>
 
-                        <h2>Comparatif en chiffres</h2>
-                        <div style={{ overflowX: 'auto' }}>
-                            <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '2rem' }}>
-                                <thead>
-                                    <tr style={{ borderBottom: '2px solid var(--glass-border)' }}>
-                                        <th style={{ padding: '1rem', textAlign: 'left' }}>Critère</th>
-                                        <th style={{ padding: '1rem', textAlign: 'center', color: '#ef4444' }}>Gratuit</th>
-                                        <th style={{ padding: '1rem', textAlign: 'center', color: '#22c55e' }}>Premium</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                                        <td style={{ padding: '1rem' }}>Qualité vidéo</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>SD/480p</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>HD/4K</td>
-                                    </tr>
-                                    <tr style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                                        <td style={{ padding: '1rem' }}>Nombre de chaînes</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>~100</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>+20 000</td>
-                                    </tr>
-                                    <tr style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                                        <td style={{ padding: '1rem' }}>VOD (Films/Séries)</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>❌</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>+100 000</td>
-                                    </tr>
-                                    <tr style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                                        <td style={{ padding: '1rem' }}>Support client</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>❌</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>24/7</td>
-                                    </tr>
-                                    <tr>
-                                        <td style={{ padding: '1rem' }}>Stabilité</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>⚠️ Aléatoire</td>
-                                        <td style={{ padding: '1rem', textAlign: 'center' }}>✅ 99.9%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <h3>3. Support Client</h3>
+                        <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
+                            <li><strong>Disponibilité</strong> : Support accessible et réactif</li>
+                            <li><strong>Canaux multiples</strong> : Email, chat, téléphone</li>
+                            <li><strong>Documentation</strong> : Guides et tutoriels disponibles</li>
+                        </ul>
+
+                        <h3>4. Compatibilité</h3>
+                        <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
+                            <li><strong>Multi-appareils</strong> : TV, mobile, tablette, ordinateur</li>
+                            <li><strong>Applications dédiées</strong> : Apps natives pour chaque plateforme</li>
+                            <li><strong>Facilité d'installation</strong> : Configuration simple et guidée</li>
+                        </ul>
+
+                        <h2>Points de Vigilance</h2>
+                        <div style={{ background: 'rgba(239, 68, 68, 0.1)', borderLeft: '4px solid #ef4444', padding: '1.5rem', margin: '2rem 0', borderRadius: '0 8px 8px 0' }}>
+                            <h3 style={{ color: '#f87171', margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>⚠️ À éviter</h3>
+                            <ul style={{ margin: 0, color: '#fecaca', paddingLeft: '1.5rem' }}>
+                                <li>Services sans aucun moyen de contact</li>
+                                <li>Prix anormalement bas (qualité souvent médiocre)</li>
+                                <li>Pas de période d'essai proposée</li>
+                                <li>Paiement uniquement en cryptomonnaie</li>
+                            </ul>
                         </div>
 
-                        <h2>Notre verdict</h2>
+                        <h2>Conclusion</h2>
                         <p>
-                            Pour quelques euros par mois, un abonnement IPTV premium offre une expérience <strong>incomparablement supérieure</strong>.
-                            Le temps perdu à chercher des liens fonctionnels et la frustration des coupures ne valent pas l'économie réalisée.
+                            Un service de qualité se distingue par sa <strong>stabilité</strong>, son <strong>support réactif</strong>
+                            et sa <strong>transparence</strong>. Prenez le temps de tester avant de vous engager sur une longue durée.
                         </p>
 
                     </article>
 
                     <div style={{ marginTop: '4rem', background: 'linear-gradient(135deg, rgba(30, 26, 48, 0.9) 0%, rgba(124, 58, 237, 0.2) 100%)', padding: '3rem', borderRadius: '1rem', textAlign: 'center', border: '1px solid var(--glass-border)', maxWidth: '800px', margin: '4rem auto 0' }}>
-                        <h3 style={{ fontSize: '1.75rem', fontWeight: 'bold', marginBottom: '1rem' }}>Testez gratuitement pendant 24h</h3>
+                        <h3 style={{ fontSize: '1.75rem', fontWeight: 'bold', marginBottom: '1rem' }}>Des Questions ?</h3>
                         <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-                            Convaincu ? Essayez notre service premium sans engagement.
+                            Notre équipe est disponible pour vous conseiller et répondre à vos questions.
                         </p>
-                        <Button href="/#plans" variant="primary">Voir nos offres</Button>
+                        <Button href="/contact" variant="primary">Nous Contacter</Button>
                     </div>
                 </div>
             </section>

@@ -8,9 +8,13 @@ import styles from '../../styles/shared.module.css';
 
 export const metadata: Metadata = {
     title: 'Activer Smart IPTV : Le Guide Complet 2025',
-    description: 'Problème d\'activation Smart IPTV ? Suivez notre tutoriel étape par étape pour activer l\'application Smart IPTV à vie (5.49€) et y ajouter votre playlist M3U.',
+    description: 'Tutoriel étape par étape pour activer l\'application Smart IPTV et y ajouter votre playlist.',
     alternates: {
-        canonical: '/blog/smart-iptv-activation',
+        canonical: 'https://iptvplusfrance.com/blog/smart-iptv-activation/',
+    },
+    robots: {
+        index: true,
+        follow: true,
     },
 };
 
