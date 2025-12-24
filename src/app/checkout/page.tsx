@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { Navbar } from "@/components/layout/Navbar";
 import styles from "./checkout.module.css";
 import Link from 'next/link';
@@ -25,23 +25,35 @@ const stripeLinks: { [key: string]: string } = {
     "12 Mois_3": "",
 };
 
+// Base prices for 1 device
+const basePrices: { [key: string]: number } = {
+    "1 Mois": 8.99,
+    "3 Mois": 24.99,
+    "6 Mois": 39.99,
+    "12 Mois": 49.99
+};
+
 function CheckoutContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
-    const plan = searchParams.get('plan') || '12 Mois';
-    const devices = parseInt(searchParams.get('devices') || '1');
+    const [isReady, setIsReady] = useState(false);
+    const [plan, setPlan] = useState('12 Mois');
+    const [devices, setDevices] = useState(1);
     const [email, setEmail] = useState('');
     const [note, setNote] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
 
-    // Base prices for 1 device
-    const basePrices: { [key: string]: number } = {
-        "1 Mois": 8.99,
-        "3 Mois": 24.99,
-        "6 Mois": 39.99,
-        "12 Mois": 49.99
-    };
+    // Hydration-safe params reading
+    useEffect(() => {
+        const planParam = searchParams.get('plan');
+        const devicesParam = searchParams.get('devices');
+
+        if (planParam) setPlan(planParam);
+        if (devicesParam) setDevices(parseInt(devicesParam) || 1);
+
+        setIsReady(true);
+    }, [searchParams]);
 
     const getPrice = () => {
         const base = basePrices[plan] || 49.99;
@@ -107,6 +119,28 @@ function CheckoutContent() {
             setIsLoading(false);
         }
     };
+
+    // Show skeleton while hydrating
+    if (!isReady) {
+        return (
+            <main className={styles.main}>
+                <Navbar />
+                <div className={styles.container}>
+                    <div className={styles.header}>
+                        <h1 className={styles.title}>Finaliser la Commande</h1>
+                        <p className={styles.subtitle}>Chargement de votre commande...</p>
+                    </div>
+                    <div className={styles.card} style={{ opacity: 0.5 }}>
+                        <div className={styles.planSummary}>
+                            <div className={styles.planName} style={{ background: '#333', height: '24px', borderRadius: '4px' }}></div>
+                            <div className={styles.planDetails} style={{ background: '#333', height: '16px', borderRadius: '4px', marginTop: '8px' }}></div>
+                            <div className={styles.price} style={{ background: '#333', height: '32px', borderRadius: '4px', marginTop: '8px' }}></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        );
+    }
 
     return (
         <main className={styles.main}>
@@ -189,9 +223,36 @@ function CheckoutContent() {
     );
 }
 
+// Loading skeleton for Suspense
+function CheckoutSkeleton() {
+    return (
+        <main className={styles.main}>
+            <Navbar />
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <h1 className={styles.title}>Finaliser la Commande</h1>
+                    <p className={styles.subtitle}>Préparation de votre commande...</p>
+                </div>
+                <div className={styles.card} style={{ opacity: 0.6 }}>
+                    <div className={styles.planSummary}>
+                        <div style={{ background: 'rgba(124, 58, 237, 0.3)', height: '28px', borderRadius: '6px', width: '120px' }}></div>
+                        <div style={{ background: 'rgba(255,255,255,0.1)', height: '18px', borderRadius: '4px', width: '80px', marginTop: '8px' }}></div>
+                        <div style={{ background: 'rgba(124, 58, 237, 0.3)', height: '40px', borderRadius: '6px', width: '100px', marginTop: '12px' }}></div>
+                    </div>
+                    <div style={{ marginTop: '2rem' }}>
+                        <div style={{ background: 'rgba(255,255,255,0.1)', height: '48px', borderRadius: '8px', marginBottom: '1rem' }}></div>
+                        <div style={{ background: 'rgba(255,255,255,0.1)', height: '80px', borderRadius: '8px', marginBottom: '1rem' }}></div>
+                        <div style={{ background: 'rgba(124, 58, 237, 0.5)', height: '52px', borderRadius: '8px' }}></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
+}
+
 export default function Checkout() {
     return (
-        <Suspense fallback={<div>Chargement...</div>}>
+        <Suspense fallback={<CheckoutSkeleton />}>
             <CheckoutContent />
         </Suspense>
     );
