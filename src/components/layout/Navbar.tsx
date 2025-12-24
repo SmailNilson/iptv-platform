@@ -27,7 +27,7 @@ export const Navbar: React.FC = () => {
             <div className={styles.links}>
                 <Link href="/" className={styles.navLink}>Accueil</Link>
                 <Link href="/#plans" className={styles.navLink}>Abonnements</Link>
-                <Link href="/blog" className={styles.navLink}>Blog</Link>
+                <Link href="/guide-installation" className={styles.navLink}>Guide</Link>
                 <Link href="/faq" className={styles.navLink}>FAQ</Link>
                 <Link href="/contact" className={styles.navLink}>Contact</Link>
             </div>
@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
             <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
                 <Link href="/" className={styles.navLink} onClick={closeMenu}>Accueil</Link>
                 <Link href="/#plans" className={styles.navLink} onClick={closeMenu}>Abonnements</Link>
-                <Link href="/blog" className={styles.navLink} onClick={closeMenu}>Blog</Link>
+                <Link href="/guide-installation" className={styles.navLink} onClick={closeMenu}>Guide</Link>
                 <Link href="/faq" className={styles.navLink} onClick={closeMenu}>FAQ</Link>
                 <Link href="/contact" className={styles.navLink} onClick={closeMenu}>Contact</Link>
                 <div style={{ marginTop: '1rem' }} onClick={closeMenu}>
