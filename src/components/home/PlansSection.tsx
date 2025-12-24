@@ -32,8 +32,8 @@ export const PlansSection = () => {
         "⚡ 4K/FHD (Anti-Lag)",
         "⏪ Replay 7 Jours",
         "📅 Guide EPG",
-        "🔒 Compatible VPN",
         "🛡️ Support 24/7",
+        "💰 Satisfait ou Remboursé 7j",
         "🔞 Option Adulte"
     ];
 

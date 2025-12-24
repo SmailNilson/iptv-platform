@@ -34,8 +34,8 @@ export default function Plans() {
         "⚡ Qualité 4K / FHD / HD (Anti-Lag)",
         "⏪ Replay / Catch-Up (7 Jours)",
         "📅 Guide EPG Complet",
-        "🔒 Compatible VPN",
         "🛡️ Support 24/7 (WhatsApp / Email)",
+        "💰 Satisfait ou Remboursé 7 Jours",
         "🔞 Option Adulte Incluse"
     ];
 
