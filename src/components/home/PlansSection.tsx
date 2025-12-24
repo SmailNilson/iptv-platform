@@ -174,10 +174,10 @@ export const PlansSection = () => {
                                 fontWeight: '600',
                                 cursor: 'pointer',
                                 fontSize: '1rem',
-                                boxShadow: plan.highlight ? '0 4px 20px rgba(245, 158, 11, 0.4)' : 'none',
+                                whiteSpace: 'nowrap',
                                 transition: 'all 0.3s ease'
                             }}>
-                                {plan.highlight ? '🚀 Commander Maintenant' : 'Finaliser la Commande'}
+                                Finaliser la Commande
                             </div>
                         </Link>
                     </div>
