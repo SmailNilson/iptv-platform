@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { TrustBadges } from "@/components/ui/TrustBadges";
 import styles from "@/app/home.module.css";
 import Link from "next/link";
 
@@ -92,9 +91,6 @@ export const PlansSection = () => {
                     </button>
                 ))}
             </div>
-
-            {/* Trust Badges */}
-            <TrustBadges />
 
             <div className={styles.plansGrid}>
                 {plans.map((plan) => (
