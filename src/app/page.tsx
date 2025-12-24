@@ -149,10 +149,10 @@ export default function Home() {
       <section className={styles.hero}>
         <h1 className={styles.title}>
           +20 000 Chaînes TV.<br />
-          <span className={styles.highlight}>Streaming premium.</span> Accès Immédiat.
+          <span className={styles.highlight}>Stable & Sans Coupure.</span> Essai 24h.
         </h1>
         <p className={styles.subtitle}>
-          Le service IPTV N°1 en France &amp; Europe. Regardez vos Sports, Films et Séries favoris en 4K/FHD.
+          Service IPTV Premium 4K. Zéro buffering, qualité garantie. Sports, Films et Séries sur tous vos appareils.
         </p>
         <div className={styles.ctaGroup}>
           <Button variant="primary" href="/#plans">Voir les Offres</Button>
