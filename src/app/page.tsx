@@ -149,7 +149,7 @@ export default function Home() {
       <section className={styles.hero}>
         <h1 className={styles.title}>
           +20 000 Chaînes TV.<br />
-          <span className={styles.highlight}>Stable & Sans Coupure.</span> Essai 24h.
+          <span className={styles.highlight}>Streaming premium.</span> Accès Immédiat.
         </h1>
         <p className={styles.subtitle}>
           Service IPTV Premium 4K. Zéro buffering, qualité garantie. Sports, Films et Séries sur tous vos appareils.
