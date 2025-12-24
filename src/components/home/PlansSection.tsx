@@ -168,12 +168,12 @@ export const PlansSection = () => {
                                     ? 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)'
                                     : 'var(--cta-gradient)',
                                 color: 'white',
-                                padding: plan.highlight ? '1rem' : '0.8rem',
+                                padding: '0.8rem',
                                 borderRadius: '50px',
                                 textAlign: 'center',
-                                fontWeight: '700',
+                                fontWeight: '600',
                                 cursor: 'pointer',
-                                fontSize: plan.highlight ? '1.1rem' : '1rem',
+                                fontSize: '1rem',
                                 boxShadow: plan.highlight ? '0 4px 20px rgba(245, 158, 11, 0.4)' : 'none',
                                 transition: 'all 0.3s ease'
                             }}>
