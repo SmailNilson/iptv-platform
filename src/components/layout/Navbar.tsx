@@ -23,15 +23,18 @@ export const Navbar: React.FC = () => {
                 />
             </Link>
 
-            {/* Desktop Links - Only indexable pages */}
+            {/* Desktop Links */}
             <div className={styles.links}>
+                <Link href="/" className={styles.navLink}>Accueil</Link>
+                <Link href="/#plans" className={styles.navLink}>Abonnements</Link>
                 <Link href="/blog" className={styles.navLink}>Blog</Link>
-                <Link href="/compatibilite" className={styles.navLink}>Compatibilité</Link>
                 <Link href="/faq" className={styles.navLink}>FAQ</Link>
                 <Link href="/contact" className={styles.navLink}>Contact</Link>
             </div>
 
             <div className={styles.actions}>
+                <Button variant="primary" href="/trial">Essai Gratuit</Button>
+
                 {/* Hamburger Button */}
                 <button
                     className={`${styles.hamburger} ${isMenuOpen ? styles.open : ''}`}
@@ -44,12 +47,16 @@ export const Navbar: React.FC = () => {
                 </button>
             </div>
 
-            {/* Mobile Menu Overlay - Only indexable pages */}
+            {/* Mobile Menu Overlay */}
             <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
+                <Link href="/" className={styles.navLink} onClick={closeMenu}>Accueil</Link>
+                <Link href="/#plans" className={styles.navLink} onClick={closeMenu}>Abonnements</Link>
                 <Link href="/blog" className={styles.navLink} onClick={closeMenu}>Blog</Link>
-                <Link href="/compatibilite" className={styles.navLink} onClick={closeMenu}>Compatibilité</Link>
                 <Link href="/faq" className={styles.navLink} onClick={closeMenu}>FAQ</Link>
                 <Link href="/contact" className={styles.navLink} onClick={closeMenu}>Contact</Link>
+                <div style={{ marginTop: '1rem' }} onClick={closeMenu}>
+                    <Button variant="primary" href="/trial">Essai Gratuit</Button>
+                </div>
             </div>
         </nav>
     );
