@@ -94,19 +94,67 @@ export const PlansSection = () => {
 
             <div className={styles.plansGrid}>
                 {plans.map((plan) => (
-                    <div key={plan.name} className={styles.planCard} style={{
-                        backgroundColor: 'var(--bg-secondary)',
-                        border: '1px solid var(--glass-border)',
-                        borderRadius: '20px',
-                        padding: '2rem 1.5rem',
-                        backdropFilter: 'blur(10px)'
-                    }}>
-                        {plan.highlight && <div className={styles.bestValue}>Le plus populaire</div>}
-                        <h2 className={styles.planName} style={{ color: 'white', textTransform: 'uppercase', fontSize: '1.5rem' }}>{plan.name}</h2>
-                        <div className={styles.price} style={{ color: 'white', display: 'flex', gap: '5px', fontSize: '2.5rem' }}>
+                    <div
+                        key={plan.name}
+                        className={styles.planCard}
+                        style={{
+                            backgroundColor: plan.highlight ? 'rgba(124, 58, 237, 0.15)' : 'var(--bg-secondary)',
+                            border: plan.highlight ? '2px solid var(--accent-1)' : '1px solid var(--glass-border)',
+                            borderRadius: '20px',
+                            padding: plan.highlight ? '2.5rem 1.75rem' : '2rem 1.5rem',
+                            backdropFilter: 'blur(10px)',
+                            transform: plan.highlight ? 'scale(1.05)' : 'scale(1)',
+                            boxShadow: plan.highlight ? '0 0 40px rgba(124, 58, 237, 0.3), 0 0 80px rgba(124, 58, 237, 0.15)' : 'none',
+                            position: 'relative' as const,
+                            zIndex: plan.highlight ? 10 : 1,
+                            transition: 'all 0.3s ease'
+                        }}
+                    >
+                        {plan.highlight && (
+                            <div style={{
+                                position: 'absolute',
+                                top: '-14px',
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                background: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
+                                color: 'white',
+                                padding: '0.5rem 1.5rem',
+                                borderRadius: '50px',
+                                fontSize: '0.85rem',
+                                fontWeight: '700',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px',
+                                boxShadow: '0 4px 15px rgba(245, 158, 11, 0.4)',
+                                whiteSpace: 'nowrap',
+                                animation: 'pulse 2s infinite'
+                            }}>
+                                🔥 Meilleur Choix
+                            </div>
+                        )}
+                        <h2 className={styles.planName} style={{
+                            color: 'white',
+                            textTransform: 'uppercase',
+                            fontSize: plan.highlight ? '1.75rem' : '1.5rem',
+                            marginTop: plan.highlight ? '0.5rem' : '0'
+                        }}>
+                            {plan.name}
+                        </h2>
+                        <div className={styles.price} style={{
+                            color: 'white',
+                            display: 'flex',
+                            gap: '5px',
+                            fontSize: plan.highlight ? '3rem' : '2.5rem',
+                            fontWeight: plan.highlight ? '800' : '700'
+                        }}>
                             {getPrice(plan.name)} <span style={{ fontSize: '1.2rem', color: '#b3b3b3', marginTop: '10px' }}>€</span>
                         </div>
-                        <div className={styles.period} style={{ color: 'var(--accent-2)' }}>{plan.period}</div>
+                        <div className={styles.period} style={{
+                            color: plan.highlight ? '#fbbf24' : 'var(--accent-2)',
+                            fontWeight: plan.highlight ? '600' : '500'
+                        }}>
+                            {plan.period}
+                            {plan.highlight && <span style={{ display: 'block', fontSize: '0.85rem', color: '#22c55e', marginTop: '4px' }}>💰 Économisez 58%</span>}
+                        </div>
 
                         <ul className={styles.planFeatures}>
                             {plan.features.map((f, i) => (
@@ -116,16 +164,20 @@ export const PlansSection = () => {
 
                         <Link href={`/checkout?plan=${encodeURIComponent(plan.name)}&devices=${devices}`} style={{ width: '100%' }}>
                             <div style={{
-                                background: 'var(--cta-gradient)',
+                                background: plan.highlight
+                                    ? 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)'
+                                    : 'var(--cta-gradient)',
                                 color: 'white',
-                                padding: '0.8rem',
+                                padding: plan.highlight ? '1rem' : '0.8rem',
                                 borderRadius: '50px',
                                 textAlign: 'center',
-                                fontWeight: '600',
+                                fontWeight: '700',
                                 cursor: 'pointer',
-                                fontSize: '1rem'
+                                fontSize: plan.highlight ? '1.1rem' : '1rem',
+                                boxShadow: plan.highlight ? '0 4px 20px rgba(245, 158, 11, 0.4)' : 'none',
+                                transition: 'all 0.3s ease'
                             }}>
-                                Finaliser la Commande
+                                {plan.highlight ? '🚀 Commander Maintenant' : 'Finaliser la Commande'}
                             </div>
                         </Link>
                     </div>
