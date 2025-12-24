@@ -10,8 +10,8 @@ import { OrganizationSchema, WebSiteSchema } from "@/components/seo/SchemaOrg";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "IPTV Premium France - Streaming HD & 4K",
-  description: "Service de streaming premium. Accédez à des milliers de contenus en HD et 4K. Compatible Smart TV, Box Android, FireStick.",
+  title: "Abonnement IPTV Premium 4K - Stable & Sans Coupure | Essai 24h",
+  description: "Service IPTV stable et fiable. +20 000 chaînes en 4K/HD, VOD illimitée, zéro buffering. Compatible Smart TV, FireStick, Android. Essai gratuit 24h.",
   robots: {
     index: false,
     follow: true,
@@ -24,6 +24,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'IPTV Plus France',
+    title: 'IPTV Premium 4K - Stable & Sans Coupure',
+    description: 'Service IPTV stable. +20 000 chaînes, VOD illimitée, qualité 4K. Essai gratuit 24h.',
   },
 };
 
