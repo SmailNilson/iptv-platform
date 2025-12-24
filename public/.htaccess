@@ -3,6 +3,14 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Redirect www to non-www (301 permanent)
+RewriteCond %{HTTP_HOST} ^www\.iptvplusfrance\.com [NC]
+RewriteRule ^(.*)$ https://iptvplusfrance.com/$1 [L,R=301]
+
+# Block bad bots (SEO scrapers)
+RewriteCond %{HTTP_USER_AGENT} (AhrefsBot|MJ12bot|SemrushBot) [NC]
+RewriteRule .* - [F,L]
+
 # Enable compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript
