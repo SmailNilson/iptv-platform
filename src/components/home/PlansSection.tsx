@@ -158,7 +158,7 @@ export const PlansSection = () => {
 
                         <ul className={styles.planFeatures}>
                             {plan.features.map((f, i) => (
-                                <li key={i}><span className={styles.check}>✓</span> {f}</li>
+                                <li key={i}>{f}</li>
                             ))}
                         </ul>
 
