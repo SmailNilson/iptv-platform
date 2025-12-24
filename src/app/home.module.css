@@ -218,18 +218,19 @@ html {
 
 .planFeatures {
     list-style: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     width: 100%;
     text-align: left;
 }
 
 .planFeatures li {
-    padding: 0.75rem 0;
+    padding: 0.4rem 0;
     border-bottom: 1px solid var(--glass-border);
     color: var(--text-secondary);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
+    font-size: 0.85rem;
 }
 
 .check {
