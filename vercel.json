@@ -1,0 +1,15 @@
+{
+    "redirects": [
+        {
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "www.iptvplusfrance.com"
+                }
+            ],
+            "destination": "https://iptvplusfrance.com/:path*",
+            "permanent": true
+        }
+    ]
+}
