@@ -150,7 +150,8 @@ export const PlansSection = () => {
                         </div>
                         <div className={styles.period} style={{
                             color: plan.highlight ? '#22c55e' : 'var(--accent-2)',
-                            fontWeight: plan.highlight ? '600' : '500'
+                            fontWeight: plan.highlight ? '600' : '500',
+                            fontSize: plan.highlight ? '0.9rem' : '1.1rem'
                         }}>
                             {plan.highlight ? '💰 Meilleure Offre - Économisez 58%' : plan.period}
                         </div>
