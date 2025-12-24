@@ -149,11 +149,10 @@ export const PlansSection = () => {
                             {getPrice(plan.name)} <span style={{ fontSize: '1.2rem', color: '#b3b3b3', marginTop: '10px' }}>€</span>
                         </div>
                         <div className={styles.period} style={{
-                            color: plan.highlight ? '#fbbf24' : 'var(--accent-2)',
+                            color: plan.highlight ? '#22c55e' : 'var(--accent-2)',
                             fontWeight: plan.highlight ? '600' : '500'
                         }}>
-                            {plan.period}
-                            {plan.highlight && <span style={{ display: 'block', fontSize: '0.85rem', color: '#22c55e', marginTop: '4px' }}>💰 Économisez 58%</span>}
+                            {plan.highlight ? '💰 Meilleure Offre - Économisez 58%' : plan.period}
                         </div>
 
                         <ul className={styles.planFeatures}>
