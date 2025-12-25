@@ -11,7 +11,7 @@ const articles = [
         excerpt: "Découvrez comment distinguer un vrai abonnement IPTV Premium d'une offre bas de gamme. Stabilité 4K, anti-freeze et support réactif.",
         date: "25 Décembre 2024",
         readTime: "8 min",
-        image: "/images/blog/iptv-premium-4k.png"
+        image: "/images/blog/iptv-premium-4k.jpg"
     },
     {
         id: "alternative-premium-iptv",
