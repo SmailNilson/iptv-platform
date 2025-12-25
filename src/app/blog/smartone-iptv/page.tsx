@@ -24,6 +24,17 @@ export default function SmartOneIPTVGuide() {
                     </p>
                 </div>
 
+                {/* Hero Image */}
+                <div className={styles.heroImage}>
+                    <Image
+                        src="/images/blog/smartone-iptv/living-room.jpg"
+                        alt="SmartOne IPTV sur grand écran dans un salon moderne avec éclairage ambiant"
+                        width={1200}
+                        height={675}
+                        style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                    />
+                </div>
+
                 <div className={styles.content}>
                     <section className={styles.section}>
                         <p>
@@ -267,7 +278,7 @@ export default function SmartOneIPTVGuide() {
                             Pour exploiter le plein potentiel de votre TV 4K, il vous faut un <strong>flux Premium Stable</strong>.
                         </p>
                         <Link
-                            href="https://wa.me/33612345678?text=Bonjour%2C%20je%20souhaite%20un%20test%20gratuit%2024h%20IPTV%20Premium"
+                            href="https://wa.me/17575357760?text=Bonjour%2C%20je%20souhaite%20un%20test%20gratuit%2024h%20IPTV%20Premium"
                             className={styles.ctaButton}
                             target="_blank"
                             rel="noopener noreferrer"

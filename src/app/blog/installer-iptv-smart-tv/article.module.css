@@ -254,3 +254,63 @@
         gap: 0.25rem;
     }
 }
+
+/* CTA Note */
+.ctaNote {
+    font-size: 0.9rem !important;
+    color: var(--text-tertiary) !important;
+    margin-top: 1rem !important;
+    font-style: italic;
+}
+
+/* Hero Image */
+.heroImage {
+    margin: 2rem 0 3rem 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Container */
+.imageContainer {
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Feature List */
+.featureList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.featureItem {
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.featureItem:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-1);
+    box-shadow: 0 10px 30px rgba(124, 58, 250, 0.15);
+}
+
+.featureItem h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.featureItem p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}

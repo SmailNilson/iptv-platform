@@ -159,7 +159,7 @@ export default function IPTVPremium4K2025() {
                             Ne gâchez plus votre soirée télé. Testez la différence entre un service qui coupe et un service conçu pour la performance.
                         </p>
                         <Link
-                            href="https://wa.me/33612345678?text=Bonjour%2C%20je%20souhaite%20un%20test%20gratuit%2024h%20IPTV%20Premium"
+                            href="https://wa.me/17575357760?text=Bonjour%2C%20je%20souhaite%20un%20test%20gratuit%2024h%20IPTV%20Premium"
                             className={styles.ctaButton}
                             target="_blank"
                             rel="noopener noreferrer"

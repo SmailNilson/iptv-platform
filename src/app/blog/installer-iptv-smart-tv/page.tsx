@@ -178,11 +178,19 @@ export default function InstallerIPTVSmartTV() {
                     </section>
 
                     <section className={styles.ctaSection}>
-                        <h2>Prêt à commencer ?</h2>
-                        <p>Obtenez votre abonnement IPTV et profitez de milliers de chaînes !</p>
-                        <Link href="/#plans" className={styles.ctaButton}>
-                            Voir nos offres
+                        <h2>🚀 Passez au niveau supérieur dès ce soir</h2>
+                        <p>Ne gâchez plus votre soirée télé. Testez la différence entre un service qui coupe et un service conçu pour la performance.</p>
+                        <Link
+                            href="https://wa.me/17575357760?text=Bonjour%2C%20je%20souhaite%20un%20test%20gratuit%2024h%20IPTV%20Premium"
+                            className={styles.ctaButton}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            📱 Demander mon TEST 24H GRATUIT sur WhatsApp
                         </Link>
+                        <p className={styles.ctaNote}>
+                            Notre équipe vous répond en moins de 5 minutes et vous active immédiatement. Zéro robot, que des humains.
+                        </p>
                     </section>
                 </div>
             </article>
