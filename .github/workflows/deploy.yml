@@ -34,3 +34,5 @@ jobs:
           local-dir: ./out/
           server-dir: ./
           dangerous-clean-slate: true
+          exclude: |
+            **/*.mp4
