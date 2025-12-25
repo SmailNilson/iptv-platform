@@ -6,6 +6,30 @@ import Link from 'next/link';
 
 const articles = [
     {
+        id: "abonnement-iptv-premium-2025",
+        title: "Abonnement IPTV Premium en 2025 : Comment reconnaître la vraie qualité 4K ?",
+        excerpt: "Découvrez comment distinguer un vrai abonnement IPTV Premium d'une offre bas de gamme. Stabilité 4K, anti-freeze et support réactif.",
+        date: "25 Décembre 2024",
+        readTime: "8 min",
+        image: "🏆"
+    },
+    {
+        id: "alternative-premium-iptv",
+        title: "Déçu de votre fournisseur IPTV ? Voici l'alternative fiable",
+        excerpt: "Vous cherchez à annuler votre abonnement ou déçu des coupures ? Découvrez l'alternative fiable avec support humain WhatsApp.",
+        date: "25 Décembre 2024",
+        readTime: "6 min",
+        image: "🔄"
+    },
+    {
+        id: "tuto-smarters-pro-iptv",
+        title: "Tuto : Configurer IPTV Smarters Pro (Guide Complet)",
+        excerpt: "Guide technique : Comment configurer IPTV Smarters Pro avec un abonnement premium stable. Obtenez vos codes Xtream valides.",
+        date: "25 Décembre 2024",
+        readTime: "5 min",
+        image: "📱"
+    },
+    {
         id: "installer-iptv-smart-tv",
         title: "Comment installer une application sur Smart TV",
         excerpt: "Guide complet pour configurer des applications sur Samsung, LG, Android TV et autres Smart TV.",
