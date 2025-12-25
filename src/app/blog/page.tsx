@@ -6,6 +6,14 @@ import Link from 'next/link';
 
 const articles = [
     {
+        id: "iptv-premium-4k-2025",
+        title: "IPTV Premium en 2025 : Arrêtez de payer pour des écrans noirs (Le Guide Définitif de la 4K)",
+        excerpt: "Il est 21h45, c'est le match de l'année, et... l'image se fige. Découvrez ce qui différencie un vrai service Premium 4K d'une pâle copie.",
+        date: "25 Décembre 2024",
+        readTime: "8 min",
+        image: "/images/blog/iptv-premium-4k-2025/hero.png"
+    },
+    {
         id: "abonnement-iptv-premium-2025",
         title: "Abonnement IPTV Premium en 2025 : Comment reconnaître la vraie qualité 4K ?",
         excerpt: "Découvrez comment distinguer un vrai abonnement IPTV Premium d'une offre bas de gamme. Stabilité 4K, anti-freeze et support réactif.",
@@ -87,11 +95,11 @@ const articles = [
     },
     {
         id: "smartone-iptv",
-        title: "SmartOne IPTV : Guide d'Installation",
-        excerpt: "Comment installer et configurer l'application SmartOne sur Smart TV, Fire Stick et Box Android.",
-        date: "22 Décembre 2024",
-        readTime: "6 min",
-        image: "📲"
+        title: "SmartOne IPTV : Le Guide Ultime pour l'Installer et le Configurer (2025)",
+        excerpt: "Transformez votre téléviseur en centre de divertissement ultime en moins de 10 minutes avec SmartOne IPTV.",
+        date: "25 Décembre 2024",
+        readTime: "10 min",
+        image: "/images/blog/smartone-iptv/ecosystem.jpg"
     },
     {
         id: "can-2025-regarder-matchs",
