@@ -27,6 +27,12 @@ export default function TutoSmartersProIPTVPage() {
                 <div className={styles.container}>
                     <article className={styles.prose} style={{ background: 'var(--card-bg)', padding: '3rem', borderRadius: '1rem', border: '1px solid var(--glass-border)', maxWidth: '800px', margin: '0 auto' }}>
 
+                        <img
+                            src="/images/blog/tuto-smarters-pro.jpg"
+                            alt="Interface de connexion IPTV Smarters Pro"
+                            style={{ width: '100%', borderRadius: '12px', marginBottom: '2rem' }}
+                        />
+
                         <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                             Vous avez sans doute entendu dire que <strong>IPTV Smarters Pro</strong> est la meilleure application du marché en 2025. C'est vrai. Son interface est fluide, elle gère parfaitement le Replay et le Multi-écran.
                         </p>

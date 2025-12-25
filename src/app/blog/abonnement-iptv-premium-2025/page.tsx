@@ -27,6 +27,12 @@ export default function AbonnementIPTVPremium2025Page() {
                 <div className={styles.container}>
                     <article className={styles.prose} style={{ background: 'var(--card-bg)', padding: '3rem', borderRadius: '1rem', border: '1px solid var(--glass-border)', maxWidth: '800px', margin: '0 auto' }}>
 
+                        <img
+                            src="/images/blog/iptv-premium-4k.jpg"
+                            alt="Streaming football 4K sur grand écran"
+                            style={{ width: '100%', borderRadius: '12px', marginBottom: '2rem' }}
+                        />
+
                         <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                             Il n'y a rien de pire. C'est la 89ème minute, votre équipe s'apprête à tirer le penalty décisif... et l'image se fige. Le cercle de chargement tourne, et quand l'image revient, le match est fini.
                         </p>

@@ -27,6 +27,12 @@ export default function AlternativePremiumIPTVPage() {
                 <div className={styles.container}>
                     <article className={styles.prose} style={{ background: 'var(--card-bg)', padding: '3rem', borderRadius: '1rem', border: '1px solid var(--glass-border)', maxWidth: '800px', margin: '0 auto' }}>
 
+                        <img
+                            src="/images/blog/support-whatsapp.jpg"
+                            alt="Support WhatsApp en direct"
+                            style={{ width: '100%', borderRadius: '12px', marginBottom: '2rem' }}
+                        />
+
                         <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                             Vous tournez en rond sur le site à la recherche du bouton "Annuler" ? Vous avez envoyé trois emails au support parce que votre match a coupé à la mi-temps, et le silence radio est total ?
                         </p>
