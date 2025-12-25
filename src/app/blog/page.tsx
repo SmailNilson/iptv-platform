@@ -19,7 +19,7 @@ const articles = [
         excerpt: "Vous cherchez à annuler votre abonnement ou déçu des coupures ? Découvrez l'alternative fiable avec support humain WhatsApp.",
         date: "25 Décembre 2024",
         readTime: "6 min",
-        image: "/images/blog/support-whatsapp.png"
+        image: "/images/blog/support-whatsapp.jpg"
     },
     {
         id: "tuto-smarters-pro-iptv",
