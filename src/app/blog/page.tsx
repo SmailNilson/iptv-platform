@@ -11,7 +11,7 @@ const articles = [
         excerpt: "Découvrez comment distinguer un vrai abonnement IPTV Premium d'une offre bas de gamme. Stabilité 4K, anti-freeze et support réactif.",
         date: "25 Décembre 2024",
         readTime: "8 min",
-        image: "🏆"
+        image: "/images/blog/iptv-premium-4k.png"
     },
     {
         id: "alternative-premium-iptv",
@@ -19,7 +19,7 @@ const articles = [
         excerpt: "Vous cherchez à annuler votre abonnement ou déçu des coupures ? Découvrez l'alternative fiable avec support humain WhatsApp.",
         date: "25 Décembre 2024",
         readTime: "6 min",
-        image: "🔄"
+        image: "/images/blog/support-whatsapp.png"
     },
     {
         id: "tuto-smarters-pro-iptv",
@@ -27,7 +27,7 @@ const articles = [
         excerpt: "Guide technique : Comment configurer IPTV Smarters Pro avec un abonnement premium stable. Obtenez vos codes Xtream valides.",
         date: "25 Décembre 2024",
         readTime: "5 min",
-        image: "📱"
+        image: "/images/blog/tuto-smarters-pro.png"
     },
     {
         id: "installer-iptv-smart-tv",
@@ -123,7 +123,13 @@ export default function Blog() {
                             key={article.id}
                             className={styles.articleCard}
                         >
-                            <div className={styles.articleImage}>{article.image}</div>
+                            <div className={styles.articleImage}>
+                                {article.image.startsWith('/') ? (
+                                    <img src={article.image} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }} />
+                                ) : (
+                                    article.image
+                                )}
+                            </div>
                             <div className={styles.articleContent}>
                                 <div className={styles.articleMeta}>
                                     <span>{article.date}</span>
