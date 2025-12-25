@@ -27,7 +27,7 @@ const articles = [
         excerpt: "Guide technique : Comment configurer IPTV Smarters Pro avec un abonnement premium stable. Obtenez vos codes Xtream valides.",
         date: "25 Décembre 2024",
         readTime: "5 min",
-        image: "/images/blog/tuto-smarters-pro.png"
+        image: "/images/blog/tuto-smarters-pro.jpg"
     },
     {
         id: "installer-iptv-smart-tv",
