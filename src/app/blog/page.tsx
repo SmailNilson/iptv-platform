@@ -6,6 +6,30 @@ import Link from 'next/link';
 
 const articles = [
     {
+        id: "avis-flash-stream-tv",
+        title: "Avis Flash-Stream TV : Arnaque ou Pépite en 2025 ? Le test complet",
+        excerpt: "Promesses de 4K, catalogue infini, stabilité à toute épreuve... Après 15 jours de test intensif, découvrez notre verdict sans concession sur ce fournisseur IPTV.",
+        date: "29 Décembre 2025",
+        readTime: "15 min",
+        image: "/images/blog/avis-flash-stream-tv/hero.jpg"
+    },
+    {
+        id: "avis-abonnement-iptvplus",
+        title: "Avis Abonnement-IPTVPlus.fr : Copie Low-Cost ou Réelle Alternative ? Le Test Vérité",
+        excerpt: "Son nom joue sur la confusion avec 'iptv plus'. Après 3 semaines d'audit : infrastructure, sécurité, fluidité... Notre verdict sans concession.",
+        date: "29 Décembre 2025",
+        readTime: "18 min",
+        image: "/images/blog/avis-abonnement-iptvplus/hero.jpg"
+    },
+    {
+        id: "avis-iptvpluseplayer",
+        title: "Avis IPTVPlusePlayer.live : L'illusion parfaite ou le piège de 2025 ? Analyse Technique",
+        excerpt: "Application propriétaire douteuse, fausse 4K, permissions abusives... Après analyse APK et crash test, notre verdict technique sans appel.",
+        date: "29 Décembre 2025",
+        readTime: "20 min",
+        image: "/images/blog/avis-iptvpluseplayer/hero.jpg"
+    },
+    {
         id: "configurer-iptv-smarters-hisense-vidaa",
         title: "Tuto : Comment Configurer IPTV Smarters Pro sur TV Hisense (Vidaa) sans Bug ?",
         excerpt: "Le système Vidaa de Hisense est très fermé, mais nous avons deux solutions contournées : Web Player et applications natives.",
