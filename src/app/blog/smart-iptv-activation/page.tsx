@@ -2,6 +2,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navbar } from '@/components/layout/Navbar';
 import { Button } from '@/components/ui/Button';
 import styles from '../../styles/shared.module.css';
@@ -33,6 +34,18 @@ export default function SmartIptvActivationPage() {
                     <p className={styles.heroSubtitle}>
                         L'application Smart IPTV est gratuite pendant 7 jours. Passé ce délai, vous devez l'activer pour 5.49€ à vie. Voici la méthode exacte pour ne pas se tromper.
                     </p>
+
+                    {/* Hero Image */}
+                    <div style={{ marginTop: '2rem', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)' }}>
+                        <Image
+                            src="/images/blog/smart-iptv-activation/hero.jpg"
+                            alt="Activation Smart IPTV avec adresse MAC sur TV et laptop"
+                            width={1200}
+                            height={675}
+                            style={{ width: '100%', height: 'auto' }}
+                            priority
+                        />
+                    </div>
                 </div>
             </section>
 

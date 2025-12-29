@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import styles from "./article.module.css";
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function InstallerIPTVSmartTV() {
     return (
@@ -21,6 +22,18 @@ export default function InstallerIPTVSmartTV() {
                     <p className={styles.intro}>
                         Guide complet pour configurer votre service IPTV sur Samsung, LG, Android TV et autres Smart TV en quelques étapes simples.
                     </p>
+                </div>
+
+                {/* Hero Image */}
+                <div className={styles.heroImage}>
+                    <Image
+                        src="/images/blog/installer-iptv-smart-tv/hero.jpg"
+                        alt="Installation IPTV Smarters Pro sur Smart TV Samsung et LG"
+                        width={1200}
+                        height={675}
+                        style={{ width: '100%', height: 'auto' }}
+                        priority
+                    />
                 </div>
 
                 <div className={styles.content}>
