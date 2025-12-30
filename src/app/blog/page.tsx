@@ -6,6 +6,14 @@ import Link from 'next/link';
 
 const articles = [
     {
+        id: "avis-iptvplus-france",
+        title: "Avis iptvplus-france.com : Copie, Usurpation ou Service Légitime ? Le Test Vérité de Fin 2025",
+        excerpt: "Ce site joue sur la confusion avec les leaders du marché. Après 20 jours d'audit : infrastructure, sécurité, crash test en direct... Notre verdict sans appel.",
+        date: "30 Décembre 2025",
+        readTime: "22 min",
+        image: "/images/blog/avis-iptvplus-france/hero.jpg"
+    },
+    {
         id: "avis-flash-stream-tv",
         title: "Avis Flash-Stream TV : Arnaque ou Pépite en 2025 ? Le test complet",
         excerpt: "Promesses de 4K, catalogue infini, stabilité à toute épreuve... Après 15 jours de test intensif, découvrez notre verdict sans concession sur ce fournisseur IPTV.",
@@ -111,19 +119,19 @@ const articles = [
     },
     {
         id: "installer-iptv-smart-tv",
-        title: "Comment installer une application sur Smart TV",
-        excerpt: "Guide complet pour configurer des applications sur Samsung, LG, Android TV et autres Smart TV.",
+        title: "Comment installer IPTV sur Smart TV (Samsung, LG, Android TV)",
+        excerpt: "Guide complet pour configurer IPTV Smarters Pro sur Samsung, LG, Android TV et autres Smart TV en quelques étapes simples.",
         date: "18 Décembre 2024",
         readTime: "5 min",
-        image: "📺"
+        image: "/images/blog/installer-iptv-smart-tv/hero.jpg"
     },
     {
         id: "smart-iptv-activation",
         title: "Activer Smart IPTV : Le Guide Complet 2025",
-        excerpt: "Tutoriel étape par étape pour activer l'application Smart IPTV et y ajouter votre playlist.",
+        excerpt: "Tutoriel étape par étape pour activer l'application Smart IPTV (5.49€) et y ajouter votre playlist M3U.",
         date: "21 Décembre 2024",
         readTime: "4 min",
-        image: "🔓"
+        image: "/images/blog/smart-iptv-activation/hero.jpg"
     },
     {
         id: "activer-smart-iptv-samsung",
