@@ -3,8 +3,10 @@
 import { Navbar } from "@/components/layout/Navbar";
 import styles from "./blog.module.css";
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-const articles = [
+// Articles statiques existants (fallback)
+const staticArticles = [
     {
         id: "avis-iptvplus-france",
         title: "Avis iptvplus-france.com : Copie, Usurpation ou Service Légitime ? Le Test Vérité de Fin 2025",
@@ -191,7 +193,62 @@ const articles = [
     }
 ];
 
+interface DynamicArticle {
+    id: number;
+    slug: string;
+    title: string;
+    excerpt: string | null;
+    image_url: string | null;
+    read_time: string;
+    published_at: string;
+}
+
 export default function Blog() {
+    const [dynamicArticles, setDynamicArticles] = useState<DynamicArticle[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Fetch dynamic articles from API
+        fetch('/api/posts')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success && data.data.length > 0) {
+                    setDynamicArticles(data.data);
+                }
+            })
+            .catch(() => {
+                // Silently fail - use static articles as fallback
+            })
+            .finally(() => setLoading(false));
+    }, []);
+
+    // Format date from ISO to French format
+    const formatDate = (dateString: string) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('fr-FR', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+    };
+
+    // Combine dynamic articles first, then static (avoid duplicates)
+    const dynamicSlugs = new Set(dynamicArticles.map(a => a.slug));
+    const filteredStaticArticles = staticArticles.filter(a => !dynamicSlugs.has(a.id));
+
+    // Convert dynamic articles to display format
+    const formattedDynamicArticles = dynamicArticles.map(a => ({
+        id: a.slug,
+        title: a.title,
+        excerpt: a.excerpt || '',
+        date: formatDate(a.published_at),
+        readTime: a.read_time,
+        image: a.image_url || '📄'
+    }));
+
+    // All articles: dynamic first, then static
+    const allArticles = [...formattedDynamicArticles, ...filteredStaticArticles];
+
     return (
         <main className={styles.main}>
             <Navbar />
@@ -204,33 +261,40 @@ export default function Blog() {
                     </p>
                 </div>
 
-                <div className={styles.articlesGrid}>
-                    {articles.map((article) => (
-                        <Link
-                            href={`/blog/${article.id}`}
-                            key={article.id}
-                            className={styles.articleCard}
-                        >
-                            <div className={styles.articleImage}>
-                                {article.image.startsWith('/') ? (
-                                    <img src={article.image} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }} />
-                                ) : (
-                                    article.image
-                                )}
-                            </div>
-                            <div className={styles.articleContent}>
-                                <div className={styles.articleMeta}>
-                                    <span>{article.date}</span>
-                                    <span>•</span>
-                                    <span>{article.readTime} de lecture</span>
+                {loading ? (
+                    <div className={styles.loading}>
+                        <div className={styles.spinner}></div>
+                        <p>Chargement des articles...</p>
+                    </div>
+                ) : (
+                    <div className={styles.articlesGrid}>
+                        {allArticles.map((article) => (
+                            <Link
+                                href={`/blog/${article.id}`}
+                                key={article.id}
+                                className={styles.articleCard}
+                            >
+                                <div className={styles.articleImage}>
+                                    {article.image.startsWith('/') ? (
+                                        <img src={article.image} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }} />
+                                    ) : (
+                                        article.image
+                                    )}
                                 </div>
-                                <h2 className={styles.articleTitle}>{article.title}</h2>
-                                <p className={styles.articleExcerpt}>{article.excerpt}</p>
-                                <span className={styles.readMore}>Lire l'article →</span>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
+                                <div className={styles.articleContent}>
+                                    <div className={styles.articleMeta}>
+                                        <span>{article.date}</span>
+                                        <span>•</span>
+                                        <span>{article.readTime} de lecture</span>
+                                    </div>
+                                    <h2 className={styles.articleTitle}>{article.title}</h2>
+                                    <p className={styles.articleExcerpt}>{article.excerpt}</p>
+                                    <span className={styles.readMore}>Lire l'article →</span>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                )}
             </div>
         </main>
     );
