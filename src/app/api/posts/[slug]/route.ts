@@ -1,7 +1,7 @@
 /**
  * API Route: GET /api/posts/:slug
  * Returns a single published article by slug
- * Only returns the article if it's published AND the publish date has passed
+ * With caching for faster responses
  */
 
 import { NextResponse } from 'next/server';
@@ -31,6 +31,9 @@ async function ensureDbInitialized() {
     }
 }
 
+// Cache configuration - revalidate every 60 seconds
+export const revalidate = 60;
+
 export async function GET(request: Request, { params }: RouteParams) {
     try {
         await ensureDbInitialized();
@@ -54,10 +57,17 @@ export async function GET(request: Request, { params }: RouteParams) {
             );
         }
 
-        return NextResponse.json({
+        const response = NextResponse.json({
             success: true,
             data: article
         });
+
+        // Add cache headers for public requests
+        if (!isAdmin) {
+            response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
+        }
+
+        return response;
     } catch (error) {
         console.error('Error fetching article:', error);
         return NextResponse.json(

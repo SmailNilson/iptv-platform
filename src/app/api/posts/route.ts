@@ -1,7 +1,7 @@
 /**
  * API Route: GET /api/posts
  * Returns all published articles where published_at <= NOW()
- * This is the "auto-publication without cron jobs" endpoint
+ * With caching for faster responses
  */
 
 import { NextResponse } from 'next/server';
@@ -21,19 +21,26 @@ async function ensureDbInitialized() {
     }
 }
 
+// Cache configuration - revalidate every 60 seconds
+export const revalidate = 60;
+
 export async function GET() {
     try {
         await ensureDbInitialized();
 
         // Get only published articles where the publish date has passed
-        // This is where the "automatic publication" magic happens
         const articles = await getPublishedArticles();
 
-        return NextResponse.json({
+        const response = NextResponse.json({
             success: true,
             data: articles,
             count: articles.length
         });
+
+        // Add cache headers for CDN
+        response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
+
+        return response;
     } catch (error) {
         console.error('Error fetching articles:', error);
         return NextResponse.json(
