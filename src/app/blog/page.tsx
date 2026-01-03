@@ -1,10 +1,16 @@
-"use client";
+/**
+ * Blog page with Static Generation (SSG) + ISR for fast loading
+ * Pages are pre-rendered at build time and revalidated every 60 seconds
+ */
 
 import { Navbar } from "@/components/layout/Navbar";
 import styles from "./blog.module.css";
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { getPublishedArticles, initDatabase } from '@/lib/db';
+
+// Revalidate every 60 seconds
+export const revalidate = 60;
 
 interface Article {
     id: number;
@@ -16,35 +22,28 @@ interface Article {
     published_at: string;
 }
 
-export default function Blog() {
-    const [articles, setArticles] = useState<Article[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+async function getArticles(): Promise<Article[]> {
+    try {
+        await initDatabase();
+        const articles = await getPublishedArticles();
+        return articles as Article[];
+    } catch (error) {
+        console.error('Error fetching articles:', error);
+        return [];
+    }
+}
 
-    useEffect(() => {
-        fetch('/api/posts')
-            .then(res => res.json())
-            .then(data => {
-                if (data.success && data.data) {
-                    setArticles(data.data);
-                } else {
-                    setError('Erreur lors du chargement des articles');
-                }
-            })
-            .catch(() => {
-                setError('Erreur de connexion');
-            })
-            .finally(() => setLoading(false));
-    }, []);
+function formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('fr-FR', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+}
 
-    const formatDate = (dateString: string) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('fr-FR', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        });
-    };
+export default async function Blog() {
+    const articles = await getArticles();
 
     return (
         <main className={styles.main}>
@@ -57,25 +56,11 @@ export default function Blog() {
                         Guides et astuces pour profiter au maximum de votre abonnement IPTV
                     </p>
 
-                    {loading && (
-                        <div className={styles.loading}>
-                            <p>Chargement des articles...</p>
-                        </div>
-                    )}
-
-                    {error && (
-                        <div className={styles.error}>
-                            <p>{error}</p>
-                        </div>
-                    )}
-
-                    {!loading && !error && articles.length === 0 && (
+                    {articles.length === 0 ? (
                         <div className={styles.empty}>
                             <p>Aucun article disponible pour le moment.</p>
                         </div>
-                    )}
-
-                    {!loading && !error && articles.length > 0 && (
+                    ) : (
                         <div className={styles.articlesGrid}>
                             {articles.map((article) => (
                                 <Link
