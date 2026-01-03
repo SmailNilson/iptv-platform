@@ -13,7 +13,7 @@ const staticArticles = [
         excerpt: "Ce site joue sur la confusion avec les leaders du marché. Après 20 jours d'audit : infrastructure, sécurité, crash test en direct... Notre verdict sans appel.",
         date: "30 Décembre 2025",
         readTime: "22 min",
-        image: "/images/blog/avis-iptvplus-france/hero.jpg"
+        image: "/images/blog/avis-iptvplus-france/hero.webp"
     },
     {
         id: "avis-flash-stream-tv",
@@ -21,7 +21,7 @@ const staticArticles = [
         excerpt: "Promesses de 4K, catalogue infini, stabilité à toute épreuve... Après 15 jours de test intensif, découvrez notre verdict sans concession sur ce fournisseur IPTV.",
         date: "29 Décembre 2025",
         readTime: "15 min",
-        image: "/images/blog/avis-flash-stream-tv/hero.jpg"
+        image: "/images/blog/avis-flash-stream-tv/hero.webp"
     },
     {
         id: "avis-abonnement-iptvplus",
@@ -29,7 +29,7 @@ const staticArticles = [
         excerpt: "Son nom joue sur la confusion avec 'iptv plus'. Après 3 semaines d'audit : infrastructure, sécurité, fluidité... Notre verdict sans concession.",
         date: "29 Décembre 2025",
         readTime: "18 min",
-        image: "/images/blog/avis-abonnement-iptvplus/hero.jpg"
+        image: "/images/blog/avis-abonnement-iptvplus/hero.webp"
     },
     {
         id: "avis-iptvpluseplayer",
@@ -37,7 +37,7 @@ const staticArticles = [
         excerpt: "Application propriétaire douteuse, fausse 4K, permissions abusives... Après analyse APK et crash test, notre verdict technique sans appel.",
         date: "29 Décembre 2025",
         readTime: "20 min",
-        image: "/images/blog/avis-iptvpluseplayer/hero.jpg"
+        image: "/images/blog/avis-iptvpluseplayer/hero.webp"
     },
     {
         id: "configurer-iptv-smarters-hisense-vidaa",
@@ -45,7 +45,7 @@ const staticArticles = [
         excerpt: "Le système Vidaa de Hisense est très fermé, mais nous avons deux solutions contournées : Web Player et applications natives.",
         date: "26 Décembre 2024",
         readTime: "8 min",
-        image: "/images/blog/configurer-iptv-smarters-hisense-vidaa/hero.png"
+        image: "/images/blog/configurer-iptv-smarters-hisense-vidaa/hero.webp"
     },
     {
         id: "test-iptv-24h-whatsapp",
@@ -53,7 +53,7 @@ const staticArticles = [
         excerpt: "Arrêtez de remplir des formulaires interminables. Recevez votre test IPTV 24h gratuit directement sur WhatsApp en quelques minutes.",
         date: "26 Décembre 2024",
         readTime: "5 min",
-        image: "/images/blog/test-iptv-24h-whatsapp/hero.png"
+        image: "/images/blog/test-iptv-24h-whatsapp/hero.webp"
     },
     {
         id: "reglage-tivimate-eviter-buffering",
@@ -61,7 +61,7 @@ const staticArticles = [
         excerpt: "Découvrez les 3 réglages anti-lag secrets de TiviMate : Buffer Size, Video Decoder et User-Agent pour une expérience sans coupure.",
         date: "26 Décembre 2024",
         readTime: "7 min",
-        image: "/images/blog/reglage-tivimate-eviter-buffering/hero.png"
+        image: "/images/blog/reglage-tivimate-eviter-buffering/hero.webp"
     },
     {
         id: "meilleur-abonnement-formuler-z11",
@@ -69,7 +69,7 @@ const staticArticles = [
         excerpt: "Votre Formuler Z11 mérite le carburant Premium. Découvrez la configuration Portal idéale pour MyTVOnline 3.",
         date: "26 Décembre 2024",
         readTime: "6 min",
-        image: "/images/blog/meilleur-abonnement-formuler-z11/hero.png"
+        image: "/images/blog/meilleur-abonnement-formuler-z11/hero.webp"
     },
     {
         id: "tuto-iptv-ps5-navigateur",
@@ -77,7 +77,7 @@ const staticArticles = [
         excerpt: "La PS5 n'a pas d'app IPTV, mais il existe une astuce. Découvrez le navigateur caché et notre Web Player compatible.",
         date: "26 Décembre 2024",
         readTime: "6 min",
-        image: "/images/blog/tuto-iptv-ps5-navigateur/hero.png"
+        image: "/images/blog/tuto-iptv-ps5-navigateur/hero.webp"
     },
     {
         id: "activation-renouvellement-ibo-player",
@@ -85,7 +85,7 @@ const staticArticles = [
         excerpt: "Ne payez pas deux fois ! Pack Duo : Activation IBO Player OFFERTE + Abonnement Premium 12 mois.",
         date: "26 Décembre 2024",
         readTime: "5 min",
-        image: "/images/blog/activation-renouvellement-ibo-player/hero.png"
+        image: "/images/blog/activation-renouvellement-ibo-player/hero.webp"
     },
     {
         id: "iptv-premium-4k-2025",
@@ -93,7 +93,7 @@ const staticArticles = [
         excerpt: "Il est 21h45, c'est le match de l'année, et... l'image se fige. Découvrez ce qui différencie un vrai service Premium 4K d'une pâle copie.",
         date: "25 Décembre 2024",
         readTime: "8 min",
-        image: "/images/blog/iptv-premium-4k-2025/hero.png"
+        image: "/images/blog/iptv-premium-4k-2025/hero.webp"
     },
     {
         id: "abonnement-iptv-premium-2025",
@@ -101,7 +101,7 @@ const staticArticles = [
         excerpt: "Découvrez comment distinguer un vrai abonnement IPTV Premium d'une offre bas de gamme. Stabilité 4K, anti-freeze et support réactif.",
         date: "25 Décembre 2024",
         readTime: "8 min",
-        image: "/images/blog/iptv-premium-4k.jpg"
+        image: "/images/blog/iptv-premium-4k.webp"
     },
     {
         id: "alternative-premium-iptv",
@@ -109,7 +109,7 @@ const staticArticles = [
         excerpt: "Vous cherchez à annuler votre abonnement ou déçu des coupures ? Découvrez l'alternative fiable avec support humain WhatsApp.",
         date: "25 Décembre 2024",
         readTime: "6 min",
-        image: "/images/blog/support-whatsapp.jpg"
+        image: "/images/blog/support-whatsapp.webp"
     },
     {
         id: "tuto-smarters-pro-iptv",
@@ -117,7 +117,7 @@ const staticArticles = [
         excerpt: "Guide technique : Comment configurer IPTV Smarters Pro avec un abonnement premium stable. Obtenez vos codes Xtream valides.",
         date: "25 Décembre 2024",
         readTime: "5 min",
-        image: "/images/blog/tuto-smarters-pro.jpg"
+        image: "/images/blog/tuto-smarters-pro.webp"
     },
     {
         id: "installer-iptv-smart-tv",
@@ -125,7 +125,7 @@ const staticArticles = [
         excerpt: "Guide complet pour configurer IPTV Smarters Pro sur Samsung, LG, Android TV et autres Smart TV en quelques étapes simples.",
         date: "18 Décembre 2024",
         readTime: "5 min",
-        image: "/images/blog/installer-iptv-smart-tv/hero.jpg"
+        image: "/images/blog/installer-iptv-smart-tv/hero.webp"
     },
     {
         id: "smart-iptv-activation",
@@ -133,7 +133,7 @@ const staticArticles = [
         excerpt: "Tutoriel étape par étape pour activer l'application Smart IPTV (5.49€) et y ajouter votre playlist M3U.",
         date: "21 Décembre 2024",
         readTime: "4 min",
-        image: "/images/blog/smart-iptv-activation/hero.jpg"
+        image: "/images/blog/smart-iptv-activation/hero.webp"
     },
     {
         id: "activer-smart-iptv-samsung",
@@ -181,7 +181,7 @@ const staticArticles = [
         excerpt: "Transformez votre téléviseur en centre de divertissement ultime en moins de 10 minutes avec SmartOne IPTV.",
         date: "25 Décembre 2024",
         readTime: "10 min",
-        image: "/images/blog/smartone-iptv/ecosystem.jpg"
+        image: "/images/blog/smartone-iptv/ecosystem.webp"
     },
     {
         id: "can-2025-regarder-matchs",

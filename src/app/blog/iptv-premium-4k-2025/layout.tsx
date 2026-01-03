@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         authors: ["IPTV Plus France"],
         images: [
             {
-                url: "/images/blog/iptv-premium-4k-2025/hero.png",
+                url: "/images/blog/iptv-premium-4k-2025/hero.webp",
                 width: 1200,
                 height: 675,
                 alt: "IPTV Premium 4K - Match en qualité cristalline"
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "IPTV Premium 4K 2025 : Le Guide Définitif",
         description: "Découvrez comment profiter de la vraie 4K sans buffering. Test gratuit 24h inclus.",
-        images: ["/images/blog/iptv-premium-4k-2025/hero.png"]
+        images: ["/images/blog/iptv-premium-4k-2025/hero.webp"]
     },
     alternates: {
         canonical: "https://iptvplusfrance.com/blog/iptv-premium-4k-2025"

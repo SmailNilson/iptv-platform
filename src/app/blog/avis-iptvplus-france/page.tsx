@@ -27,7 +27,7 @@ export default function AvisIPTVPlusFrance() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/avis-iptvplus-france/hero.jpg"
+                        src="/images/blog/avis-iptvplus-france/hero.webp"
                         alt="Bureau encombré avec laptop et TV montrant buffering pendant un match - iptvplus-france.com test"
                         width={1200}
                         height={675}

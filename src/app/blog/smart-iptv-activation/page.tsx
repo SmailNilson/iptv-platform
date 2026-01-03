@@ -38,7 +38,7 @@ export default function SmartIptvActivationPage() {
                     {/* Hero Image */}
                     <div style={{ marginTop: '2rem', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)' }}>
                         <Image
-                            src="/images/blog/smart-iptv-activation/hero.jpg"
+                            src="/images/blog/smart-iptv-activation/hero.webp"
                             alt="Activation Smart IPTV avec adresse MAC sur TV et laptop"
                             width={1200}
                             height={675}

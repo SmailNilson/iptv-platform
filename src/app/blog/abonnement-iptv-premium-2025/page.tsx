@@ -28,7 +28,7 @@ export default function AbonnementIPTVPremium2025Page() {
                     <article className={styles.prose} style={{ background: 'var(--card-bg)', padding: '3rem', borderRadius: '1rem', border: '1px solid var(--glass-border)', maxWidth: '800px', margin: '0 auto' }}>
 
                         <img
-                            src="/images/blog/iptv-premium-4k.jpg"
+                            src="/images/blog/iptv-premium-4k.webp"
                             alt="Streaming football 4K sur grand écran"
                             style={{ width: '100%', borderRadius: '12px', marginBottom: '2rem' }}
                         />

@@ -28,7 +28,7 @@ export default function AlternativePremiumIPTVPage() {
                     <article className={styles.prose} style={{ background: 'var(--card-bg)', padding: '3rem', borderRadius: '1rem', border: '1px solid var(--glass-border)', maxWidth: '800px', margin: '0 auto' }}>
 
                         <img
-                            src="/images/blog/support-whatsapp.jpg"
+                            src="/images/blog/support-whatsapp.webp"
                             alt="Support WhatsApp en direct"
                             style={{ width: '100%', borderRadius: '12px', marginBottom: '2rem' }}
                         />

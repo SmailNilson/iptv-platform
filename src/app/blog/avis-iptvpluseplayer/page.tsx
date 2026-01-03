@@ -27,7 +27,7 @@ export default function AvisIPTVPlusePlayer() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/avis-iptvpluseplayer/hero.jpg"
+                        src="/images/blog/avis-iptvpluseplayer/hero.webp"
                         alt="Application IPTV Pluse Player avec alerte malware - Logiciel dangereux détecté"
                         width={1200}
                         height={675}
@@ -322,7 +322,7 @@ export default function AvisIPTVPlusePlayer() {
                         {/* Comparison Image */}
                         <div className={styles.imageContainer}>
                             <Image
-                                src="/images/blog/avis-iptvpluseplayer/comparison.jpg"
+                                src="/images/blog/avis-iptvpluseplayer/comparison.webp"
                                 alt="Comparaison 2025 Technology - Competitor (serveurs en feu) vs IPTV Plus France (infrastructure moderne)"
                                 width={1200}
                                 height={675}

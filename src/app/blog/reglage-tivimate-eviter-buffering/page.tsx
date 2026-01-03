@@ -28,7 +28,7 @@ export default function ReglageTivimateBuffering() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/reglage-tivimate-eviter-buffering/hero.png"
+                        src="/images/blog/reglage-tivimate-eviter-buffering/hero.webp"
                         alt="TiviMate Buffering - Résoudre les problèmes de chargement"
                         width={1200}
                         height={675}

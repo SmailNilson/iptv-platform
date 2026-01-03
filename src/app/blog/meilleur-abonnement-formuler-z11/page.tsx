@@ -28,7 +28,7 @@ export default function AbonnementFormulerZ11() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/meilleur-abonnement-formuler-z11/hero.png"
+                        src="/images/blog/meilleur-abonnement-formuler-z11/hero.webp"
                         alt="Formuler Z11 Pro Max - Abonnement Premium"
                         width={1200}
                         height={675}

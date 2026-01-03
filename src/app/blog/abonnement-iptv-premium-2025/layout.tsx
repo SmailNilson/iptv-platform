@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Abonnement IPTV Premium 2025 : Reconnaître la vraie qualité 4K",
         description: "Découvrez comment distinguer un vrai abonnement IPTV Premium d'une offre bas de gamme.",
-        images: ["/images/blog/iptv-premium-4k.jpg"],
+        images: ["/images/blog/iptv-premium-4k.webp"],
         type: "article",
         locale: "fr_FR",
     },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Abonnement IPTV Premium 2025 : Reconnaître la vraie qualité 4K",
         description: "Découvrez comment distinguer un vrai abonnement IPTV Premium d'une offre bas de gamme.",
-        images: ["/images/blog/iptv-premium-4k.jpg"],
+        images: ["/images/blog/iptv-premium-4k.webp"],
     },
     robots: {
         index: true,

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         authors: ["IPTV Plus France"],
         images: [
             {
-                url: "/images/blog/smartone-iptv/ecosystem.jpg",
+                url: "/images/blog/smartone-iptv/ecosystem.webp",
                 width: 1200,
                 height: 675,
                 alt: "SmartOne IPTV sur tous les appareils"
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "SmartOne IPTV : Guide Complet 2025",
         description: "Installez SmartOne IPTV sur Smart TV, Fire Stick, Android TV en 10 minutes.",
-        images: ["/images/blog/smartone-iptv/ecosystem.jpg"]
+        images: ["/images/blog/smartone-iptv/ecosystem.webp"]
     },
     alternates: {
         canonical: "https://iptvplusfrance.com/blog/smartone-iptv"

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Déçu de votre fournisseur IPTV ? L'alternative fiable",
         description: "Découvrez l'alternative fiable avec support humain WhatsApp 24/7.",
-        images: ["/images/blog/support-whatsapp.jpg"],
+        images: ["/images/blog/support-whatsapp.webp"],
         type: "article",
         locale: "fr_FR",
     },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Déçu de votre fournisseur IPTV ? L'alternative fiable",
         description: "Découvrez l'alternative fiable avec support humain WhatsApp 24/7.",
-        images: ["/images/blog/support-whatsapp.jpg"],
+        images: ["/images/blog/support-whatsapp.webp"],
     },
     robots: {
         index: true,

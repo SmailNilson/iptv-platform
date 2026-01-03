@@ -28,7 +28,7 @@ export default function TestIPTV24hWhatsApp() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/test-iptv-24h-whatsapp/hero.png"
+                        src="/images/blog/test-iptv-24h-whatsapp/hero.webp"
                         alt="Test IPTV 24h via WhatsApp - Accès instantané"
                         width={1200}
                         height={675}

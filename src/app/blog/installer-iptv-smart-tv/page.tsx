@@ -27,7 +27,7 @@ export default function InstallerIPTVSmartTV() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/installer-iptv-smart-tv/hero.jpg"
+                        src="/images/blog/installer-iptv-smart-tv/hero.webp"
                         alt="Installation IPTV Smarters Pro sur Smart TV Samsung et LG"
                         width={1200}
                         height={675}

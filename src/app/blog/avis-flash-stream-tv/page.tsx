@@ -27,7 +27,7 @@ export default function AvisFlashStreamTV() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/avis-flash-stream-tv/hero.jpg"
+                        src="/images/blog/avis-flash-stream-tv/hero.webp"
                         alt="Comparaison service IPTV arnaque vs premium - Flash-Stream TV test"
                         width={1200}
                         height={675}

@@ -27,7 +27,7 @@ export default function IPTVPremium4K2025() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/iptv-premium-4k-2025/hero.png"
+                        src="/images/blog/iptv-premium-4k-2025/hero.webp"
                         alt="IPTV 4K Premium - Match de football en qualité cristalline"
                         width={1200}
                         height={675}
@@ -66,7 +66,7 @@ export default function IPTVPremium4K2025() {
                         {/* Comparaison Buffering vs 4K Image */}
                         <div className={styles.imageContainer}>
                             <Image
-                                src="/images/blog/iptv-premium-4k-2025/servers.jpg"
+                                src="/images/blog/iptv-premium-4k-2025/servers.webp"
                                 alt="Comparaison IPTV bas de gamme vs IPTV Premium 4K - Buffering vs Fluidité"
                                 width={800}
                                 height={450}
@@ -108,7 +108,7 @@ export default function IPTVPremium4K2025() {
                         {/* Smarters Setup Image */}
                         <div className={styles.imageContainer}>
                             <Image
-                                src="/images/blog/iptv-premium-4k-2025/smarters-setup.jpg"
+                                src="/images/blog/iptv-premium-4k-2025/smarters-setup.webp"
                                 alt="IPTV Smarters Pro sur smartphone et Smart TV - Configuration facile"
                                 width={800}
                                 height={450}

@@ -28,7 +28,7 @@ export default function ActivationIBOPlayer() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/activation-renouvellement-ibo-player/hero.png"
+                        src="/images/blog/activation-renouvellement-ibo-player/hero.webp"
                         alt="IBO Player Activation - Pack tout-en-un"
                         width={1200}
                         height={675}

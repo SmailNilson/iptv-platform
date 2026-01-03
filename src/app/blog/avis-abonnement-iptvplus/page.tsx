@@ -27,7 +27,7 @@ export default function AvisAbonnementIPTVPlus() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/avis-abonnement-iptvplus/hero.jpg"
+                        src="/images/blog/avis-abonnement-iptvplus/hero.webp"
                         alt="Utilisateur frustré face à une erreur de connexion sur Abonnement-IPTVPlus"
                         width={1200}
                         height={675}
@@ -302,7 +302,7 @@ export default function AvisAbonnementIPTVPlus() {
                         {/* Comparison Image */}
                         <div className={styles.imageContainer}>
                             <Image
-                                src="/images/blog/avis-abonnement-iptvplus/comparison.jpg"
+                                src="/images/blog/avis-abonnement-iptvplus/comparison.webp"
                                 alt="Comparaison entre Cheap Reseller et IPTV Plus France - 8K Premium"
                                 width={1200}
                                 height={675}

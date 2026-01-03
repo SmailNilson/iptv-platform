@@ -28,7 +28,7 @@ export default function TutoIPTVPS5() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/tuto-iptv-ps5-navigateur/hero.png"
+                        src="/images/blog/tuto-iptv-ps5-navigateur/hero.webp"
                         alt="IPTV sur PS5 - Tutoriel complet"
                         width={1200}
                         height={675}

@@ -27,7 +27,7 @@ export default function IPTVSmartersHisenseVidaa() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/configurer-iptv-smarters-hisense-vidaa/hero.png"
+                        src="/images/blog/configurer-iptv-smarters-hisense-vidaa/hero.webp"
                         alt="TV Hisense avec IPTV Smarters Pro - Configuration Vidaa"
                         width={1200}
                         height={675}

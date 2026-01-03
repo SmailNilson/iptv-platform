@@ -27,7 +27,7 @@ export default function SmartOneIPTVGuide() {
                 {/* Hero Image */}
                 <div className={styles.heroImage}>
                     <Image
-                        src="/images/blog/smartone-iptv/living-room.jpg"
+                        src="/images/blog/smartone-iptv/living-room.webp"
                         alt="SmartOne IPTV sur grand écran dans un salon moderne avec éclairage ambiant"
                         width={1200}
                         height={675}
@@ -87,7 +87,7 @@ export default function SmartOneIPTVGuide() {
                         {/* Image 1 - Ecosystem */}
                         <div className={styles.imageContainer}>
                             <Image
-                                src="/images/blog/smartone-iptv/ecosystem.jpg"
+                                src="/images/blog/smartone-iptv/ecosystem.webp"
                                 alt="SmartOne IPTV sur Smart TV, FireStick, Android TV Box et smartphone"
                                 width={800}
                                 height={450}
@@ -171,7 +171,7 @@ export default function SmartOneIPTVGuide() {
                         {/* Image 2 - App Store */}
                         <div className={styles.imageContainer}>
                             <Image
-                                src="/images/blog/smartone-iptv/app-store.jpg"
+                                src="/images/blog/smartone-iptv/app-store.webp"
                                 alt="Téléchargement de l'application IPTV depuis l'App Store de la Smart TV"
                                 width={800}
                                 height={450}
@@ -234,7 +234,7 @@ export default function SmartOneIPTVGuide() {
                         {/* Image 3 - Living Room */}
                         <div className={styles.imageContainer}>
                             <Image
-                                src="/images/blog/smartone-iptv/living-room.jpg"
+                                src="/images/blog/smartone-iptv/living-room.webp"
                                 alt="SmartOne IPTV sur grand écran dans un salon moderne avec éclairage ambiant"
                                 width={800}
                                 height={450}

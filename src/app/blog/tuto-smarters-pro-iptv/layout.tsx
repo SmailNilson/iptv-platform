@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Tuto : Configurer IPTV Smarters Pro - Guide Complet 2025",
         description: "Guide technique pour configurer IPTV Smarters Pro avec un abonnement premium stable.",
-        images: ["/images/blog/tuto-smarters-pro.jpg"],
+        images: ["/images/blog/tuto-smarters-pro.webp"],
         type: "article",
         locale: "fr_FR",
     },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Tuto : Configurer IPTV Smarters Pro - Guide Complet 2025",
         description: "Guide technique pour configurer IPTV Smarters Pro avec un abonnement premium stable.",
-        images: ["/images/blog/tuto-smarters-pro.jpg"],
+        images: ["/images/blog/tuto-smarters-pro.webp"],
     },
     robots: {
         index: true,
