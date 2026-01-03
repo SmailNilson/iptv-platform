@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
                 title: `${article.title} - IPTV Plus France`,
                 description: article.meta_description || article.excerpt || "",
                 type: "article",
-                url: `https://iptvplusfrance.com/blog-dynamic/${slug}`,
+                url: `https://iptvplusfrance.com/blog/${slug}`,
                 images: article.image_url ? [{ url: article.image_url }] : [],
                 publishedTime: article.published_at?.toString(),
             },

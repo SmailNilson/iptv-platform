@@ -65,7 +65,7 @@ export default async function Blog() {
                             {articles.map((article) => (
                                 <Link
                                     key={article.id}
-                                    href={`/blog-dynamic/${article.slug}`}
+                                    href={`/blog/${article.slug}`}
                                     className={styles.articleCard}
                                 >
                                     <div className={styles.articleImage}>
