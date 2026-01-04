@@ -75,6 +75,8 @@ export default async function Blog() {
                                                 alt={article.title}
                                                 width={400}
                                                 height={225}
+                                                loading="lazy"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                                                 style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
                                             />
                                         ) : (

@@ -160,6 +160,7 @@ export default async function BlogDynamicPostPage({ params }: PageProps) {
                             alt={article.title}
                             width={900}
                             height={500}
+                            sizes="(max-width: 768px) 100vw, 900px"
                             style={{
                                 width: "100%",
                                 height: "auto",
