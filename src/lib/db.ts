@@ -46,11 +46,12 @@ export interface CreateArticleInput {
 // ==========================================
 
 /**
- * Initialize the articles table (run once on startup)
+ * Initialize the database tables (run once on startup)
  */
 export async function initDatabase(): Promise<void> {
     const client = await pool.connect();
     try {
+        // Create articles table
         await client.query(`
       CREATE TABLE IF NOT EXISTS articles (
         id SERIAL PRIMARY KEY,
@@ -68,11 +69,32 @@ export async function initDatabase(): Promise<void> {
       )
     `);
 
-        // Create indexes if they don't exist
+        // Create indexes for articles
         await client.query(`CREATE INDEX IF NOT EXISTS idx_articles_slug ON articles(slug)`);
         await client.query(`CREATE INDEX IF NOT EXISTS idx_articles_status_published ON articles(status, published_at)`);
 
-        console.log('✅ Database initialized successfully');
+        // Create contacts table
+        await client.query(`
+            CREATE TABLE IF NOT EXISTS contacts (
+                id SERIAL PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                email VARCHAR(255),
+                phone VARCHAR(50),
+                source VARCHAR(20) NOT NULL CHECK (source IN ('email', 'whatsapp', 'form')),
+                message TEXT,
+                status VARCHAR(20) DEFAULT 'new' CHECK (status IN ('new', 'contacted', 'converted', 'lost')),
+                created_at TIMESTAMP DEFAULT NOW(),
+                updated_at TIMESTAMP DEFAULT NOW()
+            )
+        `);
+
+        // Create indexes for contacts
+        await client.query(`CREATE INDEX IF NOT EXISTS idx_contacts_email ON contacts(email)`);
+        await client.query(`CREATE INDEX IF NOT EXISTS idx_contacts_phone ON contacts(phone)`);
+        await client.query(`CREATE INDEX IF NOT EXISTS idx_contacts_status ON contacts(status)`);
+        await client.query(`CREATE INDEX IF NOT EXISTS idx_contacts_created ON contacts(created_at DESC)`);
+
+        console.log('✅ Database initialized successfully (articles + contacts)');
     } catch (error) {
         console.error('Database initialization error:', error);
         throw error;
@@ -232,6 +254,150 @@ export async function upsertArticle(input: CreateArticleInput): Promise<Article>
     } else {
         return createArticle(input);
     }
+}
+
+// ==========================================
+// CONTACTS / CRM
+// ==========================================
+
+export interface Contact {
+    id: number;
+    name: string;
+    email: string | null;
+    phone: string | null;
+    source: 'email' | 'whatsapp' | 'form';
+    message: string | null;
+    status: 'new' | 'contacted' | 'converted' | 'lost';
+    created_at: string;
+    updated_at: string;
+}
+
+export interface CreateContactInput {
+    name: string;
+    email?: string;
+    phone?: string;
+    source: 'email' | 'whatsapp' | 'form';
+    message?: string;
+    status?: 'new' | 'contacted' | 'converted' | 'lost';
+}
+
+/**
+ * Initialize contacts table
+ */
+export async function initContactsTable(): Promise<void> {
+    const client = await pool.connect();
+    try {
+        await client.query(`
+            CREATE TABLE IF NOT EXISTS contacts (
+                id SERIAL PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                email VARCHAR(255),
+                phone VARCHAR(50),
+                source VARCHAR(20) NOT NULL CHECK (source IN ('email', 'whatsapp', 'form')),
+                message TEXT,
+                status VARCHAR(20) DEFAULT 'new' CHECK (status IN ('new', 'contacted', 'converted', 'lost')),
+                created_at TIMESTAMP DEFAULT NOW(),
+                updated_at TIMESTAMP DEFAULT NOW()
+            )
+        `);
+
+        // Create indexes
+        await client.query(`CREATE INDEX IF NOT EXISTS idx_contacts_email ON contacts(email)`);
+        await client.query(`CREATE INDEX IF NOT EXISTS idx_contacts_phone ON contacts(phone)`);
+        await client.query(`CREATE INDEX IF NOT EXISTS idx_contacts_status ON contacts(status)`);
+        await client.query(`CREATE INDEX IF NOT EXISTS idx_contacts_created ON contacts(created_at DESC)`);
+
+        console.log('✅ Contacts table initialized successfully');
+    } catch (error) {
+        console.error('Contacts table initialization error:', error);
+        throw error;
+    } finally {
+        client.release();
+    }
+}
+
+/**
+ * Create a new contact
+ */
+export async function createContact(input: CreateContactInput): Promise<Contact> {
+    const result = await pool.query(`
+        INSERT INTO contacts (name, email, phone, source, message, status)
+        VALUES ($1, $2, $3, $4, $5, $6)
+        RETURNING *
+    `, [
+        input.name,
+        input.email || null,
+        input.phone || null,
+        input.source,
+        input.message || null,
+        input.status || 'new'
+    ]);
+
+    return result.rows[0] as Contact;
+}
+
+/**
+ * Get all contacts
+ */
+export async function getAllContacts(): Promise<Contact[]> {
+    const result = await pool.query(`
+        SELECT * FROM contacts 
+        ORDER BY created_at DESC
+    `);
+    return result.rows as Contact[];
+}
+
+/**
+ * Get contacts by status
+ */
+export async function getContactsByStatus(status: string): Promise<Contact[]> {
+    const result = await pool.query(`
+        SELECT * FROM contacts 
+        WHERE status = $1
+        ORDER BY created_at DESC
+    `, [status]);
+    return result.rows as Contact[];
+}
+
+/**
+ * Update contact status
+ */
+export async function updateContactStatus(id: number, status: string): Promise<Contact | undefined> {
+    const result = await pool.query(`
+        UPDATE contacts 
+        SET status = $1, updated_at = NOW()
+        WHERE id = $2
+        RETURNING *
+    `, [status, id]);
+
+    return result.rows[0] as Contact | undefined;
+}
+
+/**
+ * Check if contact exists by email or phone
+ */
+export async function contactExists(email?: string, phone?: string): Promise<boolean> {
+    if (!email && !phone) return false;
+
+    const conditions = [];
+    const params = [];
+    let paramIndex = 1;
+
+    if (email) {
+        conditions.push(`email = $${paramIndex}`);
+        params.push(email);
+        paramIndex++;
+    }
+
+    if (phone) {
+        conditions.push(`phone = $${paramIndex}`);
+        params.push(phone);
+    }
+
+    const query = `SELECT 1 FROM contacts WHERE ${conditions.join(' OR ')} LIMIT 1`;
+    const result = await pool.query(query, params);
+
+    return result.rows.length > 0;
 }
 
 export { pool };

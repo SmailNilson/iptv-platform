@@ -1,0 +1,129 @@
+.main {
+    background-color: #0D1117;
+    min-height: 100vh;
+    color: #ffffff;
+    padding-bottom: 4rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statValue {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #7C3AFA;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filters button {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filters button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.activeFilter {
+    background: linear-gradient(135deg, #7C3AFA 0%, #3B82F6 100%) !important;
+    border-color: #7C3AFA !important;
+}
+
+.tableContainer {
+    overflow-x: auto;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #a78bfa;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.name {
+    font-weight: 600;
+    color: #fff;
+}
+
+.message {
+    max-width: 300px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.date {
+    color: #888;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+}
