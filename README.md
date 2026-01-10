@@ -27,29 +27,36 @@ npm start
 
 ## 🗄️ Base de Données
 
-Cette application utilise **SQLite** comme base de données locale via `better-sqlite3`.
+Cette application utilise des **fichiers JSON statiques** pour stocker les articles.
 
 ### Caractéristiques
-- ✅ **Aucune configuration requise** - La base de données est créée automatiquement
-- ✅ **Stockage local** - Toutes les données dans `data/iptv-platform.db`
-- ✅ **Mode WAL** - Performances optimales avec Write-Ahead Logging
-- ✅ **Gestion des articles** - Système de blog intégré
-- ✅ **CRM intégré** - Gestion des contacts et leads
+- ✅ **Simple et rapide** - Fichiers JSON statiques
+- ✅ **Parfait pour Vercel** - Déploiement instantané
+- ✅ **16 articles** - Prêts dans `src/data/articles.json`
+- ✅ **Facile à éditer** - Modifiez directement le JSON
 
-### Commandes Utiles
+### Gestion des Articles
 
-```bash
-# Vérifier la structure de la base de données
-npm run db:verify
+Pour ajouter un nouvel article, éditez `src/data/articles.json` :
 
-# Importer des articles
-npm run import-articles
+```json
+{
+  "title": "Titre de votre article",
+  "slug": "titre-de-votre-article",
+  "content": "<h2>Introduction</h2><p>Contenu...</p>",
+  "excerpt": "Résumé court",
+  "image_url": "/images/blog/mon-article/hero.webp",
+  "meta_description": "Description SEO",
+  "read_time": "5 min",
+  "status": "published",
+  "published_at": "2026-01-10T00:00:00"
+}
 ```
 
 ### Documentation Complète
-- 📖 **[Guide de la Base de Données](DATABASE_GUIDE.md)** - Guide complet d'utilisation
-- 🔄 **[Migration SQLite](MIGRATION_SQLITE.md)** - Documentation de la migration depuis Supabase
-- ✅ **[Succès de la Migration](MIGRATION_SUCCESS.md)** - Résumé de la migration réussie
+- 📖 **[Guide de Déploiement](DEPLOYMENT_GUIDE.md)** - Guide complet Vercel
+- ✅ **[Résumé Déploiement](DEPLOY_READY.md)** - Checklist et statut
+
 
 ## 📁 Structure du Projet
 
