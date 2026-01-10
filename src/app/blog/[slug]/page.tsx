@@ -22,7 +22,7 @@ export async function generateStaticParams() {
     try {
         await initDatabase();
         const articles = await getPublishedArticles();
-        return articles.map((article) => ({
+        return articles.map((article: { slug: string }) => ({
             slug: article.slug,
         }));
     } catch (error) {
