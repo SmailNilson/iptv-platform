@@ -1,19 +1,8 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": ".next",
-    "devCommand": "npm run dev",
-    "installCommand": "npm install",
-    "framework": "nextjs",
     "env": {
         "NEXT_PUBLIC_USE_JSON_DB": "true"
     },
     "regions": [
         "cdg1"
-    ],
-    "functions": {
-        "api/**/*.ts": {
-            "memory": 1024,
-            "maxDuration": 10
-        }
-    }
+    ]
 }
