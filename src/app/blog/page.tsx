@@ -8,6 +8,39 @@ import styles from "./blog.module.css";
 import Link from 'next/link';
 import Image from 'next/image';
 import { getPublishedArticles, initDatabase } from '@/lib/db';
+import type { Metadata } from 'next';
+
+// SEO Metadata
+export const metadata: Metadata = {
+    title: 'Blog IPTV - Guides et Astuces | IPTV Plus France',
+    description: 'Découvrez nos guides complets, tutoriels et astuces pour profiter au maximum de votre abonnement IPTV Premium. Installation, configuration et optimisation.',
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        }
+    },
+    alternates: {
+        canonical: 'https://iptvplusfrance.com/blog'
+    },
+    openGraph: {
+        title: 'Blog IPTV - Guides et Astuces | IPTV Plus France',
+        description: 'Découvrez nos guides complets, tutoriels et astuces pour profiter au maximum de votre abonnement IPTV Premium.',
+        url: 'https://iptvplusfrance.com/blog',
+        type: 'website',
+        siteName: 'IPTV Plus France',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Blog IPTV - Guides et Astuces | IPTV Plus France',
+        description: 'Découvrez nos guides complets, tutoriels et astuces pour profiter au maximum de votre abonnement IPTV Premium.',
+    }
+};
 
 // Revalidate every 60 seconds
 export const revalidate = 60;

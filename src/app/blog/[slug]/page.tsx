@@ -49,6 +49,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         return {
             title: `${article.title} - IPTV Plus France`,
             description: article.meta_description || article.excerpt || "",
+            robots: {
+                index: true,
+                follow: true,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': -1,
+                    'max-image-preview': 'large',
+                    'max-snippet': -1,
+                }
+            },
+            alternates: {
+                canonical: `https://iptvplusfrance.com/blog/${slug}`
+            },
             openGraph: {
                 title: `${article.title} - IPTV Plus France`,
                 description: article.meta_description || article.excerpt || "",
