@@ -8,11 +8,11 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "eslint",
-    "import-articles": "tsx scripts/import-articles.ts"
+    "db:verify": "node scripts/verify-db.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "better-sqlite3": "^12.5.0",
+    "better-sqlite3": "^12.6.0",
     "date-fns": "^4.1.0",
     "dotenv": "^17.2.3",
     "lucide-react": "^0.561.0",
@@ -20,7 +20,6 @@
     "next": "16.0.10",
     "next-sitemap": "^4.2.3",
     "nodemailer": "^7.0.12",
-    "pg": "^8.16.3",
     "react": "19.2.1",
     "react-dom": "19.2.1"
   },
@@ -28,7 +27,6 @@
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^20",
     "@types/nodemailer": "^7.0.4",
-    "@types/pg": "^8.16.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

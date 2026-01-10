@@ -1,33 +1,32 @@
 # *
 User-agent: *
+Allow: /
 Allow: /blog
 Allow: /blog/
+Allow: /blog/*
+Allow: /abonnement-iptv
 Allow: /compatibilite
+Allow: /compatibilite/*
 Allow: /contact
 Allow: /faq
 Allow: /channels
 Allow: /mentions-legales
 Allow: /politique-de-confidentialite
 Allow: /conditions
-Disallow: /
 Disallow: /checkout
+Disallow: /checkout/*
 Disallow: /trial
 Disallow: /thank-you
 Disallow: /plans
 Disallow: /prix
 Disallow: /login
 Disallow: /dashboard
+Disallow: /dashboard/*
 Disallow: /admin
+Disallow: /admin/*
 Disallow: /api/
+Disallow: /api/*
 Disallow: /_next/
-
-# Googlebot
-User-agent: Googlebot
-Allow: /
-
-# Bingbot
-User-agent: Bingbot
-Allow: /
 
 # AhrefsBot
 User-agent: AhrefsBot
@@ -39,6 +38,10 @@ Disallow: /
 
 # MJ12bot
 User-agent: MJ12bot
+Disallow: /
+
+# DotBot
+User-agent: DotBot
 Disallow: /
 
 # Host

@@ -3,17 +3,33 @@
 // PAGES INDEXABLES UNIQUEMENT - SAFE content only
 // Synchronisé avec src/lib/seo-config.ts
 const INDEXED_PAGES = [
+    // Blog main page
     '/blog',
+    // Tutoriels
     '/blog/activer-smart-iptv-samsung',   // Safe: tutoriel activation
     '/blog/installer-iptv-smart-tv',      // Safe: tutoriel installation
     '/blog/smart-iptv-activation',        // Safe: tutoriel activation
     '/blog/smartone-iptv',                // Safe: guide application
+    '/blog/configurer-iptv-smarters-hisense-vidaa',  // Safe: tutoriel Hisense
+    '/blog/activation-renouvellement-ibo-player',    // Safe: tutoriel IBO Player
+    '/blog/abonnement-iptv-premium-2025', // Safe: guide premium
+    '/blog/alternative-premium-iptv',     // Safe: alternative guide
+    '/blog/tuto-smarters-pro-iptv',       // Safe: tutoriel Smarters Pro
+    '/blog/iptv-premium-4k-2025',         // Safe: guide 4K
     // REWRITTEN - Now safe content
     '/blog/can-2025-regarder-matchs',     // Rewritten: Smart TV config guide
     '/blog/iptv-gratuit-vs-premium',      // Rewritten: Choose quality streaming
     '/blog/iptv-legal-france',            // Rewritten: How streaming works
     '/blog/probleme-iptv-buffering',      // Rewritten: Network optimization
     '/blog/meilleure-iptv-2025',          // Rewritten: Optimize experience
+    // Avis articles
+    '/blog/avis-iptvplus-france',         // Review article
+    '/blog/avis-flash-stream-tv',         // Review article
+    '/blog/avis-abonnement-iptvplus',     // Review article
+    '/blog/avis-iptvpluseplayer',         // Review article
+    // Money pages
+    '/abonnement-iptv',                   // Main money page
+    // Support pages
     '/compatibilite',
     '/compatibilite/*',
     '/contact',
@@ -45,7 +61,7 @@ module.exports = {
         '/admin/*',
         '/api',
         '/api/*',
-        '/abonnement-iptv',
+        // '/abonnement-iptv',  // NOW INDEXED - main money page
         '/iptv-france',
         '/iptv-premium',
         '/smart-iptv',
@@ -60,9 +76,13 @@ module.exports = {
             {
                 userAgent: '*',
                 allow: [
+                    '/',
                     '/blog',
                     '/blog/',
+                    '/blog/*',
+                    '/abonnement-iptv',
                     '/compatibilite',
+                    '/compatibilite/*',
                     '/contact',
                     '/faq',
                     '/channels',
@@ -71,24 +91,26 @@ module.exports = {
                     '/conditions',
                 ],
                 disallow: [
-                    '/',
                     '/checkout',
+                    '/checkout/*',
                     '/trial',
                     '/thank-you',
                     '/plans',
                     '/prix',
                     '/login',
                     '/dashboard',
+                    '/dashboard/*',
                     '/admin',
+                    '/admin/*',
                     '/api/',
+                    '/api/*',
                     '/_next/',
                 ],
             },
-            { userAgent: 'Googlebot', allow: '/' },
-            { userAgent: 'Bingbot', allow: '/' },
             { userAgent: 'AhrefsBot', disallow: '/' },
             { userAgent: 'SemrushBot', disallow: '/' },
             { userAgent: 'MJ12bot', disallow: '/' },
+            { userAgent: 'DotBot', disallow: '/' },
         ],
     },
 
