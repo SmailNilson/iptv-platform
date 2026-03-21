@@ -27,6 +27,11 @@ const INDEXED_PAGES = [
     '/blog/avis-flash-stream-tv',         // Review article
     '/blog/avis-abonnement-iptvplus',     // Review article
     '/blog/avis-iptvpluseplayer',         // Review article
+    // Nouveaux articles ajoutés 2026-03-21
+    '/blog/meilleur-abonnement-formuler-z11', // Guide Formuler Z11
+    '/blog/reglage-tivimate-eviter-buffering', // Réglages TiviMate
+    '/blog/test-iptv-24h-whatsapp',          // Test IPTV WhatsApp
+    '/blog/tuto-iptv-ps5-navigateur',        // Tuto IPTV PS5
     // Money pages
     '/abonnement-iptv',                   // Main money page
     // Support pages
@@ -129,6 +134,16 @@ module.exports = {
             return null;
         }
 
+        // Money page = très haute priorité
+        if (path === '/abonnement-iptv') {
+            return {
+                loc: path,
+                changefreq: 'weekly',
+                priority: 0.9,
+                lastmod: new Date().toISOString(),
+            };
+        }
+
         // Blog = priorité maximale
         if (path === '/blog') {
             return {
@@ -179,6 +194,12 @@ module.exports = {
             };
         }
 
-        return null; // Exclure tout le reste
+        // Catch-all pour les autres pages indexables
+        return {
+            loc: path,
+            changefreq: 'monthly',
+            priority: 0.5,
+            lastmod: new Date().toISOString(),
+        };
     },
 };
