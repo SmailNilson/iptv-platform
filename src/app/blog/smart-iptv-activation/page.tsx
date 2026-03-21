@@ -91,6 +91,14 @@ export default function SmartIptvActivationPage() {
                         </ol>
                         <p><em>Attention : Méfiez-vous des sites tiers qui vous demandent plus cher. Le seul prix officiel est 5.49€.</em></p>
 
+                        <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid #3b82f6', padding: '1.5rem', margin: '2rem 0', borderRadius: '0 8px 8px 0' }}>
+                            <h3 style={{ color: '#60a5fa', margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>📚 Guides Complémentaires</h3>
+                            <p style={{ margin: 0, color: '#bfdbfe' }}>
+                                Pour plus de détails, consultez notre <Link href="/blog/siptv-eu-activation-guide" style={{ color: 'var(--accent-2)' }}>guide complet SIPTV.eu</Link> ou notre
+                                tutoriel <Link href="/blog/activer-smart-iptv-samsung" style={{ color: 'var(--accent-2)' }}>activation Smart IPTV sur Samsung</Link>.
+                            </p>
+                        </div>
+
                         <h2>Étape 3 : Injecter la Playlist M3U</h2>
                         <p>
                             Une fois l'application activée, elle est vide. Il faut y mettre les chaînes de votre abonnement.

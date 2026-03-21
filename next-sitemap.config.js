@@ -32,6 +32,9 @@ const INDEXED_PAGES = [
     '/blog/reglage-tivimate-eviter-buffering', // Réglages TiviMate
     '/blog/test-iptv-24h-whatsapp',          // Test IPTV WhatsApp
     '/blog/tuto-iptv-ps5-navigateur',        // Tuto IPTV PS5
+    // SEO optimization articles - targeting high-potential keywords
+    '/blog/iptv-plus-player-telechargement', // IPTV Plus Player guide
+    '/blog/siptv-eu-activation-guide',       // SIPTV.eu activation guide
     // Money pages
     '/abonnement-iptv',                   // Main money page
     // Support pages

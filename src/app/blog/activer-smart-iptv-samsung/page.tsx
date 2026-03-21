@@ -47,7 +47,7 @@ export default function ActiverSmartIptvSamsungPage() {
                             <h3 style={{ color: '#f87171', margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>⚠️ Application introuvable ?</h3>
                             <p style={{ margin: 0, color: '#fecaca' }}>
                                 Smart IPTV a été retiré du Samsung Store dans certains pays. Alternatives : <strong>IBO Player</strong>,
-                                <strong> Nanomid</strong> ou <strong>IPTV Smarters Pro</strong>.
+                                <strong> Nanomid</strong> ou <Link href="/blog/iptv-plus-player-telechargement" style={{ color: 'var(--accent-2)' }}>IPTV Smarters Pro</Link>.
                             </p>
                         </div>
 
@@ -57,6 +57,14 @@ export default function ActiverSmartIptvSamsungPage() {
                             <li>Sur l'écran d'accueil, notez l'<strong>adresse MAC</strong> affichée</li>
                             <li>Elle ressemble à : <code>a1:b2:c3:d4:e5:f6</code></li>
                         </ol>
+
+                        <div style={{ background: 'rgba(59, 130, 246, 0.1)', borderLeft: '4px solid #3b82f6', padding: '1.5rem', margin: '2rem 0', borderRadius: '0 8px 8px 0' }}>
+                            <h3 style={{ color: '#60a5fa', margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>📚 Guides Complémentaires</h3>
+                            <p style={{ margin: 0, color: '#bfdbfe' }}>
+                                Consultez notre <Link href="/blog/smart-iptv-activation" style={{ color: 'var(--accent-2)' }}>guide activation Smart IPTV</Link> ou
+                                notre <Link href="/blog/siptv-eu-activation-guide" style={{ color: 'var(--accent-2)' }}>tutoriel complet SIPTV.eu</Link> pour plus de détails.
+                            </p>
+                        </div>
 
                         <h2>Étape 3 : Activer l'application (5.49€)</h2>
                         <p>
