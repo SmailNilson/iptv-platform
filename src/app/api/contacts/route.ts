@@ -70,6 +70,9 @@ export async function POST(request: Request) {
         // Create the contact
         const contact = await createContact(body);
 
+        let emailStatus = 'success';
+        let emailErrorMsg = null;
+
         // Send email notification to Admin
         try {
             await transporter.sendMail({
@@ -95,14 +98,17 @@ export async function POST(request: Request) {
                     </div>
                 `
             });
-        } catch (emailError) {
+        } catch (emailError: any) {
             console.error('Failed to send contact notification email:', emailError);
-            // We continue returning success because the lead was successfully saved to DB
+            emailStatus = 'failed';
+            emailErrorMsg = emailError.message || String(emailError);
         }
 
         return NextResponse.json({
             success: true,
             data: contact,
+            email_status: emailStatus,
+            email_error: emailErrorMsg,
             message: 'Contact enregistré avec succès'
         }, { status: 201 });
     } catch (error) {
