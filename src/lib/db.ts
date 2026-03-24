@@ -5,6 +5,10 @@
  */
 
 import articlesData from '@/data/articles.json';
+import fs from 'fs';
+import path from 'path';
+
+const CONTACTS_FILE_PATH = path.join(process.cwd(), 'src', 'data', 'contacts.json');
 
 // Article type definition
 export interface Article {
@@ -164,20 +168,41 @@ export async function upsertArticle(input: CreateArticleInput): Promise<Article>
 }
 
 // ==========================================
-// CONTACTS / CRM (External Service)
+// CONTACTS / CRM (JSON File Database)
 // ==========================================
 
+async function readContacts(): Promise<Contact[]> {
+    try {
+        if (!fs.existsSync(CONTACTS_FILE_PATH)) {
+            return [];
+        }
+        const data = fs.readFileSync(CONTACTS_FILE_PATH, 'utf-8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error('Error reading contacts.json:', error);
+        return [];
+    }
+}
+
+async function writeContacts(contacts: Contact[]): Promise<void> {
+    try {
+        fs.writeFileSync(CONTACTS_FILE_PATH, JSON.stringify(contacts, null, 2), 'utf-8');
+    } catch (error) {
+        console.error('Error writing to contacts.json:', error);
+    }
+}
+
 /**
- * Create a new contact (Send to external service)
- * In production, this should send to Web3Forms, EmailJS, or similar
+ * Create a new contact and save to contacts.json
  */
 export async function createContact(input: CreateContactInput): Promise<Contact> {
-    // For Vercel deployment, contacts should be sent to an external service
-    // This is just a placeholder that returns a mock contact
-    console.warn('⚠️ Contact creation in JSON mode - should use external service (Web3Forms, etc.)');
+    const contacts = await readContacts();
+    
+    // Auto-increment ID based on max existing ID, or fallback to Date.now() if conflicts occur
+    const nextId = contacts.length > 0 ? Math.max(...contacts.map(c => c.id)) + 1 : Date.now();
 
     const contact: Contact = {
-        id: Date.now(),
+        id: nextId,
         name: input.name,
         email: input.email || null,
         phone: input.phone || null,
@@ -188,47 +213,69 @@ export async function createContact(input: CreateContactInput): Promise<Contact>
         updated_at: new Date().toISOString()
     };
 
+    contacts.push(contact);
+    await writeContacts(contacts);
+
     return contact;
 }
 
 /**
- * Get all contacts (Not supported in JSON mode)
+ * Get all contacts from contacts.json
  */
 export async function getAllContacts(): Promise<Contact[]> {
-    console.warn('⚠️ Getting contacts is not supported in JSON mode');
-    return [];
+    const contacts = await readContacts();
+    // Sort descending by created_at
+    return contacts.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 }
 
 /**
- * Get contacts by status (Not supported in JSON mode)
+ * Get contacts by status
  */
 export async function getContactsByStatus(status: string): Promise<Contact[]> {
-    console.warn('⚠️ Getting contacts by status is not supported in JSON mode');
-    return [];
+    const contacts = await readContacts();
+    return contacts.filter(c => c.status === status)
+                   .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 }
 
 /**
- * Update contact status (Not supported in JSON mode)
+ * Update contact status in contacts.json
  */
 export async function updateContactStatus(id: number, status: string): Promise<Contact | undefined> {
-    console.warn('⚠️ Updating contact status is not supported in JSON mode');
-    return undefined;
+    const contacts = await readContacts();
+    const index = contacts.findIndex(c => c.id === id);
+    
+    if (index === -1) return undefined;
+    
+    contacts[index].status = status as Contact['status'];
+    contacts[index].updated_at = new Date().toISOString();
+    
+    await writeContacts(contacts);
+    return contacts[index];
 }
 
 /**
- * Check if contact exists (Not supported in JSON mode)
+ * Check if contact exists by email or phone
  */
 export async function contactExists(email?: string, phone?: string): Promise<boolean> {
-    // In JSON mode, we can't check for duplicates
-    // This should be handled by the external service
-    return false;
+    if (!email && !phone) return false;
+    
+    const contacts = await readContacts();
+    
+    return contacts.some(contact => {
+        const emailMatch = email && contact.email === email;
+        const phoneMatch = phone && contact.phone === phone;
+        return emailMatch || phoneMatch;
+    });
 }
 
 /**
- * Initialize contacts table (No-op for JSON)
+ * Initialize contacts table (No-op but ensures file exists)
  */
 export async function initContactsTable(): Promise<void> {
-    console.log('✅ Contacts will be sent to external service (no table needed)');
+    if (!fs.existsSync(CONTACTS_FILE_PATH)) {
+        console.log('📝 Creating contacts.json file');
+        fs.writeFileSync(CONTACTS_FILE_PATH, '[]', 'utf-8');
+    }
 }
 
 export default {
