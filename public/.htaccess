@@ -1,12 +1,16 @@
-# Force HTTPS redirect
+# Force HTTPS redirect (Except for ads.txt and robots.txt)
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteCond %{REQUEST_URI} !^/ads\.txt$
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect www to non-www (301 permanent)
+# 1. Skip everything for ads.txt and robots.txt
+# This ensures Next.js or other rules don't interfere
+RewriteRule ^(ads\.txt|robots\.txt)$ - [L]
+
+# 2. Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+# 3. Redirect www to non-www (301 permanent)
 RewriteCond %{HTTP_HOST} ^www\.iptvplusfrance\.com [NC]
-RewriteCond %{REQUEST_URI} !^/ads\.txt$
 RewriteRule ^(.*)$ https://iptvplusfrance.com/$1 [L,R=301]
 
 # Block bad bots (SEO scrapers)

@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Removed 'output: export' to enable API routes and dynamic features
   // For production, deploy to Vercel, Railway, Render, or any Node.js host
-  trailingSlash: true,
+  trailingSlash: false,
   images: {
     // Enable Next.js image optimization
     formats: ['image/webp', 'image/avif'],
