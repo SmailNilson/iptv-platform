@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     title: 'IPTV Premium 4K - Stable & Sans Coupure',
     description: 'Service IPTV stable. +20 000 chaînes, VOD illimitée, qualité 4K. Essai gratuit 24h.',
   },
+  other: {
+    'google-adsense-account': 'ca-pub-3235102292758932',
+  },
 };
 
 export default function RootLayout({
@@ -59,6 +62,14 @@ export default function RootLayout({
             gtag('config', 'G-TQZMMLZ8DE');
           `}
         </Script>
+
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3235102292758932"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={inter.className}>
         {children}

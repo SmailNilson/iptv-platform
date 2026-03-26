@@ -4,6 +4,7 @@
  */
 
 import { Navbar } from "@/components/layout/Navbar";
+import { AdSenseAd } from "@/components/ads/AdSenseAd";
 import { getPublishedArticleBySlug, getPublishedArticles, initDatabase } from "@/lib/db";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -194,6 +195,9 @@ export default async function BlogDynamicPostPage({ params }: PageProps) {
                     }}
                     dangerouslySetInnerHTML={{ __html: article.content || '' }}
                 />
+
+                {/* AdSense Ad */}
+                <AdSenseAd />
 
                 {/* CTA */}
                 <div style={{

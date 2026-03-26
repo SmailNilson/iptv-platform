@@ -44,6 +44,7 @@ export const Footer = () => {
                 <div className={styles.column}>
                     <h3>Informations</h3>
                     <ul>
+                        <li><Link href="/about">À propos de nous</Link></li>
                         <li><Link href="/mentions-legales">Mentions Légales</Link></li>
                         <li><Link href="/politique-de-confidentialite">Politique de Confidentialité</Link></li>
                         <li><Link href="/conditions">Conditions d'Utilisation</Link></li>
