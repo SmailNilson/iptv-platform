@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   title: "Abonnement IPTV Premium 4K - Stable & Sans Coupure | Essai 24h",
   description: "Service IPTV stable et fiable. +20 000 chaînes en 4K/HD, VOD illimitée, zéro buffering. Compatible Smart TV, FireStick, Android. Essai gratuit 24h.",
   robots: {
-    index: false,
+    index: true,
     follow: true,
     googleBot: {
-      index: false,
+      index: true,
       follow: true,
     },
   },
@@ -64,11 +64,10 @@ export default function RootLayout({
         </Script>
 
         {/* Google AdSense */}
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3235102292758932"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
       </head>
       <body className={inter.className}>
