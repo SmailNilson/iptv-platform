@@ -143,6 +143,9 @@ export default async function Blog({
                                             </div>
                                             <h2 className={styles.articleTitle}>{article.title}</h2>
                                             <p className={styles.articleExcerpt}>{article.excerpt}</p>
+                                            <div className={styles.readMoreButton}>
+                                                En savoir plus
+                                            </div>
                                         </div>
                                     </Link>
                                 ))}
