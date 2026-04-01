@@ -199,6 +199,36 @@ export default async function BlogDynamicPostPage({ params }: PageProps) {
                 {/* AdSense Ad */}
                 <AdSenseAd />
 
+                {/* Adsterra Ad */}
+                <div style={{ margin: "2rem 0", textAlign: "center", overflow: "hidden" }} dangerouslySetInnerHTML={{
+                    __html: `
+                    <script async="async" data-cfasync="false" src="https://pl29033962.profitablecpmratenetwork.com/62d997f2be7be2903141523dd2bc39ef/invoke.js"></script>
+                    <div id="container-62d997f2be7be2903141523dd2bc39ef"></div>
+                ` }} />
+
+                {/* Adsterra Direct Link */}
+                <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+                    <a
+                        href="https://www.profitablecpmratenetwork.com/fwughjce?key=f7c30d633f5eea44d4b5824f81152152"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            display: "inline-block",
+                            padding: "12px 24px",
+                            backgroundColor: "rgba(167, 139, 250, 0.1)",
+                            color: "#a78bfa",
+                            borderRadius: "8px",
+                            textDecoration: "none",
+                            fontSize: "1rem",
+                            fontWeight: "bold",
+                            border: "1px solid rgba(167, 139, 250, 0.5)",
+                            transition: "all 0.3s ease"
+                        }}
+                    >
+                        🎁 Découvrir l'offre exclusive du moment
+                    </a>
+                </div>
+
                 {/* CTA */}
                 <div style={{
                     marginTop: "3rem",
