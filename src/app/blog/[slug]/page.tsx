@@ -227,6 +227,7 @@ export default async function BlogDynamicPostPage({ params }: PageProps) {
                     >
                         🎁 Découvrir l'offre exclusive du moment
                     </a>
+                    <a href="" rel="nofollow"><img alt="banner" src="https://landings-cdn.adsterratech.com/referralBanners/gif/120x60_adsterra_reff.gif" /></a>
                 </div>
 
                 {/* CTA */}
