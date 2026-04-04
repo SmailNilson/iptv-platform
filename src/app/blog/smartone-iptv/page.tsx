@@ -18,7 +18,7 @@ export default function SmartOneIPTVGuide() {
                         <span>•</span>
                         <span>10 min de lecture</span>
                     </div>
-                    <h1 className={styles.title}>SmartOne IPTV : Le Guide Ultime pour l'Installer et le Configurer sur Tous vos Appareils (2025)</h1>
+                    <h1 className={styles.title}>SmartOne IPTV : Le Guide Ultime pour l'Installer et le Configurer sur Tous vos Appareils (2026)</h1>
                     <p className={styles.intro}>
                         Vous cherchez le lecteur IPTV parfait pour votre Smart TV ? Ne cherchez plus.
                     </p>
@@ -38,7 +38,7 @@ export default function SmartOneIPTVGuide() {
                 <div className={styles.content}>
                     <section className={styles.section}>
                         <p>
-                            En 2025, <strong>SmartOne IPTV</strong> s'est imposée comme l'application de référence pour sa fluidité, son interface moderne et sa compatibilité 4K native. Mais comment l'installer et la configurer sans erreur ?
+                            En 2026, <strong>SmartOne IPTV</strong> s'est imposée comme l'application de référence pour sa fluidité, son interface moderne et sa compatibilité 4K native. Mais comment l'installer et la configurer sans erreur ?
                         </p>
                         <p>
                             Dans ce guide complet, nous allons vous montrer, étape par étape, comment transformer votre téléviseur en un centre de divertissement ultime en moins de 10 minutes.
@@ -51,7 +51,7 @@ export default function SmartOneIPTVGuide() {
                             SmartOne n'est pas juste une autre application, c'est <strong>l'une des plus stables du marché actuellement</strong>. Conçue pour gérer des playlists volumineuses (plus de 20 000 chaînes et VOD) sans ralentir votre processeur, elle offre une expérience utilisateur premium.
                         </p>
 
-                        <h3>Ses points forts en 2025 :</h3>
+                        <h3>Ses points forts en 2026 :</h3>
                         <div className={styles.featureList}>
                             <div className={styles.featureItem}>
                                 <h3>🚀 Interface Ultra-Moderne</h3>

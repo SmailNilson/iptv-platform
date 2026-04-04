@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button';
 import styles from '../../styles/shared.module.css';
 
 export const metadata: Metadata = {
-    title: 'Activer Smart IPTV : Le Guide Complet 2025',
+    title: 'Activer Smart IPTV : Le Guide Complet 2026',
     description: 'Tutoriel étape par étape pour activer l\'application Smart IPTV et y ajouter votre playlist.',
     alternates: {
         canonical: 'https://iptvplusfrance.com/blog/smart-iptv-activation/',

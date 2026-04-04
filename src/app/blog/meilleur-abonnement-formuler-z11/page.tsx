@@ -21,7 +21,7 @@ export default function AbonnementFormulerZ11() {
                     </div>
                     <h1 className={styles.title}>Le Meilleur Abonnement Premium optimisé pour Formuler Z11 Pro Max</h1>
                     <p className={styles.intro}>
-                        Vous avez investi dans un <strong>Formuler Z11 Pro</strong> ou <strong>Z11 Pro Max</strong>. Félicitations, vous avez du goût. Avec son application exclusive <strong>MyTVOnline 3 (MOL3)</strong>, c'est sans conteste le boîtier le plus puissant de 2025.
+                        Vous avez investi dans un <strong>Formuler Z11 Pro</strong> ou <strong>Z11 Pro Max</strong>. Félicitations, vous avez du goût. Avec son application exclusive <strong>MyTVOnline 3 (MOL3)</strong>, c'est sans conteste le boîtier le plus puissant de 2026.
                     </p>
                 </div>
 

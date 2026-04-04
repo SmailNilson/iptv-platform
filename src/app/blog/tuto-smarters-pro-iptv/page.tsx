@@ -34,7 +34,7 @@ export default function TutoSmartersProIPTVPage() {
                         />
 
                         <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-                            Vous avez sans doute entendu dire que <strong>IPTV Smarters Pro</strong> est la meilleure application du marché en 2025. C'est vrai. Son interface est fluide, elle gère parfaitement le Replay et le Multi-écran.
+                            Vous avez sans doute entendu dire que <strong>IPTV Smarters Pro</strong> est la meilleure application du marché en 2026. C'est vrai. Son interface est fluide, elle gère parfaitement le Replay et le Multi-écran.
                         </p>
 
                         <p>

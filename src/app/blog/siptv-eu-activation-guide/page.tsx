@@ -15,7 +15,7 @@ export default function SIPTVeuActivationGuidePage() {
                 <div className={styles.container}>
                     <span style={{ color: 'var(--accent-1)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem' }}>Tutoriel Officiel</span>
                     <h1 className={styles.heroTitle} style={{ fontSize: '2.8rem', marginTop: '1rem' }}>
-                        SIPTV.eu : Le Guide Complet d'Activation Smart IPTV 2025
+                        SIPTV.eu : Le Guide Complet d'Activation Smart IPTV 2026
                     </h1>
                     <p className={styles.heroSubtitle}>
                         Tout savoir sur siptv.eu, le site officiel pour activer l'application Smart IPTV sur votre Smart TV Samsung, LG ou Android.
@@ -48,7 +48,7 @@ export default function SIPTVeuActivationGuidePage() {
                             </p>
                         </div>
 
-                        <h2>Smart IPTV est-elle encore disponible en 2025 ?</h2>
+                        <h2>Smart IPTV est-elle encore disponible en 2026 ?</h2>
                         <p>
                             <strong>Oui, mais avec des restrictions.</strong> L'application Smart IPTV a été retirée du Samsung App Store et LG Content Store dans plusieurs pays européens,
                             dont la France, en raison de pressions liées aux droits d'auteur.
@@ -178,7 +178,7 @@ export default function SIPTVeuActivationGuidePage() {
                             </p>
                         </div>
 
-                        <h2>Alternatives à Smart IPTV en 2025</h2>
+                        <h2>Alternatives à Smart IPTV en 2026</h2>
 
                         <h3>1. IBO Player (Recommandé ⭐)</h3>
                         <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem' }}>

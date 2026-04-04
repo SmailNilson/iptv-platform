@@ -5,7 +5,7 @@ import styles from "./article.module.css";
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function IPTVPremium4K2025() {
+export default function IPTVPremium4K2026() {
     return (
         <main className={styles.main}>
             <Navbar />
@@ -18,7 +18,7 @@ export default function IPTVPremium4K2025() {
                         <span>•</span>
                         <span>8 min de lecture</span>
                     </div>
-                    <h1 className={styles.title}>IPTV Premium en 2025 : Arrêtez de payer pour des écrans noirs (Le Guide Définitif de la 4K)</h1>
+                    <h1 className={styles.title}>IPTV Premium en 2026 : Arrêtez de payer pour des écrans noirs (Le Guide Définitif de la 4K)</h1>
                     <p className={styles.intro}>
                         Il est 21h45. C'est le match de l'année. L'attaquant s'élance face au but et... l'image se fige. Un cercle de chargement apparaît. Vous venez de rater le but décisif.
                     </p>

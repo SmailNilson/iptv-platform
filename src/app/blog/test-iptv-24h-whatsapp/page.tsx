@@ -40,7 +40,7 @@ export default function TestIPTV24hWhatsApp() {
                     <section className={styles.section}>
                         <h2>💬 Pourquoi passer par WhatsApp ?</h2>
                         <p>
-                            En 2025, la vitesse est reine. L'utilisateur malin sait que <strong>les meilleurs fournisseurs IPTV se trouvent sur WhatsApp</strong>. Pourquoi ? Parce que cela garantit un contact humain, un support réactif et surtout, une preuve que le vendeur n'a rien à cacher.
+                            En 2026, la vitesse est reine. L'utilisateur malin sait que <strong>les meilleurs fournisseurs IPTV se trouvent sur WhatsApp</strong>. Pourquoi ? Parce que cela garantit un contact humain, un support réactif et surtout, une preuve que le vendeur n'a rien à cacher.
                         </p>
                     </section>
 

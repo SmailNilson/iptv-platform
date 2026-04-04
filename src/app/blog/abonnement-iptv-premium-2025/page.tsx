@@ -6,7 +6,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Button } from '@/components/ui/Button';
 import styles from '../../styles/shared.module.css';
 
-export default function AbonnementIPTVPremium2025Page() {
+export default function AbonnementIPTVPremium2026Page() {
     return (
         <main className={styles.main}>
             <Navbar />
@@ -15,7 +15,7 @@ export default function AbonnementIPTVPremium2025Page() {
                 <div className={styles.container}>
                     <span style={{ color: 'var(--accent-1)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem' }}>Guide Premium</span>
                     <h1 className={styles.heroTitle} style={{ fontSize: '2.5rem', marginTop: '1rem' }}>
-                        Abonnement IPTV Premium en 2025 : Comment reconnaître la vraie qualité 4K ?
+                        Abonnement IPTV Premium en 2026 : Comment reconnaître la vraie qualité 4K ?
                     </h1>
                     <p className={styles.heroSubtitle}>
                         Découvrez comment distinguer un vrai abonnement IPTV Premium d'une offre bas de gamme.
@@ -38,7 +38,7 @@ export default function AbonnementIPTVPremium2025Page() {
                         </p>
 
                         <p>
-                            Si vous avez déjà vécu cette frustration, c'est que vous n'utilisez pas un <strong>abonnement IPTV premium</strong>, mais une ligne standard surchargée. En 2025, la technologie a évolué. La 4K ne doit plus être une option instable, mais une norme fluide.
+                            Si vous avez déjà vécu cette frustration, c'est que vous n'utilisez pas un <strong>abonnement IPTV premium</strong>, mais une ligne standard surchargée. En 2026, la technologie a évolué. La 4K ne doit plus être une option instable, mais une norme fluide.
                         </p>
 
                         <p>

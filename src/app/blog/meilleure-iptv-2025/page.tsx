@@ -15,7 +15,7 @@ export default function OptimiserExperienceStreamingPage() {
                 <div className={styles.container}>
                     <span style={{ color: 'var(--accent-1)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem' }}>Guide</span>
                     <h1 className={styles.heroTitle} style={{ fontSize: '2.5rem', marginTop: '1rem' }}>
-                        Optimiser Votre Expérience de Streaming en 2025
+                        Optimiser Votre Expérience de Streaming en 2026
                     </h1>
                     <p className={styles.heroSubtitle}>
                         Conseils pratiques pour profiter de la meilleure qualité de visionnage.

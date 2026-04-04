@@ -16,7 +16,7 @@ export default function IPTVPlusPlayerTelechargementPage() {
                 <div className={styles.container}>
                     <span style={{ color: 'var(--accent-1)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem' }}>Guide Applications</span>
                     <h1 className={styles.heroTitle} style={{ fontSize: '2.8rem', marginTop: '1rem' }}>
-                        IPTV Plus Player : Téléchargement et Configuration Complète 2025
+                        IPTV Plus Player : Téléchargement et Configuration Complète 2026
                     </h1>
                     <p className={styles.heroSubtitle}>
                         Tout ce que vous devez savoir pour télécharger, installer et configurer les meilleures applications IPTV Player sur vos appareils.
@@ -50,7 +50,7 @@ export default function IPTVPlusPlayerTelechargementPage() {
                             </p>
                         </div>
 
-                        <h2>Les Meilleures Applications IPTV Player en 2025</h2>
+                        <h2>Les Meilleures Applications IPTV Player en 2026</h2>
 
                         <h3>1. IPTV Smarters Pro (Recommandé ⭐)</h3>
                         <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem' }}>

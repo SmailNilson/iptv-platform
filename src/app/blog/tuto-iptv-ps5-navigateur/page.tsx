@@ -19,7 +19,7 @@ export default function TutoIPTVPS5() {
                         <span>•</span>
                         <span>6 min de lecture</span>
                     </div>
-                    <h1 className={styles.title}>Comment regarder l'IPTV sur PS5 en 2025 ? (Solution Testée)</h1>
+                    <h1 className={styles.title}>Comment regarder l'IPTV sur PS5 en 2026 ? (Solution Testée)</h1>
                     <p className={styles.intro}>
                         La PlayStation 5 est une bête de course, mais Sony verrouille tout. Contrairement à la Xbox, il n'y a pas d'application "IPTV Smarters" ou "VLC" sur le PlayStation Store. Beaucoup pensent que c'est impossible.
                     </p>
