@@ -18,14 +18,35 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
+  },
+  alternates: {
+    canonical: 'https://iptvplusfrance.com/',
   },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'IPTV Plus France',
-    title: 'IPTV Premium 4K - Stable & Sans Coupure',
+    url: 'https://iptvplusfrance.com/',
+    title: 'Abonnement IPTV Premium 4K France - Stable & Sans Coupure',
     description: 'Service IPTV stable. +20 000 chaînes, VOD illimitée, qualité 4K. Essai gratuit 24h.',
+    images: [
+      {
+        url: 'https://iptvplusfrance.com/assets/hero-bg.png',
+        width: 1200,
+        height: 630,
+        alt: 'IPTV Plus France - Abonnement IPTV Premium 4K',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Abonnement IPTV Premium 4K France - Stable & Sans Coupure',
+    description: 'Service IPTV stable. +20 000 chaînes, VOD illimitée, qualité 4K. Essai gratuit 24h.',
+    images: ['https://iptvplusfrance.com/assets/hero-bg.png'],
   },
   other: {
     'google-adsense-account': 'ca-pub-3235102292758932',
@@ -44,6 +65,7 @@ export default function RootLayout({
         <OrganizationSchema
           name="IPTV Plus France"
           url="https://iptvplusfrance.com"
+          logo="https://iptvplusfrance.com/assets/logo.png"
           contactEmail="contact@iptvplusfrance.com"
           contactPhone="+33749931569"
         />

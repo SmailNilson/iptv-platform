@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
-    title: "Avis Flash-Stream TV : Arnaque ou Pépite en 2025 ? Le Test Complet",
+    title: "Avis Flash-Stream TV : Arnaque ou Pépite en 2026 ? Le Test Complet",
     description: "Test complet et avis détaillé sur Flash-Stream TV. Analyse technique de la qualité 4K, stabilité, support client et rapport qualité-prix. Verdict sans concession.",
-    keywords: "avis flash stream tv, flash-stream tv avis, test flash stream, comparatif iptv 2025",
+    keywords: "avis flash stream tv, flash-stream tv avis, test flash stream, comparatif iptv 2026",
     openGraph: {
-        title: "Avis Flash-Stream TV : Arnaque ou Pépite en 2025 ?",
+        title: "Avis Flash-Stream TV : Arnaque ou Pépite en 2026 ?",
         description: "Test complet et avis détaillé sur Flash-Stream TV. Analyse technique sans concession.",
         type: "article",
         locale: "fr_FR",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Avis Flash-Stream TV : Le Test Complet 2025",
+        title: "Avis Flash-Stream TV : Le Test Complet 2026",
         description: "Test complet et avis détaillé sur Flash-Stream TV.",
     },
     robots: {
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Avis Flash-Stream TV : Arnaque ou Pépite en 2026 ? Le Test Complet"
+            description="Test complet et avis détaillé sur Flash-Stream TV. Analyse technique de la qualité 4K, stabilité, support client et rapport qualité-prix. Verdict sans concession."
+            slug="avis-flash-stream-tv"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

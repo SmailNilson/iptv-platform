@@ -38,7 +38,7 @@ export default function ContactPage() {
                     <div className={styles.button}>
                         <Button
                             variant="primary"
-                            href="https://wa.me/123456789"
+                            href="https://wa.me/17575357760"
                             className="w-full flex justify-center items-center gap-2"
                         >
                             Discuter maintenant

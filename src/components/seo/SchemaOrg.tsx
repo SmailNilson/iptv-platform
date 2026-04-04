@@ -183,3 +183,44 @@ export function HowToSchema({
         />
     );
 }
+
+// Product/Offer Schema (pour les pages de tarification)
+export function ProductSchema({
+    name,
+    description,
+    url,
+    offers,
+}: {
+    name: string;
+    description: string;
+    url: string;
+    offers: Array<{ name: string; price: string; priceCurrency: string; description?: string }>;
+}) {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": name,
+        "description": description,
+        "url": url,
+        "brand": {
+            "@type": "Brand",
+            "name": "IPTV Plus France"
+        },
+        "offers": offers.map(offer => ({
+            "@type": "Offer",
+            "name": offer.name,
+            "price": offer.price,
+            "priceCurrency": offer.priceCurrency,
+            "availability": "https://schema.org/InStock",
+            "url": url,
+            ...(offer.description && { "description": offer.description }),
+        }))
+    };
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    );
+}

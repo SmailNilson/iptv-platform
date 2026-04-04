@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
     title: "Comment Installer IPTV sur Smart TV : Guide Complet Samsung, LG, Android TV",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
         url: "https://iptvplusfrance.com/blog/installer-iptv-smart-tv/",
         images: [
             {
-                url: "/images/blog/installer-iptv-smart-tv/hero.webp",
+                url: "https://iptvplusfrance.com/images/blog/installer-iptv-smart-tv/hero.webp",
                 width: 1200,
                 height: 675,
                 alt: "Installation IPTV Smarters Pro sur Smart TV"
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Comment Installer IPTV sur Smart TV",
         description: "Guide complet pour installer IPTV sur Samsung, LG et Android TV.",
-        images: ["/images/blog/installer-iptv-smart-tv/hero.webp"]
+        images: ["https://iptvplusfrance.com/images/blog/installer-iptv-smart-tv/hero.webp"]
     },
     robots: {
         index: true,
@@ -35,5 +36,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Comment Installer IPTV sur Smart TV : Guide Complet Samsung, LG, Android TV"
+            description="Guide complet pour installer IPTV sur Smart TV Samsung, LG et Android TV. Configuration IPTV Smarters Pro étape par étape avec identifiants Xtream Codes."
+            slug="installer-iptv-smart-tv"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

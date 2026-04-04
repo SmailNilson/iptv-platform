@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
-    title: "Configurer IPTV Smarters Pro sur TV Hisense Vidaa : Guide Complet 2025",
+    title: "Configurer IPTV Smarters Pro sur TV Hisense Vidaa : Guide Complet 2026",
     description: "Tutoriel complet pour configurer IPTV Smarters Pro sur votre TV Hisense avec système Vidaa. Solutions Web Player et applications alternatives IBO Player, Smart One.",
     keywords: "iptv smarters hisense, vidaa iptv, configurer iptv hisense, ibo player hisense, smart one vidaa, iptv tv hisense",
     openGraph: {
@@ -35,5 +36,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Configurer IPTV Smarters Pro sur TV Hisense Vidaa : Guide Complet 2026"
+            description="Tutoriel complet pour configurer IPTV Smarters Pro sur votre TV Hisense avec système Vidaa. Solutions Web Player et applications alternatives IBO Player, Smart One."
+            slug="configurer-iptv-smarters-hisense-vidaa"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

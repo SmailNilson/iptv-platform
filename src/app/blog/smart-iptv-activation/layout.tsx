@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
-    title: "Smart IPTV Activation : Comment Activer Smart IPTV en 2025 ? Guide Complet",
-    description: "✅ Guide complet activation Smart IPTV (SIPTV) 2025 : adresse MAC, paiement 5.49€, ajout playlist M3U. Tutoriel étape par étape pour TV Samsung, LG et Android.",
+    title: "Smart IPTV Activation : Comment Activer Smart IPTV en 2026 ? Guide Complet",
+    description: "✅ Guide complet activation Smart IPTV (SIPTV) 2026 : adresse MAC, paiement 5.49€, ajout playlist M3U. Tutoriel étape par étape pour TV Samsung, LG et Android.",
     keywords: "smart iptv activation, siptv activation, activer smart iptv, smart iptv adresse mac, activation siptv.eu, smart iptv 5.49",
     openGraph: {
-        title: "Smart IPTV Activation : Guide Complet 2025",
+        title: "Smart IPTV Activation : Guide Complet 2026",
         description: "✅ Activez Smart IPTV facilement : MAC, paiement, playlist M3U. Tutoriel complet pour toutes les Smart TV.",
         type: "article",
         locale: "fr_FR",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Smart IPTV Activation : Le Guide Complet 2025",
+        title: "Smart IPTV Activation : Le Guide Complet 2026",
         description: "✅ Activez Smart IPTV pas à pas : MAC, paiement, M3U. Compatible Samsung, LG, Android.",
     },
     robots: {
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Smart IPTV Activation : Comment Activer Smart IPTV en 2026 ? Guide Complet"
+            description="✅ Guide complet activation Smart IPTV (SIPTV) 2026 : adresse MAC, paiement 5.49€, ajout playlist M3U. Tutoriel étape par étape pour TV Samsung, LG et Android."
+            slug="smart-iptv-activation"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

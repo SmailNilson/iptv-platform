@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
-    title: "IPTV Premium 4K 2025 : Le Guide Définitif (Arrêtez les Écrans Noirs)",
+    title: "IPTV Premium 4K 2026 : Le Guide Définitif (Arrêtez les Écrans Noirs)",
     description: "Découvrez pourquoi votre IPTV coupe sans cesse et comment un vrai service Premium 4K change tout. Guide complet : infrastructure, configuration IPTV Smarters Pro, et test gratuit 24h.",
-    keywords: "IPTV Premium, IPTV 4K, abonnement IPTV 2025, IPTV Smarters Pro, anti-buffering IPTV, IPTV France, meilleure IPTV",
+    keywords: "IPTV Premium, IPTV 4K, abonnement IPTV 2026, IPTV Smarters Pro, anti-buffering IPTV, IPTV France, meilleure IPTV",
     openGraph: {
-        title: "IPTV Premium 4K 2025 : Arrêtez de payer pour des écrans noirs",
+        title: "IPTV Premium 4K 2026 : Arrêtez de payer pour des écrans noirs",
         description: "Le guide définitif pour choisir un vrai service IPTV Premium en 4K. Fini le buffering !",
         type: "article",
         publishedTime: "2024-12-25T00:00:00.000Z",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "IPTV Premium 4K 2025 : Le Guide Définitif",
+        title: "IPTV Premium 4K 2026 : Le Guide Définitif",
         description: "Découvrez comment profiter de la vraie 4K sans buffering. Test gratuit 24h inclus.",
         images: ["/images/blog/iptv-premium-4k-2025/hero.webp"]
     },
@@ -31,5 +32,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="IPTV Premium 4K 2026 : Le Guide Définitif (Arrêtez les Écrans Noirs)"
+            description="Découvrez pourquoi votre IPTV coupe sans cesse et comment un vrai service Premium 4K change tout. Guide complet : infrastructure, configuration IPTV Smarters Pro, et test gratuit 24h."
+            slug="iptv-premium-4k-2025"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

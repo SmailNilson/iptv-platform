@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
     title: "Déçu de votre fournisseur IPTV ? L'alternative fiable avec support WhatsApp",
@@ -27,5 +28,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Déçu de votre fournisseur IPTV ? L"
+            description="Vous cherchez à annuler votre abonnement ou déçu des coupures ? Découvrez l"
+            slug="alternative-premium-iptv"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
     title: "Guide Complet : Configurer Votre Smart TV pour un Affichage Optimal",
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Guide Complet : Configurer Votre Smart TV pour un Affichage Optimal"
+            description="Apprenez à optimiser les paramètres de votre téléviseur connecté Samsung, LG ou Android TV. Guide complet avec conseils réseau et qualité d"
+            slug="can-2025-regarder-matchs"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

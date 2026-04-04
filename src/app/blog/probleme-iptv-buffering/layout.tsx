@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
-    title: "Optimiser la Fluidité de Votre Streaming TV : Guide Dépannage 2025",
+    title: "Optimiser la Fluidité de Votre Streaming TV : Guide Dépannage 2026",
     description: "Guide complet pour résoudre les problèmes de buffering et optimiser la fluidité de votre streaming TV. Solutions étape par étape pour WiFi, Ethernet et config réseau.",
     keywords: "problème buffering iptv, résoudre buffering streaming, optimiser fluidité tv, dépannage iptv",
     openGraph: {
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Optimiser la Fluidité de Votre Streaming TV : Guide Dépannage 2026"
+            description="Guide complet pour résoudre les problèmes de buffering et optimiser la fluidité de votre streaming TV. Solutions étape par étape pour WiFi, Ethernet et config réseau."
+            slug="probleme-iptv-buffering"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

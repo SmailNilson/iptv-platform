@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
-    title: "Avis Abonnement-IPTVPlus.fr : Copie Low-Cost ou Réelle Alternative en 2025 ?",
+    title: "Avis Abonnement-IPTVPlus.fr : Copie Low-Cost ou Réelle Alternative en 2026 ?",
     description: "Test complet et avis détaillé sur Abonnement-IPTVPlus.fr. Analyse technique, qualité de streaming, stabilité et support client. Le verdict sans concession.",
-    keywords: "avis abonnement iptvplus, abonnement-iptvplus.fr avis, test iptv plus, comparatif iptv 2025",
+    keywords: "avis abonnement iptvplus, abonnement-iptvplus.fr avis, test iptv plus, comparatif iptv 2026",
     openGraph: {
-        title: "Avis Abonnement-IPTVPlus.fr : Le Test Vérité 2025",
+        title: "Avis Abonnement-IPTVPlus.fr : Le Test Vérité 2026",
         description: "Test complet et avis détaillé sur Abonnement-IPTVPlus.fr. Analyse technique sans concession.",
         type: "article",
         locale: "fr_FR",
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Avis Abonnement-IPTVPlus.fr : Copie Low-Cost ou Réelle Alternative en 2026 ?"
+            description="Test complet et avis détaillé sur Abonnement-IPTVPlus.fr. Analyse technique, qualité de streaming, stabilité et support client. Le verdict sans concession."
+            slug="avis-abonnement-iptvplus"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navbar } from '@/components/layout/Navbar';
 import { Button } from '@/components/ui/Button';
+import { FAQSchema, BreadcrumbSchema, ProductSchema } from '@/components/seo/SchemaOrg';
 import styles from '../styles/shared.module.css';
 import { CheckCircle, HelpCircle } from 'lucide-react';
 
@@ -11,13 +12,31 @@ export const metadata: Metadata = {
     title: 'Abonnement IPTV Premium - Le Meilleur en France (4K/FHD)',
     description: 'Découvrez le meilleur abonnement IPTV en France. Plus de 100 000 chaînes et VOD en 4K/FHD. Stable, sans coupure, et compatible Smart TV, Android, iOS.',
     alternates: {
-        canonical: '/abonnement-iptv',
+        canonical: 'https://iptvplusfrance.com/abonnement-iptv',
     },
 };
 
 export default function AbonnementIPTVPage() {
     return (
         <main className={styles.main}>
+            <BreadcrumbSchema items={[
+                { name: 'Accueil', url: 'https://iptvplusfrance.com' },
+                { name: 'Abonnement IPTV', url: 'https://iptvplusfrance.com/abonnement-iptv' },
+            ]} />
+            <ProductSchema
+                name="Abonnement IPTV Premium France"
+                description="Service IPTV Premium avec +60 000 chaînes en 4K/FHD, VOD illimitée, stable sans coupure."
+                url="https://iptvplusfrance.com/abonnement-iptv"
+                offers={[
+                    { name: "3 Mois", price: "29.99", priceCurrency: "EUR", description: "+60 000 chaînes, VOD illimitée, Anti-Buffer" },
+                    { name: "6 Mois", price: "49.99", priceCurrency: "EUR", description: "+60 000 chaînes, VOD illimitée, Anti-Buffer, Installation offerte" },
+                    { name: "12 Mois", price: "79.99", priceCurrency: "EUR", description: "Tout inclus VIP, 2 écrans simultanés, support prioritaire" },
+                ]}
+            />
+            <FAQSchema questions={[
+                { question: "Est-ce que l'abonnement fonctionne sur plusieurs appareils ?", answer: "Oui, notre abonnement standard 12 mois inclut 2 connexions simultanées." },
+                { question: "Comment installer l'IPTV sur ma Smart TV ?", answer: "C'est très simple. Installez Smart IPTV, IBO Player ou Nanomid. Nous vous envoyons le lien m3u par email." },
+            ]} />
             <Navbar />
 
             {/* Hero Section */}
@@ -33,7 +52,7 @@ export default function AbonnementIPTVPage() {
                     </p>
                     <div className={styles.ctaGroup}>
                         <Button href="/plans" variant="primary">Voir les Offres</Button>
-                        <Button href="https://wa.me/123456789" variant="secondary">Contact WhatsApp</Button>
+                        <Button href="https://wa.me/17575357760" variant="secondary">Contact WhatsApp</Button>
                     </div>
                 </div>
             </section>

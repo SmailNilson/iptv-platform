@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
-    title: "Le Meilleur Abonnement Premium pour Formuler Z11 Pro Max en 2025",
+    title: "Le Meilleur Abonnement Premium pour Formuler Z11 Pro Max en 2026",
     description: "Découvrez le meilleur abonnement IPTV optimisé pour Formuler Z11 Pro Max. Guide complet avec configuration MyTVOnline, qualité 4K HDR et zéro buffering.",
     keywords: "formuler z11 pro max, abonnement iptv formuler, meilleur iptv formuler z11, mytvonline iptv",
     openGraph: {
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Le Meilleur Abonnement Premium pour Formuler Z11 Pro Max en 2026"
+            description="Découvrez le meilleur abonnement IPTV optimisé pour Formuler Z11 Pro Max. Guide complet avec configuration MyTVOnline, qualité 4K HDR et zéro buffering."
+            slug="meilleur-abonnement-formuler-z11"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

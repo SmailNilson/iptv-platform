@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
     title: "Renouvellement & Activation IBO Player : Pack Abonnement 12 mois inclus",
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Renouvellement & Activation IBO Player : Pack Abonnement 12 mois inclus"
+            description="Guide complet pour activer et renouveler IBO Player avec un pack abonnement IPTV 12 mois inclus. Tutoriel étape par étape pour Smart TV, Android et iOS."
+            slug="activation-renouvellement-ibo-player"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

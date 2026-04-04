@@ -88,7 +88,7 @@ function ThankYouContent() {
                 <div className={styles.support}>
                     <p style={{ marginBottom: '1rem', fontWeight: '500' }}>Vous n'avez pas reçu l'email ?</p>
                     <a
-                        href={`https://wa.me/33749931569?text=${encodeURIComponent("Bonjour, je viens de passer commande mais je n'ai pas reçu l'email avec le lien de paiement.")}`}
+                        href={`https://wa.me/17575357760?text=${encodeURIComponent("Bonjour, je viens de passer commande mais je n'ai pas reçu l'email avec le lien de paiement.")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

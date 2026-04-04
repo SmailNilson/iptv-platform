@@ -42,6 +42,11 @@ export const indexedPages: string[] = [
     '/blog/reglage-tivimate-eviter-buffering', // Réglages TiviMate
     '/blog/test-iptv-24h-whatsapp',          // Test IPTV WhatsApp
     '/blog/tuto-iptv-ps5-navigateur',        // Tuto IPTV PS5
+    // SEO optimization articles
+    '/blog/iptv-plus-player-telechargement', // IPTV Plus Player guide
+    '/blog/siptv-eu-activation-guide',       // SIPTV.eu activation guide
+    // Homepage
+    '/',                                     // Homepage - branded traffic
     // Money pages
     '/abonnement-iptv',                      // Main money page
     // Support pages
@@ -58,7 +63,7 @@ export const indexedPages: string[] = [
 
 // Pages to NOINDEX (hide from Google but follow links)
 export const noindexPages: string[] = [
-    '/', // Homepage has pricing
+    // '/',  // NOW INDEXED - homepage for branded traffic
     '/trial',
     '/checkout',
     '/plans',

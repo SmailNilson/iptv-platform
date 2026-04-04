@@ -101,7 +101,7 @@ export default async function Blog({
             <section className={styles.blogSection}>
                 <div className={styles.container}>
                     <header className={styles.header}>
-                        <h1 className={styles.pageTitle}>Blog IPTV</h1>
+                        <h1 className={styles.pageTitle}>Blog IPTV : Guides, Tutoriels et Astuces</h1>
                         <p className={styles.pageSubtitle}>
                             Guides et astuces pour profiter au maximum de votre abonnement IPTV
                         </p>

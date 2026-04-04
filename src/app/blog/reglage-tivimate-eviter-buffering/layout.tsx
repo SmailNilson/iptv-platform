@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
     title: "TiviMate Buffering : Les Réglages Secrets et le Serveur Qu'il Vous Faut",
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="TiviMate Buffering : Les Réglages Secrets et le Serveur Qu"
+            description="Guide expert pour éliminer le buffering sur TiviMate. Réglages secrets, configuration avancée du buffer, décodage matériel et choix du meilleur serveur IPTV."
+            slug="reglage-tivimate-eviter-buffering"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

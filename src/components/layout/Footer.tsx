@@ -22,6 +22,7 @@ export const Footer = () => {
                 <div className={styles.column}>
                     <h3>Navigation</h3>
                     <ul>
+                        <li><Link href="/abonnement-iptv">Abonnement IPTV</Link></li>
                         <li><Link href="/blog">Blog & Tutoriels</Link></li>
                         <li><Link href="/compatibilite">Compatibilité</Link></li>
                         <li><Link href="/channels">Liste des Chaînes</Link></li>

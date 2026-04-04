@@ -35,6 +35,8 @@ const INDEXED_PAGES = [
     // SEO optimization articles - targeting high-potential keywords
     '/blog/iptv-plus-player-telechargement', // IPTV Plus Player guide
     '/blog/siptv-eu-activation-guide',       // SIPTV.eu activation guide
+    // Homepage
+    '/',                                  // Homepage - branded traffic
     // Money pages
     '/abonnement-iptv',                   // Main money page
     // Support pages
@@ -55,7 +57,7 @@ module.exports = {
 
     // EXCLUSION STRICTE - Tout sauf les pages indexables
     exclude: [
-        '/',                    // Homepage avec pricing
+        // '/',                 // Homepage now indexed for branded traffic
         '/checkout',
         '/checkout/*',
         '/trial',
@@ -135,6 +137,16 @@ module.exports = {
         // Ne pas inclure les pages non-indexables
         if (!isIndexable) {
             return null;
+        }
+
+        // Homepage
+        if (path === '/') {
+            return {
+                loc: path,
+                changefreq: 'weekly',
+                priority: 0.8,
+                lastmod: new Date().toISOString(),
+            };
         }
 
         // Money page = très haute priorité

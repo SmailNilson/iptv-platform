@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/Card";
 import styles from "./home.module.css";
 import Link from "next/link";
 import { PlansSection } from "@/components/home/PlansSection";
+import { FAQSchema } from "@/components/seo/SchemaOrg";
 
 // Sports channels list - French channels first
 const sportsChannels = [
@@ -148,8 +149,8 @@ export default function Home() {
 
       <section className={styles.hero}>
         <h1 className={styles.title}>
-          +20 000 Chaînes TV.<br />
-          <span className={styles.highlight}>Streaming premium.</span> Accès Immédiat.
+          Abonnement IPTV Premium 4K.<br />
+          <span className={styles.highlight}>+20 000 Chaînes.</span> Accès Immédiat.
         </h1>
         <p className={styles.subtitle}>
           Service IPTV Premium 4K. Zéro buffering, qualité garantie. Sports, Films et Séries sur tous vos appareils.
@@ -185,7 +186,7 @@ export default function Home() {
 
       {/* Channels Preview */}
       <section id="channels">
-        <h2 className={styles.sectionTitle}>Bibliothèque de Contenu</h2>
+        <h2 className={styles.sectionTitle}>Catalogue IPTV — +20 000 Chaînes en 4K</h2>
         <div className={styles.channelsGrid}>
           {[
             { title: "Pack Sport", icon: "⚽", count: "+500 Chaînes", color: "#00CFFF", onClick: () => setShowSportsModal(true) },
@@ -213,9 +214,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema questions={[
+        { question: "Quand vais-je recevoir mes codes ?", answer: "Instantanément. Une fois votre paiement validé, vous recevez vos identifiants par email en 1 à 5 minutes." },
+        { question: "Puis-je l'utiliser sur plusieurs appareils ?", answer: "Oui, mais le visionnage simultané dépend de votre abonnement (généralement 1 écran par défaut)." },
+      ]} />
+
       {/* FAQ Preview */}
       <section id="faq" className={styles.faqSection}>
-        <h2 className={styles.sectionTitle}>Questions Fréquentes</h2>
+        <h2 className={styles.sectionTitle}>Questions Fréquentes — Abonnement IPTV</h2>
         <div className={styles.faqItem}>
           <h3 className={styles.faqQuestion}>Quand vais-je recevoir mes codes ?</h3>
           <p className={styles.faqAnswer}>Instantanément. Une fois votre paiement validé, vous recevez vos identifiants par email en 1 à 5 minutes.</p>

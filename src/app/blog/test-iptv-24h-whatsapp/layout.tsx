@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
     title: "Test IPTV 24h via WhatsApp : Recevez Vos Accès Instantanément (Sans Coupure)",
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Test IPTV 24h via WhatsApp : Recevez Vos Accès Instantanément (Sans Coupure)"
+            description="Demandez votre test IPTV gratuit 24h via WhatsApp. Accès instantané, qualité 4K Premium, +20 000 chaînes. Sans engagement, sans carte bancaire requise."
+            slug="test-iptv-24h-whatsapp"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }

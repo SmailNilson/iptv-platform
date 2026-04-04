@@ -17,7 +17,7 @@ export const Navbar: React.FC = () => {
             <Link href="/" className={styles.logo}>
                 <img
                     src="/assets/logo.png?v=1734481768"
-                    alt="Logo"
+                    alt="IPTV Plus France - Abonnement IPTV Premium"
                     width={55}
                     height={55}
                 />
@@ -26,7 +26,7 @@ export const Navbar: React.FC = () => {
             {/* Desktop Links */}
             <div className={styles.links}>
                 <Link href="/" className={styles.navLink}>Accueil</Link>
-                <Link href="/#plans" className={styles.navLink}>Abonnements</Link>
+                <Link href="/abonnement-iptv" className={styles.navLink}>Abonnements</Link>
                 <Link href="/blog" className={styles.navLink}>Blog</Link>
                 <Link href="/guide-installation" className={styles.navLink}>Guide</Link>
                 <Link href="/faq" className={styles.navLink}>FAQ</Link>
@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Menu Overlay */}
             <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
                 <Link href="/" className={styles.navLink} onClick={closeMenu}>Accueil</Link>
-                <Link href="/#plans" className={styles.navLink} onClick={closeMenu}>Abonnements</Link>
+                <Link href="/abonnement-iptv" className={styles.navLink} onClick={closeMenu}>Abonnements</Link>
                 <Link href="/blog" className={styles.navLink} onClick={closeMenu}>Blog</Link>
                 <Link href="/guide-installation" className={styles.navLink} onClick={closeMenu}>Guide</Link>
                 <Link href="/faq" className={styles.navLink} onClick={closeMenu}>FAQ</Link>

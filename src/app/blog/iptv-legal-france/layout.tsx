@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { BlogArticleLayoutWrapper } from '@/components/seo/BlogArticleLayoutWrapper';
 
 export const metadata: Metadata = {
     title: "Comment Fonctionne le Streaming TV : Guide Technique Complet",
@@ -26,5 +27,13 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return children;
+    return (
+        <BlogArticleLayoutWrapper
+            title="Comment Fonctionne le Streaming TV : Guide Technique Complet"
+            description="Comprendre la technologie derrière le streaming TV. Protocoles HLS, DASH, CDN, qualité d"
+            slug="iptv-legal-france"
+        >
+            {children}
+        </BlogArticleLayoutWrapper>
+    );
 }
